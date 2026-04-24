@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Evaluation suite for rachio-mcp v0.1.
+
+These questions are designed to be answered exclusively by an LLM using
+only the 23 tools exposed by this MCP server. Each question:
+
+  - is independent (doesn't depend on the answer to any other question)
+  - uses only read-only, idempotent tools
+  - requires multiple tool calls and some reasoning to solve
+  - has a single verifiable answer that is stable over time (does not
+    depend on "current state" like today's runs)
+
+Answers target the account used during development (user_id
+8793b5e3-6d0d-4b31-93ed-efbba1738a13, controller Rachio-431262).
+-->
+<evaluation>
+
+  <qa_pair>
+    <question>
+      The Rachio account has several devices. Not all of them are physical
+      irrigation controllers. How many SENSOR_LINKED devices are attached
+      to the account?
+    </question>
+    <answer>2</answer>
+  </qa_pair>
+
+  <qa_pair>
+    <question>
+      Find the irrigation controller on the account and report its model
+      string exactly as the API returns it.
+    </question>
+    <answer>GENERATION3_8ZONE_PRO</answer>
+  </qa_pair>
+
+  <qa_pair>
+    <question>
+      The controller has a Koppen climate classification stored with it.
+      Report the Koppen code as a single string.
+    </question>
+    <answer>Cfa</answer>
+  </qa_pair>
+
+  <qa_pair>
+    <question>
+      The controller is in a specific USDA plant hardiness zone. Report
+      the zone as the API returns it.
+    </question>
+    <answer>7a</answer>
+  </qa_pair>
+
+  <qa_pair>
+    <question>
+      Look across all the zones configured on the controller. How many of
+      them are currently disabled?
+    </question>
+    <answer>3</answer>
+  </qa_pair>
+
+  <qa_pair>
+    <question>
+      Across the enabled zones on the controller, how many distinct
+      nozzle types are in use? (A zone's nozzle type is reported in its
+      zone_detail.)
+    </question>
+    <answer>2</answer>
+  </qa_pair>
+
+  <qa_pair>
+    <question>
+      List every watering schedule on the controller and count only those
+      whose annual-recurring window starts in April.
+    </question>
+    <answer>2</answer>
+  </qa_pair>
+
+  <qa_pair>
+    <question>
+      One schedule on the controller is configured to run on more than
+      one day of the week. What is that schedule's name? Answer with
+      exactly the name as stored, no quotes.
+    </question>
+    <answer>Summer Lawn</answer>
+  </qa_pair>
+
+  <qa_pair>
+    <question>
+      The controller has two RAIN sensors wired into it. One is in
+      SLOT_ONE, the other in SLOT_TWO. Are either of them enabled?
+      Answer "yes" if at least one is enabled, otherwise "no".
+    </question>
+    <answer>no</answer>
+  </qa_pair>
+
+  <qa_pair>
+    <question>
+      Look up the virtual weather station associated with the account's
+      location. It has a station identifier (a Weather Underground PWS
+      ID). Report that station_id exactly.
+    </question>
+    <answer>KDEWILMI147</answer>
+  </qa_pair>
+
+</evaluation>

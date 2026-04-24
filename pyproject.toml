@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rachio-mcp"
+version = "0.1.0"
+description = "MCP server for Rachio sprinkler controllers using the reverse-engineered mobile gRPC API"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.14"
+authors = [
+    { name = "Randy" },
+]
+keywords = ["rachio", "mcp", "sprinkler", "irrigation", "smart-home", "model-context-protocol"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Home Automation",
+]
+dependencies = [
+    "mcp>=1.0.0",
+    "httpx>=0.27.0",
+    "grpcio>=1.66",
+    "protobuf>=5.28",
+    "googleapis-common-protos>=1.65",
+]
+
+[project.scripts]
+rachio-mcp = "rachio_mcp.server:main"
+rachio-mcp-token = "rachio_mcp.cli:mint_token"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.8.0",
+    "grpcio-tools>=1.66",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/rachio_mcp"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/rachio_mcp",
+    "README.md",
+    "LICENSE",
+]

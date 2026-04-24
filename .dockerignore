@@ -1,0 +1,25 @@
+# Exclude noise from the build context
+.git
+.gitignore
+__pycache__
+*.pyc
+.venv
+venv
+.pytest_cache
+.ruff_cache
+dist
+build
+*.egg-info
+node_modules
+reverse-engineering
+scripts
+evaluation.xml
+server.json
+skills-lock.json
+session-*.md
+package.json
+package-lock.json
+*.md
+!README.md
+Dockerfile
+.dockerignore
