@@ -48,3 +48,8 @@ include = [
     "README.md",
     "LICENSE",
 ]
+
+[tool.ruff]
+# Exclude generated protobuf stubs. These are emitted by grpc-tools in
+# scripts/build_protos.sh and are not intended to be style-checked.
+extend-exclude = ["src/rachio_mcp/proto"]

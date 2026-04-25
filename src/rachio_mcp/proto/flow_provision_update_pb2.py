@@ -4,43 +4,44 @@
 # source: flow_provision_update.proto
 # Protobuf Python Version: 6.31.1
 """Generated protocol buffer code."""
-
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import runtime_version as _runtime_version
 from google.protobuf import symbol_database as _symbol_database
 from google.protobuf.internal import builder as _builder
-
 _runtime_version.ValidateProtobufRuntimeVersion(
-    _runtime_version.Domain.PUBLIC, 6, 31, 1, "", "flow_provision_update.proto"
+    _runtime_version.Domain.PUBLIC,
+    6,
+    31,
+    1,
+    '',
+    'flow_provision_update.proto'
 )
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
 
 
+import flow_provision_model_pb2 as flow__provision__model__pb2
+import provision_pb2 as provision__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
-    b'\n\x1b\x66low_provision_update.proto\x1a\x1a\x66low_provision_model.proto\x1a\x0fprovision.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto"]\n*UpdatePcbManufacturingFlowProvisionRequest\x12\x15\n\rserial_number\x18\x01 \x01(\t\x12\x18\n\x10\x66irmware_version\x18\x03 \x01(\t"?\n&UpdateFlowAssemblyFlowProvisionRequest\x12\x15\n\rserial_number\x18\x01 \x01(\t"P\n+UpdatePcbManufacturingFlowProvisionResponse\x12!\n\tprovision\x18\x01 \x01(\x0b\x32\x0e.FlowProvision"L\n\'UpdateFlowAssemblyFlowProvisionResponse\x12!\n\tprovision\x18\x01 \x01(\x0b\x32\x0e.FlowProvisionB \n\x1c\x63om.rachio.api.flowprovisionP\x01\x62\x06proto3'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x66low_provision_update.proto\x1a\x1a\x66low_provision_model.proto\x1a\x0fprovision.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\"]\n*UpdatePcbManufacturingFlowProvisionRequest\x12\x15\n\rserial_number\x18\x01 \x01(\t\x12\x18\n\x10\x66irmware_version\x18\x03 \x01(\t\"?\n&UpdateFlowAssemblyFlowProvisionRequest\x12\x15\n\rserial_number\x18\x01 \x01(\t\"P\n+UpdatePcbManufacturingFlowProvisionResponse\x12!\n\tprovision\x18\x01 \x01(\x0b\x32\x0e.FlowProvision\"L\n\'UpdateFlowAssemblyFlowProvisionResponse\x12!\n\tprovision\x18\x01 \x01(\x0b\x32\x0e.FlowProvisionB \n\x1c\x63om.rachio.api.flowprovisionP\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
-_builder.BuildTopDescriptorsAndMessages(
-    DESCRIPTOR, "flow_provision_update_pb2", _globals
-)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'flow_provision_update_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-    _globals["DESCRIPTOR"]._loaded_options = None
-    _globals[
-        "DESCRIPTOR"
-    ]._serialized_options = b"\n\034com.rachio.api.flowprovisionP\001"
-    _globals["_UPDATEPCBMANUFACTURINGFLOWPROVISIONREQUEST"]._serialized_start = 141
-    _globals["_UPDATEPCBMANUFACTURINGFLOWPROVISIONREQUEST"]._serialized_end = 234
-    _globals["_UPDATEFLOWASSEMBLYFLOWPROVISIONREQUEST"]._serialized_start = 236
-    _globals["_UPDATEFLOWASSEMBLYFLOWPROVISIONREQUEST"]._serialized_end = 299
-    _globals["_UPDATEPCBMANUFACTURINGFLOWPROVISIONRESPONSE"]._serialized_start = 301
-    _globals["_UPDATEPCBMANUFACTURINGFLOWPROVISIONRESPONSE"]._serialized_end = 381
-    _globals["_UPDATEFLOWASSEMBLYFLOWPROVISIONRESPONSE"]._serialized_start = 383
-    _globals["_UPDATEFLOWASSEMBLYFLOWPROVISIONRESPONSE"]._serialized_end = 459
+  _globals['DESCRIPTOR']._loaded_options = None
+  _globals['DESCRIPTOR']._serialized_options = b'\n\034com.rachio.api.flowprovisionP\001'
+  _globals['_UPDATEPCBMANUFACTURINGFLOWPROVISIONREQUEST']._serialized_start=141
+  _globals['_UPDATEPCBMANUFACTURINGFLOWPROVISIONREQUEST']._serialized_end=234
+  _globals['_UPDATEFLOWASSEMBLYFLOWPROVISIONREQUEST']._serialized_start=236
+  _globals['_UPDATEFLOWASSEMBLYFLOWPROVISIONREQUEST']._serialized_end=299
+  _globals['_UPDATEPCBMANUFACTURINGFLOWPROVISIONRESPONSE']._serialized_start=301
+  _globals['_UPDATEPCBMANUFACTURINGFLOWPROVISIONRESPONSE']._serialized_end=381
+  _globals['_UPDATEFLOWASSEMBLYFLOWPROVISIONRESPONSE']._serialized_start=383
+  _globals['_UPDATEFLOWASSEMBLYFLOWPROVISIONRESPONSE']._serialized_end=459
 # @@protoc_insertion_point(module_scope)

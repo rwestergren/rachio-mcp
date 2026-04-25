@@ -4,45 +4,53 @@
 # source: zone.proto
 # Protobuf Python Version: 6.31.1
 """Generated protocol buffer code."""
-
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import runtime_version as _runtime_version
 from google.protobuf import symbol_database as _symbol_database
 from google.protobuf.internal import builder as _builder
-
 _runtime_version.ValidateProtobufRuntimeVersion(
-    _runtime_version.Domain.PUBLIC, 6, 31, 1, "", "zone.proto"
+    _runtime_version.Domain.PUBLIC,
+    6,
+    31,
+    1,
+    '',
+    'zone.proto'
 )
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+import core_pb2 as core__pb2
+import alert_pb2 as alert__pb2
+from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
+import media_model_pb2 as media__model__pb2
+import irrigation_controller_pb2 as irrigation__controller__pb2
+import agronomic_data_model_pb2 as agronomic__data__model__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
-    b'\n\nzone.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\ncore.proto\x1a\x0b\x61lert.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x11media_model.proto\x1a\x1birrigation_controller.proto\x1a\x1a\x61gronomic_data_model.proto"\xdd\x0e\n\nZoneDetail\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x65nabled\x18\x02 \x01(\x08\x12\x13\n\x0bzone_number\x18\x03 \x01(\x05\x12\x0c\n\x04name\x18\x04 \x01(\t\x12+\n\x07\x63reated\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04\x61rea\x18\x07 \x01(\x01\x12\x0f\n\x07\x64\x65leted\x18\x08 \x01(\x08\x12\x11\n\tdevice_id\x18\t \x01(\t\x12 \n\x18\x61vailable_water_capacity\x18\n \x01(\x01\x12\x17\n\x0froot_zone_depth\x18\x0b \x01(\x01\x12\x12\n\nefficiency\x18\x0c \x01(\x01\x12\x11\n\tflow_rate\x18\r \x01(\x01\x12\x18\n\x10\x63rop_coefficient\x18\x0e \x01(\x01\x12!\n\x19managed_allowed_depletion\x18\x0f \x01(\x01\x12\x1c\n\tsoil_type\x18\x10 \x01(\x0e\x32\t.SoilType\x12\x1c\n\tcrop_type\x18\x11 \x01(\x0e\x32\t.CropType\x12 \n\x0bnozzle_type\x18\x12 \x01(\x0e\x32\x0b.NozzleType\x12$\n\rexposure_type\x18\x13 \x01(\x0e\x32\r.ExposureType\x12\x10\n\x08photo_id\x18\x14 \x01(\t\x12\x1e\n\nslope_type\x18\x15 \x01(\x0e\x32\n.SlopeType\x12\x19\n\x11has_moisture_data\x18\x16 \x01(\x08\x12-\n%soil_moisture_level_at_end_of_day_pct\x18\x17 \x01(\x01\x12\x10\n\x08isMetric\x18\x18 \x01(\x08\x12\x31\n\x14zone_disabled_reason\x18\x19 \x01(\x0e\x32\x13.ZoneDisabledReason\x12\x36\n\x12\x64isabled_timestamp\x18\x1a \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x06\x61lerts\x18\x1b \x03(\x0b\x32\x06.Alert\x12\x1d\n\x15\x66low_metering_enabled\x18\x1c \x01(\x08\x12"\n\x1a\x66low_auto_shut_off_enabled\x18\x1d \x01(\x08\x12\x17\n\x0f\x66low_calibrated\x18\x1e \x01(\x08\x12=\n\x17\x66low_high_threshold_pct\x18\x1f \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x12<\n\x16\x66low_low_threshold_pct\x18  \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x12\x33\n\rflow_baseline\x18! \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x12=\n\x19\x66low_calibrated_timestamp\x18" \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12"\n\x1asoil_moisture_level_amount\x18# \x01(\x01\x12>\n\x17\x66low_calibration_result\x18$ \x01(\x0b\x32\x1d.FlowCalibrationResultWrapper\x12\x1f\n\x17\x66low_manual_calibration\x18% \x01(\x08\x12+\n\x10\x61ppMessageBanner\x18& \x03(\x0b\x32\x11.AppMessageBanner\x12.\n\x08group_id\x18\' \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x16\n\x06photos\x18( \x03(\x0b\x32\x06.Photo\x12\x37\n\x13watering_efficiency\x18) \x01(\x0b\x32\x1a.WateringEfficiencyWrapper\x12(\n dynamic_crop_coefficient_enabled\x18* \x01(\x08\x12 \n\x18\x64ynamic_crop_coefficient\x18+ \x01(\x01\x12\x13\n\x0bvalve_count\x18, \x01(\x05\x12 \n\x0bvalve_brand\x18- \x01(\x0e\x32\x0b.ValveBrand\x12#\n\x1b\x61mperage_monitoring_enabled\x18. \x01(\x08\x12&\n\x1e\x61mperage_auto_shut_off_enabled\x18/ \x01(\x08\x12?\n\x1a\x62\x61seline_current_milliamps\x18\x30 \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12"\n\x1ahigh_current_threshold_pct\x18\x31 \x01(\x01\x12!\n\x19low_current_threshold_pct\x18\x32 \x01(\x01\x12\x37\n\x11perimeter_geojson\x18\x33 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12>\n\x18nozzle_locations_geojson\x18\x34 \x01(\x0b\x32\x1c.google.protobuf.StringValue"\xaa\x03\n\tZoneGroup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tdevice_id\x18\x02 \x01(\t\x12\x1c\n\x04type\x18\x03 \x01(\x0e\x32\x0e.ZoneGroupType\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x31\n\x0b\x64\x65scription\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12*\n\x04\x61rea\x18\x06 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x12-\n\x0e\x61\x63tivity_level\x18\x07 \x01(\x0b\x32\x15.ActivityLevelWrapper\x12\'\n\x0byard_health\x18\x08 \x01(\x0b\x32\x12.YardHealthWrapper\x12/\n\tperimeter\x18\t \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x10\n\x08zone_ids\x18\n \x03(\t\x12+\n\x07\x63reated\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp"5\n\x14ZoneGroupTypeWrapper\x12\x1d\n\x05value\x18\x01 \x01(\x0e\x32\x0e.ZoneGroupType"/\n\x11ValveBrandWrapper\x12\x1a\n\x05\x62rand\x18\x01 \x01(\x0e\x32\x0b.ValveBrand*w\n\x12ZoneDisabledReason\x12\x15\n\x11ZONE_NOT_DISABLED\x10\x00\x12\n\n\x06MANUAL\x10\x01\x12\r\n\tHIGH_FLOW\x10\x02\x12\x0c\n\x08LOW_FLOW\x10\x03\x12\x10\n\x0cHIGH_CURRENT\x10\x04\x12\x0f\n\x0bLOW_CURRENT\x10\x05*@\n\rZoneGroupType\x12\x0e\n\nFRONT_YARD\x10\x00\x12\r\n\tBACK_YARD\x10\x01\x12\x10\n\x0cUSER_DEFINED\x10\x02*\xc7\x02\n\nValveBrand\x12\x0b\n\x07GENERIC\x10\x00\x12\x16\n\x12\x41SCO_BERMAD_CLAVAL\x10\x01\x12\x0c\n\x08\x43HAMPION\x10\x02\x12\r\n\tGREENLAWN\x10\x03\x12\x0c\n\x08GRISWOLD\x10\x04\x12\x13\n\x0fHARDIE_IRRITROL\x10\x05\x12\n\n\x06HUNTER\x10\x06\x12\x11\n\rIMPERIAL_ATTV\x10\x07\x12\n\n\x06NELSON\x10\x08\x12\t\n\x05ORBIT\x10\t\x12\x1a\n\x16RAINBIRD_A_SERIES_COIL\x10\n\x12\x1a\n\x16RAINBIRD_B_SERIES_COIL\x10\x0b\x12\x16\n\x12RAINBIRD_DV_SERIES\x10\x0c\x12\x0c\n\x08SUPERIOR\x10\r\x12\x11\n\rTORO_ONE_INCH\x10\x0e\x12\x1b\n\x17TORO_THREE_QUARTER_INCH\x10\x0f\x12\x10\n\x0cWEATHERMATIC\x10\x10\x42\x19\n\x15\x63om.rachio.api.deviceP\x01\x62\x06proto3'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nzone.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\ncore.proto\x1a\x0b\x61lert.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x11media_model.proto\x1a\x1birrigation_controller.proto\x1a\x1a\x61gronomic_data_model.proto\"\xdd\x0e\n\nZoneDetail\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x65nabled\x18\x02 \x01(\x08\x12\x13\n\x0bzone_number\x18\x03 \x01(\x05\x12\x0c\n\x04name\x18\x04 \x01(\t\x12+\n\x07\x63reated\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04\x61rea\x18\x07 \x01(\x01\x12\x0f\n\x07\x64\x65leted\x18\x08 \x01(\x08\x12\x11\n\tdevice_id\x18\t \x01(\t\x12 \n\x18\x61vailable_water_capacity\x18\n \x01(\x01\x12\x17\n\x0froot_zone_depth\x18\x0b \x01(\x01\x12\x12\n\nefficiency\x18\x0c \x01(\x01\x12\x11\n\tflow_rate\x18\r \x01(\x01\x12\x18\n\x10\x63rop_coefficient\x18\x0e \x01(\x01\x12!\n\x19managed_allowed_depletion\x18\x0f \x01(\x01\x12\x1c\n\tsoil_type\x18\x10 \x01(\x0e\x32\t.SoilType\x12\x1c\n\tcrop_type\x18\x11 \x01(\x0e\x32\t.CropType\x12 \n\x0bnozzle_type\x18\x12 \x01(\x0e\x32\x0b.NozzleType\x12$\n\rexposure_type\x18\x13 \x01(\x0e\x32\r.ExposureType\x12\x10\n\x08photo_id\x18\x14 \x01(\t\x12\x1e\n\nslope_type\x18\x15 \x01(\x0e\x32\n.SlopeType\x12\x19\n\x11has_moisture_data\x18\x16 \x01(\x08\x12-\n%soil_moisture_level_at_end_of_day_pct\x18\x17 \x01(\x01\x12\x10\n\x08isMetric\x18\x18 \x01(\x08\x12\x31\n\x14zone_disabled_reason\x18\x19 \x01(\x0e\x32\x13.ZoneDisabledReason\x12\x36\n\x12\x64isabled_timestamp\x18\x1a \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x06\x61lerts\x18\x1b \x03(\x0b\x32\x06.Alert\x12\x1d\n\x15\x66low_metering_enabled\x18\x1c \x01(\x08\x12\"\n\x1a\x66low_auto_shut_off_enabled\x18\x1d \x01(\x08\x12\x17\n\x0f\x66low_calibrated\x18\x1e \x01(\x08\x12=\n\x17\x66low_high_threshold_pct\x18\x1f \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x12<\n\x16\x66low_low_threshold_pct\x18  \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x12\x33\n\rflow_baseline\x18! \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x12=\n\x19\x66low_calibrated_timestamp\x18\" \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\"\n\x1asoil_moisture_level_amount\x18# \x01(\x01\x12>\n\x17\x66low_calibration_result\x18$ \x01(\x0b\x32\x1d.FlowCalibrationResultWrapper\x12\x1f\n\x17\x66low_manual_calibration\x18% \x01(\x08\x12+\n\x10\x61ppMessageBanner\x18& \x03(\x0b\x32\x11.AppMessageBanner\x12.\n\x08group_id\x18\' \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x16\n\x06photos\x18( \x03(\x0b\x32\x06.Photo\x12\x37\n\x13watering_efficiency\x18) \x01(\x0b\x32\x1a.WateringEfficiencyWrapper\x12(\n dynamic_crop_coefficient_enabled\x18* \x01(\x08\x12 \n\x18\x64ynamic_crop_coefficient\x18+ \x01(\x01\x12\x13\n\x0bvalve_count\x18, \x01(\x05\x12 \n\x0bvalve_brand\x18- \x01(\x0e\x32\x0b.ValveBrand\x12#\n\x1b\x61mperage_monitoring_enabled\x18. \x01(\x08\x12&\n\x1e\x61mperage_auto_shut_off_enabled\x18/ \x01(\x08\x12?\n\x1a\x62\x61seline_current_milliamps\x18\x30 \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12\"\n\x1ahigh_current_threshold_pct\x18\x31 \x01(\x01\x12!\n\x19low_current_threshold_pct\x18\x32 \x01(\x01\x12\x37\n\x11perimeter_geojson\x18\x33 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12>\n\x18nozzle_locations_geojson\x18\x34 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"\xaa\x03\n\tZoneGroup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tdevice_id\x18\x02 \x01(\t\x12\x1c\n\x04type\x18\x03 \x01(\x0e\x32\x0e.ZoneGroupType\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x31\n\x0b\x64\x65scription\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12*\n\x04\x61rea\x18\x06 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x12-\n\x0e\x61\x63tivity_level\x18\x07 \x01(\x0b\x32\x15.ActivityLevelWrapper\x12\'\n\x0byard_health\x18\x08 \x01(\x0b\x32\x12.YardHealthWrapper\x12/\n\tperimeter\x18\t \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x10\n\x08zone_ids\x18\n \x03(\t\x12+\n\x07\x63reated\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"5\n\x14ZoneGroupTypeWrapper\x12\x1d\n\x05value\x18\x01 \x01(\x0e\x32\x0e.ZoneGroupType\"/\n\x11ValveBrandWrapper\x12\x1a\n\x05\x62rand\x18\x01 \x01(\x0e\x32\x0b.ValveBrand*w\n\x12ZoneDisabledReason\x12\x15\n\x11ZONE_NOT_DISABLED\x10\x00\x12\n\n\x06MANUAL\x10\x01\x12\r\n\tHIGH_FLOW\x10\x02\x12\x0c\n\x08LOW_FLOW\x10\x03\x12\x10\n\x0cHIGH_CURRENT\x10\x04\x12\x0f\n\x0bLOW_CURRENT\x10\x05*@\n\rZoneGroupType\x12\x0e\n\nFRONT_YARD\x10\x00\x12\r\n\tBACK_YARD\x10\x01\x12\x10\n\x0cUSER_DEFINED\x10\x02*\xc7\x02\n\nValveBrand\x12\x0b\n\x07GENERIC\x10\x00\x12\x16\n\x12\x41SCO_BERMAD_CLAVAL\x10\x01\x12\x0c\n\x08\x43HAMPION\x10\x02\x12\r\n\tGREENLAWN\x10\x03\x12\x0c\n\x08GRISWOLD\x10\x04\x12\x13\n\x0fHARDIE_IRRITROL\x10\x05\x12\n\n\x06HUNTER\x10\x06\x12\x11\n\rIMPERIAL_ATTV\x10\x07\x12\n\n\x06NELSON\x10\x08\x12\t\n\x05ORBIT\x10\t\x12\x1a\n\x16RAINBIRD_A_SERIES_COIL\x10\n\x12\x1a\n\x16RAINBIRD_B_SERIES_COIL\x10\x0b\x12\x16\n\x12RAINBIRD_DV_SERIES\x10\x0c\x12\x0c\n\x08SUPERIOR\x10\r\x12\x11\n\rTORO_ONE_INCH\x10\x0e\x12\x1b\n\x17TORO_THREE_QUARTER_INCH\x10\x0f\x12\x10\n\x0cWEATHERMATIC\x10\x10\x42\x19\n\x15\x63om.rachio.api.deviceP\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
-_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, "zone_pb2", _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'zone_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-    _globals["DESCRIPTOR"]._loaded_options = None
-    _globals["DESCRIPTOR"]._serialized_options = b"\n\025com.rachio.api.deviceP\001"
-    _globals["_ZONEDISABLEDREASON"]._serialized_start = 2601
-    _globals["_ZONEDISABLEDREASON"]._serialized_end = 2720
-    _globals["_ZONEGROUPTYPE"]._serialized_start = 2722
-    _globals["_ZONEGROUPTYPE"]._serialized_end = 2786
-    _globals["_VALVEBRAND"]._serialized_start = 2789
-    _globals["_VALVEBRAND"]._serialized_end = 3116
-    _globals["_ZONEDETAIL"]._serialized_start = 181
-    _globals["_ZONEDETAIL"]._serialized_end = 2066
-    _globals["_ZONEGROUP"]._serialized_start = 2069
-    _globals["_ZONEGROUP"]._serialized_end = 2495
-    _globals["_ZONEGROUPTYPEWRAPPER"]._serialized_start = 2497
-    _globals["_ZONEGROUPTYPEWRAPPER"]._serialized_end = 2550
-    _globals["_VALVEBRANDWRAPPER"]._serialized_start = 2552
-    _globals["_VALVEBRANDWRAPPER"]._serialized_end = 2599
+  _globals['DESCRIPTOR']._loaded_options = None
+  _globals['DESCRIPTOR']._serialized_options = b'\n\025com.rachio.api.deviceP\001'
+  _globals['_ZONEDISABLEDREASON']._serialized_start=2601
+  _globals['_ZONEDISABLEDREASON']._serialized_end=2720
+  _globals['_ZONEGROUPTYPE']._serialized_start=2722
+  _globals['_ZONEGROUPTYPE']._serialized_end=2786
+  _globals['_VALVEBRAND']._serialized_start=2789
+  _globals['_VALVEBRAND']._serialized_end=3116
+  _globals['_ZONEDETAIL']._serialized_start=181
+  _globals['_ZONEDETAIL']._serialized_end=2066
+  _globals['_ZONEGROUP']._serialized_start=2069
+  _globals['_ZONEGROUP']._serialized_end=2495
+  _globals['_ZONEGROUPTYPEWRAPPER']._serialized_start=2497
+  _globals['_ZONEGROUPTYPEWRAPPER']._serialized_end=2550
+  _globals['_VALVEBRANDWRAPPER']._serialized_start=2552
+  _globals['_VALVEBRANDWRAPPER']._serialized_end=2599
 # @@protoc_insertion_point(module_scope)

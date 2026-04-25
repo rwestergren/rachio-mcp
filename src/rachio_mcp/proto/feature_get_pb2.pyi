@@ -17,10 +17,7 @@ class GetFeaturesResponse(_message.Message):
     __slots__ = ("features",)
     FEATURES_FIELD_NUMBER: _ClassVar[int]
     features: _containers.RepeatedCompositeFieldContainer[_feature_pb2.Feature]
-    def __init__(
-        self,
-        features: _Optional[_Iterable[_Union[_feature_pb2.Feature, _Mapping]]] = ...,
-    ) -> None: ...
+    def __init__(self, features: _Optional[_Iterable[_Union[_feature_pb2.Feature, _Mapping]]] = ...) -> None: ...
 
 class GetAllFeaturesRequest(_message.Message):
     __slots__ = ()
@@ -30,7 +27,4 @@ class GetAllFeaturesResponse(_message.Message):
     __slots__ = ("feature",)
     FEATURE_FIELD_NUMBER: _ClassVar[int]
     feature: _containers.RepeatedCompositeFieldContainer[_feature_pb2.Feature]
-    def __init__(
-        self,
-        feature: _Optional[_Iterable[_Union[_feature_pb2.Feature, _Mapping]]] = ...,
-    ) -> None: ...
+    def __init__(self, feature: _Optional[_Iterable[_Union[_feature_pb2.Feature, _Mapping]]] = ...) -> None: ...

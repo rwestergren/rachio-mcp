@@ -4,33 +4,36 @@
 # source: user_preference.proto
 # Protobuf Python Version: 6.31.1
 """Generated protocol buffer code."""
-
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import runtime_version as _runtime_version
 from google.protobuf import symbol_database as _symbol_database
 from google.protobuf.internal import builder as _builder
-
 _runtime_version.ValidateProtobufRuntimeVersion(
-    _runtime_version.Domain.PUBLIC, 6, 31, 1, "", "user_preference.proto"
+    _runtime_version.Domain.PUBLIC,
+    6,
+    31,
+    1,
+    '',
+    'user_preference.proto'
 )
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
-    b'\n\x15user_preference.proto">\n\x0eUserPreference\x12\x1d\n\x04name\x18\x01 \x01(\x0e\x32\x0f.PreferenceName\x12\r\n\x05value\x18\x02 \x01(\x08*\x88\x08\n\x0ePreferenceName\x12\x10\n\x0cUNKNOWN_NAME\x10\x00\x12\x18\n\x14\x44\x45VICE_OFFLINE_EMAIL\x10\x01\x12\x17\n\x13\x44\x45VICE_OFFLINE_PUSH\x10\x02\x12\x14\n\x10ZONE_FAULT_EMAIL\x10\x03\x12\x13\n\x0fZONE_FAULT_PUSH\x10\x04\x12\x1b\n\x17RAIN_SENSOR_STATUS_PUSH\x10\x05\x12\x15\n\x11WEATHER_SKIP_PUSH\x10\x06\x12\x16\n\x12WEATHER_SKIP_EMAIL\x10\x07\x12\x18\n\x14SEASONAL_SHIFT_EMAIL\x10\x08\x12\x17\n\x13SEASONAL_SHIFT_PUSH\x10\t\x12\x18\n\x14SCHEDULE_STATUS_PUSH\x10\n\x12\r\n\tIS_METRIC\x10\x0b\x12\x11\n\rIS_TIME_USAGE\x10\x0c\x12*\n&RECEIVE_EMAILS_FROM_SHARED_CONTROLLERS\x10\r\x12$\n RECEIVE_PUSH_FROM_SHARED_DEVICES\x10\x1c\x12\x19\n\x15\x46LOW_MONITORING_EMAIL\x10\x0e\x12\x18\n\x14\x46LOW_MONITORING_PUSH\x10\x0f\x12\x1a\n\x16YARD_PHOTO_UPDATE_PUSH\x10\x10\x12\x1b\n\x17YARD_PHOTO_UPDATE_EMAIL\x10\x11\x12\x1c\n\x18THRIVE_NOTIFICATION_PUSH\x10\x12\x12\x1d\n\x19THRIVE_NOTIFICATION_EMAIL\x10\x13\x12\x19\n\x15WEATHER_STATION_EMAIL\x10\x14\x12\x1d\n\x19\x41MPERAGE_MONITORING_EMAIL\x10\x15\x12"\n\x1e\x42\x41SE_STATION_WIFI_OFFLINE_PUSH\x10\x16\x12\x1b\n\x17VALVE_DISCONNECTED_PUSH\x10\x17\x12\x1a\n\x16VALVE_BATTERY_LOW_PUSH\x10\x18\x12\x16\n\x12PROGRAM_START_PUSH\x10\x19\x12\x15\n\x11PROGRAM_SKIP_PUSH\x10\x1a\x12\x16\n\x12VALVE_NO_FLOW_PUSH\x10\x1b\x12\x14\n\x10\x41IR_QUALITY_PUSH\x10\x1d\x12\'\n#BASE_STATION_CONNECTION_STATUS_PUSH\x10\x1f\x12.\n*LIGHTING_CONTROLLER_CONNECTION_STATUS_PUSH\x10 \x12%\n!CLIMATE_MONITORING_TRIGGERED_PUSH\x10!\x12.\n*LIGHTING_CONTROLLER_OVER_TEMPERATURE_EMAIL\x10"\x12*\n&LIGHTING_CONTROLLER_OVER_WATTAGE_EMAIL\x10#B\x17\n\x13\x63om.rachio.api.userP\x01\x62\x06proto3'
-)
+
+
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15user_preference.proto\">\n\x0eUserPreference\x12\x1d\n\x04name\x18\x01 \x01(\x0e\x32\x0f.PreferenceName\x12\r\n\x05value\x18\x02 \x01(\x08*\x88\x08\n\x0ePreferenceName\x12\x10\n\x0cUNKNOWN_NAME\x10\x00\x12\x18\n\x14\x44\x45VICE_OFFLINE_EMAIL\x10\x01\x12\x17\n\x13\x44\x45VICE_OFFLINE_PUSH\x10\x02\x12\x14\n\x10ZONE_FAULT_EMAIL\x10\x03\x12\x13\n\x0fZONE_FAULT_PUSH\x10\x04\x12\x1b\n\x17RAIN_SENSOR_STATUS_PUSH\x10\x05\x12\x15\n\x11WEATHER_SKIP_PUSH\x10\x06\x12\x16\n\x12WEATHER_SKIP_EMAIL\x10\x07\x12\x18\n\x14SEASONAL_SHIFT_EMAIL\x10\x08\x12\x17\n\x13SEASONAL_SHIFT_PUSH\x10\t\x12\x18\n\x14SCHEDULE_STATUS_PUSH\x10\n\x12\r\n\tIS_METRIC\x10\x0b\x12\x11\n\rIS_TIME_USAGE\x10\x0c\x12*\n&RECEIVE_EMAILS_FROM_SHARED_CONTROLLERS\x10\r\x12$\n RECEIVE_PUSH_FROM_SHARED_DEVICES\x10\x1c\x12\x19\n\x15\x46LOW_MONITORING_EMAIL\x10\x0e\x12\x18\n\x14\x46LOW_MONITORING_PUSH\x10\x0f\x12\x1a\n\x16YARD_PHOTO_UPDATE_PUSH\x10\x10\x12\x1b\n\x17YARD_PHOTO_UPDATE_EMAIL\x10\x11\x12\x1c\n\x18THRIVE_NOTIFICATION_PUSH\x10\x12\x12\x1d\n\x19THRIVE_NOTIFICATION_EMAIL\x10\x13\x12\x19\n\x15WEATHER_STATION_EMAIL\x10\x14\x12\x1d\n\x19\x41MPERAGE_MONITORING_EMAIL\x10\x15\x12\"\n\x1e\x42\x41SE_STATION_WIFI_OFFLINE_PUSH\x10\x16\x12\x1b\n\x17VALVE_DISCONNECTED_PUSH\x10\x17\x12\x1a\n\x16VALVE_BATTERY_LOW_PUSH\x10\x18\x12\x16\n\x12PROGRAM_START_PUSH\x10\x19\x12\x15\n\x11PROGRAM_SKIP_PUSH\x10\x1a\x12\x16\n\x12VALVE_NO_FLOW_PUSH\x10\x1b\x12\x14\n\x10\x41IR_QUALITY_PUSH\x10\x1d\x12\'\n#BASE_STATION_CONNECTION_STATUS_PUSH\x10\x1f\x12.\n*LIGHTING_CONTROLLER_CONNECTION_STATUS_PUSH\x10 \x12%\n!CLIMATE_MONITORING_TRIGGERED_PUSH\x10!\x12.\n*LIGHTING_CONTROLLER_OVER_TEMPERATURE_EMAIL\x10\"\x12*\n&LIGHTING_CONTROLLER_OVER_WATTAGE_EMAIL\x10#B\x17\n\x13\x63om.rachio.api.userP\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
-_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, "user_preference_pb2", _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'user_preference_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-    _globals["DESCRIPTOR"]._loaded_options = None
-    _globals["DESCRIPTOR"]._serialized_options = b"\n\023com.rachio.api.userP\001"
-    _globals["_PREFERENCENAME"]._serialized_start = 90
-    _globals["_PREFERENCENAME"]._serialized_end = 1122
-    _globals["_USERPREFERENCE"]._serialized_start = 25
-    _globals["_USERPREFERENCE"]._serialized_end = 87
+  _globals['DESCRIPTOR']._loaded_options = None
+  _globals['DESCRIPTOR']._serialized_options = b'\n\023com.rachio.api.userP\001'
+  _globals['_PREFERENCENAME']._serialized_start=90
+  _globals['_PREFERENCENAME']._serialized_end=1122
+  _globals['_USERPREFERENCE']._serialized_start=25
+  _globals['_USERPREFERENCE']._serialized_end=87
 # @@protoc_insertion_point(module_scope)

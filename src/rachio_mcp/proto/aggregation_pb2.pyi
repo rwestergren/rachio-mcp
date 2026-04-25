@@ -23,7 +23,6 @@ class Aggregation(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     COUNT: _ClassVar[Aggregation]
     MINIMUM: _ClassVar[Aggregation]
     MAXIMUM: _ClassVar[Aggregation]
-
 MINUTE: Interval
 HOUR: Interval
 DAY: Interval
@@ -44,12 +43,7 @@ class AggregationCriteria(_message.Message):
     time_frame: _core_pb2.TimestampInterval
     interval: Interval
     aggregation: Aggregation
-    def __init__(
-        self,
-        time_frame: _Optional[_Union[_core_pb2.TimestampInterval, _Mapping]] = ...,
-        interval: _Optional[_Union[Interval, str]] = ...,
-        aggregation: _Optional[_Union[Aggregation, str]] = ...,
-    ) -> None: ...
+    def __init__(self, time_frame: _Optional[_Union[_core_pb2.TimestampInterval, _Mapping]] = ..., interval: _Optional[_Union[Interval, str]] = ..., aggregation: _Optional[_Union[Aggregation, str]] = ...) -> None: ...
 
 class Aggregate(_message.Message):
     __slots__ = ("time_frame", "value", "group")
@@ -59,9 +53,4 @@ class Aggregate(_message.Message):
     time_frame: _core_pb2.TimestampInterval
     value: float
     group: str
-    def __init__(
-        self,
-        time_frame: _Optional[_Union[_core_pb2.TimestampInterval, _Mapping]] = ...,
-        value: _Optional[float] = ...,
-        group: _Optional[str] = ...,
-    ) -> None: ...
+    def __init__(self, time_frame: _Optional[_Union[_core_pb2.TimestampInterval, _Mapping]] = ..., value: _Optional[float] = ..., group: _Optional[str] = ...) -> None: ...

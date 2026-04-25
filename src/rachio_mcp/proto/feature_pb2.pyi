@@ -1,6 +1,7 @@
 import datetime
 
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
+from google.protobuf import wrappers_pb2 as _wrappers_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -23,7 +24,6 @@ class Feature(_message.Message):
         FIRMWARE: _ClassVar[Feature.FeatureGroup]
         SCHEDULE: _ClassVar[Feature.FeatureGroup]
         INTEGRATION: _ClassVar[Feature.FeatureGroup]
-
     FLOW: Feature.FeatureGroup
     WEATHER_INTELLIGENCE: Feature.FeatureGroup
     YARD_MAPPER: Feature.FeatureGroup
@@ -64,7 +64,6 @@ class Feature(_message.Message):
         KUSTOMER_SUPPORT: _ClassVar[Feature.FeatureName]
         AMPERAGE_MONITORING: _ClassVar[Feature.FeatureName]
         WEATHER_ADJUST: _ClassVar[Feature.FeatureName]
-
     ACTUAL_USAGE_DETECTION: Feature.FeatureName
     LEAK_DETECTION: Feature.FeatureName
     AUTO_SHUTOFF: Feature.FeatureName
@@ -105,18 +104,4 @@ class Feature(_message.Message):
     expiration: _timestamp_pb2.Timestamp
     created: _timestamp_pb2.Timestamp
     updated: _timestamp_pb2.Timestamp
-    def __init__(
-        self,
-        id: _Optional[str] = ...,
-        name: _Optional[_Union[Feature.FeatureName, str]] = ...,
-        group: _Optional[_Union[Feature.FeatureGroup, str]] = ...,
-        expiration: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        created: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        updated: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-    ) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[_Union[Feature.FeatureName, str]] = ..., group: _Optional[_Union[Feature.FeatureGroup, str]] = ..., expiration: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., created: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...

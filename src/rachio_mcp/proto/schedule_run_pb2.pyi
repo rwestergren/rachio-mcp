@@ -17,21 +17,12 @@ class RunType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     IRRIGATE: _ClassVar[RunType]
     CYCLE: _ClassVar[RunType]
     PAUSE: _ClassVar[RunType]
-
 IRRIGATE: RunType
 CYCLE: RunType
 PAUSE: RunType
 
 class ScheduleRun(_message.Message):
-    __slots__ = (
-        "schedule_id",
-        "start_time",
-        "end_time",
-        "schedule_type",
-        "zone_runs",
-        "schedule_name",
-        "icon_url",
-    )
+    __slots__ = ("schedule_id", "start_time", "end_time", "schedule_type", "zone_runs", "schedule_name", "icon_url")
     SCHEDULE_ID_FIELD_NUMBER: _ClassVar[int]
     START_TIME_FIELD_NUMBER: _ClassVar[int]
     END_TIME_FIELD_NUMBER: _ClassVar[int]
@@ -46,33 +37,10 @@ class ScheduleRun(_message.Message):
     zone_runs: _containers.RepeatedCompositeFieldContainer[ScheduleZoneRun]
     schedule_name: _wrappers_pb2.StringValue
     icon_url: str
-    def __init__(
-        self,
-        schedule_id: _Optional[str] = ...,
-        start_time: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        end_time: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        schedule_type: _Optional[
-            _Union[_schedule_criteria_pb2.ScheduleType, str]
-        ] = ...,
-        zone_runs: _Optional[_Iterable[_Union[ScheduleZoneRun, _Mapping]]] = ...,
-        schedule_name: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...,
-        icon_url: _Optional[str] = ...,
-    ) -> None: ...
+    def __init__(self, schedule_id: _Optional[str] = ..., start_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., end_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., schedule_type: _Optional[_Union[_schedule_criteria_pb2.ScheduleType, str]] = ..., zone_runs: _Optional[_Iterable[_Union[ScheduleZoneRun, _Mapping]]] = ..., schedule_name: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., icon_url: _Optional[str] = ...) -> None: ...
 
 class ScheduleZoneRun(_message.Message):
-    __slots__ = (
-        "type",
-        "start_time",
-        "end_time",
-        "zone_name",
-        "zone_id",
-        "photo_id",
-        "zone_number",
-    )
+    __slots__ = ("type", "start_time", "end_time", "zone_name", "zone_id", "photo_id", "zone_number")
     TYPE_FIELD_NUMBER: _ClassVar[int]
     START_TIME_FIELD_NUMBER: _ClassVar[int]
     END_TIME_FIELD_NUMBER: _ClassVar[int]
@@ -87,17 +55,4 @@ class ScheduleZoneRun(_message.Message):
     zone_id: str
     photo_id: str
     zone_number: int
-    def __init__(
-        self,
-        type: _Optional[_Union[RunType, str]] = ...,
-        start_time: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        end_time: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        zone_name: _Optional[str] = ...,
-        zone_id: _Optional[str] = ...,
-        photo_id: _Optional[str] = ...,
-        zone_number: _Optional[int] = ...,
-    ) -> None: ...
+    def __init__(self, type: _Optional[_Union[RunType, str]] = ..., start_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., end_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., zone_name: _Optional[str] = ..., zone_id: _Optional[str] = ..., photo_id: _Optional[str] = ..., zone_number: _Optional[int] = ...) -> None: ...

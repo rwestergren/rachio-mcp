@@ -11,16 +11,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class LocationSummary(_message.Message):
-    __slots__ = (
-        "location",
-        "state",
-        "owner",
-        "favorite",
-        "has_messages",
-        "tier_one_count",
-        "tier_two_count",
-        "active_alert_types",
-    )
+    __slots__ = ("location", "state", "owner", "favorite", "has_messages", "tier_one_count", "tier_two_count", "active_alert_types")
     LOCATION_FIELD_NUMBER: _ClassVar[int]
     STATE_FIELD_NUMBER: _ClassVar[int]
     OWNER_FIELD_NUMBER: _ClassVar[int]
@@ -37,16 +28,4 @@ class LocationSummary(_message.Message):
     tier_one_count: int
     tier_two_count: int
     active_alert_types: _containers.RepeatedScalarFieldContainer[_alert_pb2.AlertType]
-    def __init__(
-        self,
-        location: _Optional[_Union[_location_pb2.Location, _Mapping]] = ...,
-        state: _Optional[_Union[_location_state_pb2.LocationState, _Mapping]] = ...,
-        owner: _Optional[_Union[_user_pb2.User, _Mapping]] = ...,
-        favorite: bool = ...,
-        has_messages: bool = ...,
-        tier_one_count: _Optional[int] = ...,
-        tier_two_count: _Optional[int] = ...,
-        active_alert_types: _Optional[
-            _Iterable[_Union[_alert_pb2.AlertType, str]]
-        ] = ...,
-    ) -> None: ...
+    def __init__(self, location: _Optional[_Union[_location_pb2.Location, _Mapping]] = ..., state: _Optional[_Union[_location_state_pb2.LocationState, _Mapping]] = ..., owner: _Optional[_Union[_user_pb2.User, _Mapping]] = ..., favorite: bool = ..., has_messages: bool = ..., tier_one_count: _Optional[int] = ..., tier_two_count: _Optional[int] = ..., active_alert_types: _Optional[_Iterable[_Union[_alert_pb2.AlertType, str]]] = ...) -> None: ...

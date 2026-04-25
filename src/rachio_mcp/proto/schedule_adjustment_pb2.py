@@ -4,39 +4,42 @@
 # source: schedule_adjustment.proto
 # Protobuf Python Version: 6.31.1
 """Generated protocol buffer code."""
-
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import runtime_version as _runtime_version
 from google.protobuf import symbol_database as _symbol_database
 from google.protobuf.internal import builder as _builder
-
 _runtime_version.ValidateProtobufRuntimeVersion(
-    _runtime_version.Domain.PUBLIC, 6, 31, 1, "", "schedule_adjustment.proto"
+    _runtime_version.Domain.PUBLIC,
+    6,
+    31,
+    1,
+    '',
+    'schedule_adjustment.proto'
 )
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
+import core_pb2 as core__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
-    b'\n\x19schedule_adjustment.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\ncore.proto"\xc0\x03\n\x12ScheduleAdjustment\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0bschedule_id\x18\x02 \x01(\t\x12\x19\n\nstart_date\x18\x03 \x01(\x0b\x32\x05.Date\x12\x17\n\x08\x65nd_date\x18\x04 \x01(\x0b\x32\x05.Date\x12>\n\x18watering_time_multiplier\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x12\'\n\x05state\x18\x06 \x01(\x0e\x32\x18.ScheduleAdjustmentState\x12R\n\x1bwatering_cadence_adjustment\x18\x07 \x01(\x0e\x32-.ScheduleAdjustment.WateringCadenceAdjustment\x12S\n-temperature_monitoring_watering_adjustment_id\x18\x08 \x01(\x0b\x32\x1c.google.protobuf.StringValue"C\n\x19WateringCadenceAdjustment\x12\x11\n\rNO_ADJUSTMENT\x10\x00\x12\x13\n\x0fWATER_EVERY_DAY\x10\x01"I\n\x1eScheduleAdjustmentStateWrapper\x12\'\n\x05value\x18\x01 \x01(\x0e\x32\x18.ScheduleAdjustmentState*@\n\x17ScheduleAdjustmentState\x12\x0b\n\x07PENDING\x10\x00\x12\x0b\n\x07IGNORED\x10\x01\x12\x0b\n\x07\x41PPLIED\x10\x02\x42\x1b\n\x17\x63om.rachio.api.scheduleP\x01\x62\x06proto3'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19schedule_adjustment.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\ncore.proto\"\xc0\x03\n\x12ScheduleAdjustment\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0bschedule_id\x18\x02 \x01(\t\x12\x19\n\nstart_date\x18\x03 \x01(\x0b\x32\x05.Date\x12\x17\n\x08\x65nd_date\x18\x04 \x01(\x0b\x32\x05.Date\x12>\n\x18watering_time_multiplier\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x12\'\n\x05state\x18\x06 \x01(\x0e\x32\x18.ScheduleAdjustmentState\x12R\n\x1bwatering_cadence_adjustment\x18\x07 \x01(\x0e\x32-.ScheduleAdjustment.WateringCadenceAdjustment\x12S\n-temperature_monitoring_watering_adjustment_id\x18\x08 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"C\n\x19WateringCadenceAdjustment\x12\x11\n\rNO_ADJUSTMENT\x10\x00\x12\x13\n\x0fWATER_EVERY_DAY\x10\x01\"I\n\x1eScheduleAdjustmentStateWrapper\x12\'\n\x05value\x18\x01 \x01(\x0e\x32\x18.ScheduleAdjustmentState*@\n\x17ScheduleAdjustmentState\x12\x0b\n\x07PENDING\x10\x00\x12\x0b\n\x07IGNORED\x10\x01\x12\x0b\n\x07\x41PPLIED\x10\x02\x42\x1b\n\x17\x63om.rachio.api.scheduleP\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
-_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, "schedule_adjustment_pb2", _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'schedule_adjustment_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-    _globals["DESCRIPTOR"]._loaded_options = None
-    _globals["DESCRIPTOR"]._serialized_options = b"\n\027com.rachio.api.scheduleP\001"
-    _globals["_SCHEDULEADJUSTMENTSTATE"]._serialized_start = 599
-    _globals["_SCHEDULEADJUSTMENTSTATE"]._serialized_end = 663
-    _globals["_SCHEDULEADJUSTMENT"]._serialized_start = 74
-    _globals["_SCHEDULEADJUSTMENT"]._serialized_end = 522
-    _globals["_SCHEDULEADJUSTMENT_WATERINGCADENCEADJUSTMENT"]._serialized_start = 455
-    _globals["_SCHEDULEADJUSTMENT_WATERINGCADENCEADJUSTMENT"]._serialized_end = 522
-    _globals["_SCHEDULEADJUSTMENTSTATEWRAPPER"]._serialized_start = 524
-    _globals["_SCHEDULEADJUSTMENTSTATEWRAPPER"]._serialized_end = 597
+  _globals['DESCRIPTOR']._loaded_options = None
+  _globals['DESCRIPTOR']._serialized_options = b'\n\027com.rachio.api.scheduleP\001'
+  _globals['_SCHEDULEADJUSTMENTSTATE']._serialized_start=599
+  _globals['_SCHEDULEADJUSTMENTSTATE']._serialized_end=663
+  _globals['_SCHEDULEADJUSTMENT']._serialized_start=74
+  _globals['_SCHEDULEADJUSTMENT']._serialized_end=522
+  _globals['_SCHEDULEADJUSTMENT_WATERINGCADENCEADJUSTMENT']._serialized_start=455
+  _globals['_SCHEDULEADJUSTMENT_WATERINGCADENCEADJUSTMENT']._serialized_end=522
+  _globals['_SCHEDULEADJUSTMENTSTATEWRAPPER']._serialized_start=524
+  _globals['_SCHEDULEADJUSTMENTSTATEWRAPPER']._serialized_end=597
 # @@protoc_insertion_point(module_scope)

@@ -4,35 +4,36 @@
 # source: location_restriction.proto
 # Protobuf Python Version: 6.31.1
 """Generated protocol buffer code."""
-
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import runtime_version as _runtime_version
 from google.protobuf import symbol_database as _symbol_database
 from google.protobuf.internal import builder as _builder
-
 _runtime_version.ValidateProtobufRuntimeVersion(
-    _runtime_version.Domain.PUBLIC, 6, 31, 1, "", "location_restriction.proto"
+    _runtime_version.Domain.PUBLIC,
+    6,
+    31,
+    1,
+    '',
+    'location_restriction.proto'
 )
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+import schedule_restriction_criteria_pb2 as schedule__restriction__criteria__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
-    b'\n\x1alocation_restriction.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a#schedule_restriction_criteria.proto"\xc9\x01\n\x13LocationRestriction\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x43\n\x1dschedule_restriction_criteria\x18\x02 \x01(\x0b\x32\x1c.ScheduleRestrictionCriteria\x12+\n\x07\x63reated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x1b\n\x17\x63om.rachio.api.locationP\x01\x62\x06proto3'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1alocation_restriction.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a#schedule_restriction_criteria.proto\"\xc9\x01\n\x13LocationRestriction\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x43\n\x1dschedule_restriction_criteria\x18\x02 \x01(\x0b\x32\x1c.ScheduleRestrictionCriteria\x12+\n\x07\x63reated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x1b\n\x17\x63om.rachio.api.locationP\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
-_builder.BuildTopDescriptorsAndMessages(
-    DESCRIPTOR, "location_restriction_pb2", _globals
-)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'location_restriction_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-    _globals["DESCRIPTOR"]._loaded_options = None
-    _globals["DESCRIPTOR"]._serialized_options = b"\n\027com.rachio.api.locationP\001"
-    _globals["_LOCATIONRESTRICTION"]._serialized_start = 101
-    _globals["_LOCATIONRESTRICTION"]._serialized_end = 302
+  _globals['DESCRIPTOR']._loaded_options = None
+  _globals['DESCRIPTOR']._serialized_options = b'\n\027com.rachio.api.locationP\001'
+  _globals['_LOCATIONRESTRICTION']._serialized_start=101
+  _globals['_LOCATIONRESTRICTION']._serialized_end=302
 # @@protoc_insertion_point(module_scope)

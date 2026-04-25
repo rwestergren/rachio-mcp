@@ -1,6 +1,7 @@
 import datetime
 
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
+import core_pb2 as _core_pb2
 import alert_pb2 as _alert_pb2
 from google.protobuf import wrappers_pb2 as _wrappers_pb2
 import media_model_pb2 as _media_model_pb2
@@ -49,7 +50,6 @@ class ValveBrand(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     TORO_ONE_INCH: _ClassVar[ValveBrand]
     TORO_THREE_QUARTER_INCH: _ClassVar[ValveBrand]
     WEATHERMATIC: _ClassVar[ValveBrand]
-
 ZONE_NOT_DISABLED: ZoneDisabledReason
 MANUAL: ZoneDisabledReason
 HIGH_FLOW: ZoneDisabledReason
@@ -78,60 +78,7 @@ TORO_THREE_QUARTER_INCH: ValveBrand
 WEATHERMATIC: ValveBrand
 
 class ZoneDetail(_message.Message):
-    __slots__ = (
-        "id",
-        "enabled",
-        "zone_number",
-        "name",
-        "created",
-        "updated",
-        "area",
-        "deleted",
-        "device_id",
-        "available_water_capacity",
-        "root_zone_depth",
-        "efficiency",
-        "flow_rate",
-        "crop_coefficient",
-        "managed_allowed_depletion",
-        "soil_type",
-        "crop_type",
-        "nozzle_type",
-        "exposure_type",
-        "photo_id",
-        "slope_type",
-        "has_moisture_data",
-        "soil_moisture_level_at_end_of_day_pct",
-        "isMetric",
-        "zone_disabled_reason",
-        "disabled_timestamp",
-        "alerts",
-        "flow_metering_enabled",
-        "flow_auto_shut_off_enabled",
-        "flow_calibrated",
-        "flow_high_threshold_pct",
-        "flow_low_threshold_pct",
-        "flow_baseline",
-        "flow_calibrated_timestamp",
-        "soil_moisture_level_amount",
-        "flow_calibration_result",
-        "flow_manual_calibration",
-        "appMessageBanner",
-        "group_id",
-        "photos",
-        "watering_efficiency",
-        "dynamic_crop_coefficient_enabled",
-        "dynamic_crop_coefficient",
-        "valve_count",
-        "valve_brand",
-        "amperage_monitoring_enabled",
-        "amperage_auto_shut_off_enabled",
-        "baseline_current_milliamps",
-        "high_current_threshold_pct",
-        "low_current_threshold_pct",
-        "perimeter_geojson",
-        "nozzle_locations_geojson",
-    )
+    __slots__ = ("id", "enabled", "zone_number", "name", "created", "updated", "area", "deleted", "device_id", "available_water_capacity", "root_zone_depth", "efficiency", "flow_rate", "crop_coefficient", "managed_allowed_depletion", "soil_type", "crop_type", "nozzle_type", "exposure_type", "photo_id", "slope_type", "has_moisture_data", "soil_moisture_level_at_end_of_day_pct", "isMetric", "zone_disabled_reason", "disabled_timestamp", "alerts", "flow_metering_enabled", "flow_auto_shut_off_enabled", "flow_calibrated", "flow_high_threshold_pct", "flow_low_threshold_pct", "flow_baseline", "flow_calibrated_timestamp", "soil_moisture_level_amount", "flow_calibration_result", "flow_manual_calibration", "appMessageBanner", "group_id", "photos", "watering_efficiency", "dynamic_crop_coefficient_enabled", "dynamic_crop_coefficient", "valve_count", "valve_brand", "amperage_monitoring_enabled", "amperage_auto_shut_off_enabled", "baseline_current_milliamps", "high_current_threshold_pct", "low_current_threshold_pct", "perimeter_geojson", "nozzle_locations_geojson")
     ID_FIELD_NUMBER: _ClassVar[int]
     ENABLED_FIELD_NUMBER: _ClassVar[int]
     ZONE_NUMBER_FIELD_NUMBER: _ClassVar[int]
@@ -221,9 +168,7 @@ class ZoneDetail(_message.Message):
     soil_moisture_level_amount: float
     flow_calibration_result: _irrigation_controller_pb2.FlowCalibrationResultWrapper
     flow_manual_calibration: bool
-    appMessageBanner: _containers.RepeatedCompositeFieldContainer[
-        _irrigation_controller_pb2.AppMessageBanner
-    ]
+    appMessageBanner: _containers.RepeatedCompositeFieldContainer[_irrigation_controller_pb2.AppMessageBanner]
     group_id: _wrappers_pb2.StringValue
     photos: _containers.RepeatedCompositeFieldContainer[_media_model_pb2.Photo]
     watering_efficiency: _agronomic_data_model_pb2.WateringEfficiencyWrapper
@@ -238,103 +183,10 @@ class ZoneDetail(_message.Message):
     low_current_threshold_pct: float
     perimeter_geojson: _wrappers_pb2.StringValue
     nozzle_locations_geojson: _wrappers_pb2.StringValue
-    def __init__(
-        self,
-        id: _Optional[str] = ...,
-        enabled: bool = ...,
-        zone_number: _Optional[int] = ...,
-        name: _Optional[str] = ...,
-        created: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        updated: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        area: _Optional[float] = ...,
-        deleted: bool = ...,
-        device_id: _Optional[str] = ...,
-        available_water_capacity: _Optional[float] = ...,
-        root_zone_depth: _Optional[float] = ...,
-        efficiency: _Optional[float] = ...,
-        flow_rate: _Optional[float] = ...,
-        crop_coefficient: _Optional[float] = ...,
-        managed_allowed_depletion: _Optional[float] = ...,
-        soil_type: _Optional[_Union[_irrigation_controller_pb2.SoilType, str]] = ...,
-        crop_type: _Optional[_Union[_irrigation_controller_pb2.CropType, str]] = ...,
-        nozzle_type: _Optional[
-            _Union[_irrigation_controller_pb2.NozzleType, str]
-        ] = ...,
-        exposure_type: _Optional[
-            _Union[_irrigation_controller_pb2.ExposureType, str]
-        ] = ...,
-        photo_id: _Optional[str] = ...,
-        slope_type: _Optional[_Union[_irrigation_controller_pb2.SlopeType, str]] = ...,
-        has_moisture_data: bool = ...,
-        soil_moisture_level_at_end_of_day_pct: _Optional[float] = ...,
-        isMetric: bool = ...,
-        zone_disabled_reason: _Optional[_Union[ZoneDisabledReason, str]] = ...,
-        disabled_timestamp: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        alerts: _Optional[_Iterable[_Union[_alert_pb2.Alert, _Mapping]]] = ...,
-        flow_metering_enabled: bool = ...,
-        flow_auto_shut_off_enabled: bool = ...,
-        flow_calibrated: bool = ...,
-        flow_high_threshold_pct: _Optional[
-            _Union[_wrappers_pb2.DoubleValue, _Mapping]
-        ] = ...,
-        flow_low_threshold_pct: _Optional[
-            _Union[_wrappers_pb2.DoubleValue, _Mapping]
-        ] = ...,
-        flow_baseline: _Optional[_Union[_wrappers_pb2.DoubleValue, _Mapping]] = ...,
-        flow_calibrated_timestamp: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        soil_moisture_level_amount: _Optional[float] = ...,
-        flow_calibration_result: _Optional[
-            _Union[_irrigation_controller_pb2.FlowCalibrationResultWrapper, _Mapping]
-        ] = ...,
-        flow_manual_calibration: bool = ...,
-        appMessageBanner: _Optional[
-            _Iterable[_Union[_irrigation_controller_pb2.AppMessageBanner, _Mapping]]
-        ] = ...,
-        group_id: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...,
-        photos: _Optional[_Iterable[_Union[_media_model_pb2.Photo, _Mapping]]] = ...,
-        watering_efficiency: _Optional[
-            _Union[_agronomic_data_model_pb2.WateringEfficiencyWrapper, _Mapping]
-        ] = ...,
-        dynamic_crop_coefficient_enabled: bool = ...,
-        dynamic_crop_coefficient: _Optional[float] = ...,
-        valve_count: _Optional[int] = ...,
-        valve_brand: _Optional[_Union[ValveBrand, str]] = ...,
-        amperage_monitoring_enabled: bool = ...,
-        amperage_auto_shut_off_enabled: bool = ...,
-        baseline_current_milliamps: _Optional[
-            _Union[_wrappers_pb2.Int32Value, _Mapping]
-        ] = ...,
-        high_current_threshold_pct: _Optional[float] = ...,
-        low_current_threshold_pct: _Optional[float] = ...,
-        perimeter_geojson: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...,
-        nozzle_locations_geojson: _Optional[
-            _Union[_wrappers_pb2.StringValue, _Mapping]
-        ] = ...,
-    ) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., enabled: bool = ..., zone_number: _Optional[int] = ..., name: _Optional[str] = ..., created: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., area: _Optional[float] = ..., deleted: bool = ..., device_id: _Optional[str] = ..., available_water_capacity: _Optional[float] = ..., root_zone_depth: _Optional[float] = ..., efficiency: _Optional[float] = ..., flow_rate: _Optional[float] = ..., crop_coefficient: _Optional[float] = ..., managed_allowed_depletion: _Optional[float] = ..., soil_type: _Optional[_Union[_irrigation_controller_pb2.SoilType, str]] = ..., crop_type: _Optional[_Union[_irrigation_controller_pb2.CropType, str]] = ..., nozzle_type: _Optional[_Union[_irrigation_controller_pb2.NozzleType, str]] = ..., exposure_type: _Optional[_Union[_irrigation_controller_pb2.ExposureType, str]] = ..., photo_id: _Optional[str] = ..., slope_type: _Optional[_Union[_irrigation_controller_pb2.SlopeType, str]] = ..., has_moisture_data: bool = ..., soil_moisture_level_at_end_of_day_pct: _Optional[float] = ..., isMetric: bool = ..., zone_disabled_reason: _Optional[_Union[ZoneDisabledReason, str]] = ..., disabled_timestamp: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., alerts: _Optional[_Iterable[_Union[_alert_pb2.Alert, _Mapping]]] = ..., flow_metering_enabled: bool = ..., flow_auto_shut_off_enabled: bool = ..., flow_calibrated: bool = ..., flow_high_threshold_pct: _Optional[_Union[_wrappers_pb2.DoubleValue, _Mapping]] = ..., flow_low_threshold_pct: _Optional[_Union[_wrappers_pb2.DoubleValue, _Mapping]] = ..., flow_baseline: _Optional[_Union[_wrappers_pb2.DoubleValue, _Mapping]] = ..., flow_calibrated_timestamp: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., soil_moisture_level_amount: _Optional[float] = ..., flow_calibration_result: _Optional[_Union[_irrigation_controller_pb2.FlowCalibrationResultWrapper, _Mapping]] = ..., flow_manual_calibration: bool = ..., appMessageBanner: _Optional[_Iterable[_Union[_irrigation_controller_pb2.AppMessageBanner, _Mapping]]] = ..., group_id: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., photos: _Optional[_Iterable[_Union[_media_model_pb2.Photo, _Mapping]]] = ..., watering_efficiency: _Optional[_Union[_agronomic_data_model_pb2.WateringEfficiencyWrapper, _Mapping]] = ..., dynamic_crop_coefficient_enabled: bool = ..., dynamic_crop_coefficient: _Optional[float] = ..., valve_count: _Optional[int] = ..., valve_brand: _Optional[_Union[ValveBrand, str]] = ..., amperage_monitoring_enabled: bool = ..., amperage_auto_shut_off_enabled: bool = ..., baseline_current_milliamps: _Optional[_Union[_wrappers_pb2.Int32Value, _Mapping]] = ..., high_current_threshold_pct: _Optional[float] = ..., low_current_threshold_pct: _Optional[float] = ..., perimeter_geojson: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., nozzle_locations_geojson: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...) -> None: ...
 
 class ZoneGroup(_message.Message):
-    __slots__ = (
-        "id",
-        "device_id",
-        "type",
-        "name",
-        "description",
-        "area",
-        "activity_level",
-        "yard_health",
-        "perimeter",
-        "zone_ids",
-        "created",
-        "updated",
-    )
+    __slots__ = ("id", "device_id", "type", "name", "description", "area", "activity_level", "yard_health", "perimeter", "zone_ids", "created", "updated")
     ID_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -359,29 +211,7 @@ class ZoneGroup(_message.Message):
     zone_ids: _containers.RepeatedScalarFieldContainer[str]
     created: _timestamp_pb2.Timestamp
     updated: _timestamp_pb2.Timestamp
-    def __init__(
-        self,
-        id: _Optional[str] = ...,
-        device_id: _Optional[str] = ...,
-        type: _Optional[_Union[ZoneGroupType, str]] = ...,
-        name: _Optional[str] = ...,
-        description: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...,
-        area: _Optional[_Union[_wrappers_pb2.DoubleValue, _Mapping]] = ...,
-        activity_level: _Optional[
-            _Union[_irrigation_controller_pb2.ActivityLevelWrapper, _Mapping]
-        ] = ...,
-        yard_health: _Optional[
-            _Union[_irrigation_controller_pb2.YardHealthWrapper, _Mapping]
-        ] = ...,
-        perimeter: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...,
-        zone_ids: _Optional[_Iterable[str]] = ...,
-        created: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        updated: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-    ) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., device_id: _Optional[str] = ..., type: _Optional[_Union[ZoneGroupType, str]] = ..., name: _Optional[str] = ..., description: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., area: _Optional[_Union[_wrappers_pb2.DoubleValue, _Mapping]] = ..., activity_level: _Optional[_Union[_irrigation_controller_pb2.ActivityLevelWrapper, _Mapping]] = ..., yard_health: _Optional[_Union[_irrigation_controller_pb2.YardHealthWrapper, _Mapping]] = ..., perimeter: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., zone_ids: _Optional[_Iterable[str]] = ..., created: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class ZoneGroupTypeWrapper(_message.Message):
     __slots__ = ("value",)

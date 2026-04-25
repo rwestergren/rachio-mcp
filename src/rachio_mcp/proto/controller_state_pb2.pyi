@@ -19,7 +19,6 @@ class WireStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     CHECK_LOW: _ClassVar[WireStatus]
     CHECK_HIGH: _ClassVar[WireStatus]
     OVER_CURRENT: _ClassVar[WireStatus]
-
 GOOD: WireStatus
 OPEN_LINE: WireStatus
 UNDER_CURRENT: WireStatus
@@ -28,30 +27,7 @@ CHECK_HIGH: WireStatus
 OVER_CURRENT: WireStatus
 
 class ControllerState(_message.Message):
-    __slots__ = (
-        "device_id",
-        "health",
-        "state",
-        "rain_delay_expiration",
-        "correct_firmware",
-        "correct_rain_delay",
-        "correct_schedule",
-        "current_running_zone",
-        "current_running_schedule",
-        "last_run",
-        "next_run",
-        "firmware_version",
-        "rain_sensor_tripped",
-        "rssi",
-        "desired_state",
-        "desired_rain_delay_expiration",
-        "flex_nodes",
-        "desired_settle_time",
-        "flow_firmware_version",
-        "desired_idle_leak_detection",
-        "desired_idle_leak_time",
-        "desired_light_bar_setting",
-    )
+    __slots__ = ("device_id", "health", "state", "rain_delay_expiration", "correct_firmware", "correct_rain_delay", "correct_schedule", "current_running_zone", "current_running_schedule", "last_run", "next_run", "firmware_version", "rain_sensor_tripped", "rssi", "desired_state", "desired_rain_delay_expiration", "flex_nodes", "desired_settle_time", "flow_firmware_version", "desired_idle_leak_detection", "desired_idle_leak_time", "desired_light_bar_setting")
     class State(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         NO_STATE: _ClassVar[ControllerState.State]
@@ -66,7 +42,6 @@ class ControllerState(_message.Message):
         OFFLINE: _ClassVar[ControllerState.State]
         EXTENDED_OFFLINE: _ClassVar[ControllerState.State]
         PROVISIONING: _ClassVar[ControllerState.State]
-
     NO_STATE: ControllerState.State
     STANDBY: ControllerState.State
     IDLE: ControllerState.State
@@ -83,7 +58,6 @@ class ControllerState(_message.Message):
         __slots__ = ()
         DESIRED_ACTIVE: _ClassVar[ControllerState.DesiredState]
         DESIRED_STANDBY: _ClassVar[ControllerState.DesiredState]
-
     DESIRED_ACTIVE: ControllerState.DesiredState
     DESIRED_STANDBY: ControllerState.DesiredState
     class Health(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -92,7 +66,6 @@ class ControllerState(_message.Message):
         GOOD: _ClassVar[ControllerState.Health]
         WARNING: _ClassVar[ControllerState.Health]
         ERROR: _ClassVar[ControllerState.Health]
-
     NO_HEALTH: ControllerState.Health
     GOOD: ControllerState.Health
     WARNING: ControllerState.Health
@@ -102,7 +75,6 @@ class ControllerState(_message.Message):
         ONE_HUNDRED_PERCENT: _ClassVar[ControllerState.LightBarSetting]
         OFF: _ClassVar[ControllerState.LightBarSetting]
         TWENTY_FIVE_PERCENT: _ClassVar[ControllerState.LightBarSetting]
-
     ONE_HUNDRED_PERCENT: ControllerState.LightBarSetting
     OFF: ControllerState.LightBarSetting
     TWENTY_FIVE_PERCENT: ControllerState.LightBarSetting
@@ -150,43 +122,7 @@ class ControllerState(_message.Message):
     desired_idle_leak_detection: bool
     desired_idle_leak_time: int
     desired_light_bar_setting: ControllerState.LightBarSetting
-    def __init__(
-        self,
-        device_id: _Optional[str] = ...,
-        health: _Optional[_Union[ControllerState.Health, str]] = ...,
-        state: _Optional[_Union[ControllerState.State, str]] = ...,
-        rain_delay_expiration: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        correct_firmware: bool = ...,
-        correct_rain_delay: bool = ...,
-        correct_schedule: bool = ...,
-        current_running_zone: _Optional[_Union[ZoneRun, _Mapping]] = ...,
-        current_running_schedule: _Optional[
-            _Union[ImmediateScheduleRun, _Mapping]
-        ] = ...,
-        last_run: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        next_run: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        firmware_version: _Optional[str] = ...,
-        rain_sensor_tripped: bool = ...,
-        rssi: _Optional[int] = ...,
-        desired_state: _Optional[_Union[ControllerState.DesiredState, str]] = ...,
-        desired_rain_delay_expiration: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        flex_nodes: _Optional[_Iterable[_Union[FlexNodeState, _Mapping]]] = ...,
-        desired_settle_time: _Optional[int] = ...,
-        flow_firmware_version: _Optional[str] = ...,
-        desired_idle_leak_detection: bool = ...,
-        desired_idle_leak_time: _Optional[int] = ...,
-        desired_light_bar_setting: _Optional[
-            _Union[ControllerState.LightBarSetting, str]
-        ] = ...,
-    ) -> None: ...
+    def __init__(self, device_id: _Optional[str] = ..., health: _Optional[_Union[ControllerState.Health, str]] = ..., state: _Optional[_Union[ControllerState.State, str]] = ..., rain_delay_expiration: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., correct_firmware: bool = ..., correct_rain_delay: bool = ..., correct_schedule: bool = ..., current_running_zone: _Optional[_Union[ZoneRun, _Mapping]] = ..., current_running_schedule: _Optional[_Union[ImmediateScheduleRun, _Mapping]] = ..., last_run: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., next_run: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., firmware_version: _Optional[str] = ..., rain_sensor_tripped: bool = ..., rssi: _Optional[int] = ..., desired_state: _Optional[_Union[ControllerState.DesiredState, str]] = ..., desired_rain_delay_expiration: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., flex_nodes: _Optional[_Iterable[_Union[FlexNodeState, _Mapping]]] = ..., desired_settle_time: _Optional[int] = ..., flow_firmware_version: _Optional[str] = ..., desired_idle_leak_detection: bool = ..., desired_idle_leak_time: _Optional[int] = ..., desired_light_bar_setting: _Optional[_Union[ControllerState.LightBarSetting, str]] = ...) -> None: ...
 
 class ImmediateScheduleRun(_message.Message):
     __slots__ = ("type", "schedule_id", "run")
@@ -194,7 +130,6 @@ class ImmediateScheduleRun(_message.Message):
         __slots__ = ()
         SCHEDULED: _ClassVar[ImmediateScheduleRun.ScheduleType]
         MANUAL: _ClassVar[ImmediateScheduleRun.ScheduleType]
-
     SCHEDULED: ImmediateScheduleRun.ScheduleType
     MANUAL: ImmediateScheduleRun.ScheduleType
     TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -203,12 +138,7 @@ class ImmediateScheduleRun(_message.Message):
     type: ImmediateScheduleRun.ScheduleType
     schedule_id: str
     run: _containers.RepeatedCompositeFieldContainer[ZoneRun]
-    def __init__(
-        self,
-        type: _Optional[_Union[ImmediateScheduleRun.ScheduleType, str]] = ...,
-        schedule_id: _Optional[str] = ...,
-        run: _Optional[_Iterable[_Union[ZoneRun, _Mapping]]] = ...,
-    ) -> None: ...
+    def __init__(self, type: _Optional[_Union[ImmediateScheduleRun.ScheduleType, str]] = ..., schedule_id: _Optional[str] = ..., run: _Optional[_Iterable[_Union[ZoneRun, _Mapping]]] = ...) -> None: ...
 
 class ZoneRun(_message.Message):
     __slots__ = ("index", "zone_number", "paused", "start", "end", "type")
@@ -217,7 +147,6 @@ class ZoneRun(_message.Message):
         IRRIGATE: _ClassVar[ZoneRun.RunType]
         SOAK: _ClassVar[ZoneRun.RunType]
         PAUSE: _ClassVar[ZoneRun.RunType]
-
     IRRIGATE: ZoneRun.RunType
     SOAK: ZoneRun.RunType
     PAUSE: ZoneRun.RunType
@@ -233,31 +162,10 @@ class ZoneRun(_message.Message):
     start: _timestamp_pb2.Timestamp
     end: _timestamp_pb2.Timestamp
     type: ZoneRun.RunType
-    def __init__(
-        self,
-        index: _Optional[int] = ...,
-        zone_number: _Optional[int] = ...,
-        paused: bool = ...,
-        start: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        end: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        type: _Optional[_Union[ZoneRun.RunType, str]] = ...,
-    ) -> None: ...
+    def __init__(self, index: _Optional[int] = ..., zone_number: _Optional[int] = ..., paused: bool = ..., start: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., end: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., type: _Optional[_Union[ZoneRun.RunType, str]] = ...) -> None: ...
 
 class ZoneState(_message.Message):
-    __slots__ = (
-        "last_run",
-        "next_run",
-        "health",
-        "last_run_start_current",
-        "last_run_end_current",
-        "last_current_reading_milliamps",
-        "last_run_end_time",
-        "wire_status",
-    )
+    __slots__ = ("last_run", "next_run", "health", "last_run_start_current", "last_run_end_current", "last_current_reading_milliamps", "last_run_end_time", "wire_status")
     class Health(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         GOOD: _ClassVar[ZoneState.Health]
@@ -267,7 +175,6 @@ class ZoneState(_message.Message):
         OVER_CURRENT: _ClassVar[ZoneState.Health]
         UNDER_CURRENT: _ClassVar[ZoneState.Health]
         CHECK: _ClassVar[ZoneState.Health]
-
     GOOD: ZoneState.Health
     WARNING: ZoneState.Health
     ERROR: ZoneState.Health
@@ -291,48 +198,18 @@ class ZoneState(_message.Message):
     last_current_reading_milliamps: _wrappers_pb2.Int32Value
     last_run_end_time: _timestamp_pb2.Timestamp
     wire_status: WireStatus
-    def __init__(
-        self,
-        last_run: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        next_run: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        health: _Optional[_Union[ZoneState.Health, str]] = ...,
-        last_run_start_current: _Optional[int] = ...,
-        last_run_end_current: _Optional[int] = ...,
-        last_current_reading_milliamps: _Optional[
-            _Union[_wrappers_pb2.Int32Value, _Mapping]
-        ] = ...,
-        last_run_end_time: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        wire_status: _Optional[_Union[WireStatus, str]] = ...,
-    ) -> None: ...
+    def __init__(self, last_run: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., next_run: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., health: _Optional[_Union[ZoneState.Health, str]] = ..., last_run_start_current: _Optional[int] = ..., last_run_end_current: _Optional[int] = ..., last_current_reading_milliamps: _Optional[_Union[_wrappers_pb2.Int32Value, _Mapping]] = ..., last_run_end_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., wire_status: _Optional[_Union[WireStatus, str]] = ...) -> None: ...
 
 class FlexNodeState(_message.Message):
-    __slots__ = (
-        "flex_type",
-        "device_id",
-        "flex_pin",
-        "paired",
-        "correct_config",
-        "last_heartbeat",
-        "battery_level",
-        "link_quality",
-        "link_quality_reading",
-    )
+    __slots__ = ("flex_type", "device_id", "flex_pin", "paired", "correct_config", "last_heartbeat", "battery_level", "link_quality", "link_quality_reading")
     class FlexNodeType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         FLOW: _ClassVar[FlexNodeState.FlexNodeType]
-
     FLOW: FlexNodeState.FlexNodeType
     class BatteryLevel(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         BATTERY_LOW: _ClassVar[FlexNodeState.BatteryLevel]
         BATTERY_GOOD: _ClassVar[FlexNodeState.BatteryLevel]
-
     BATTERY_LOW: FlexNodeState.BatteryLevel
     BATTERY_GOOD: FlexNodeState.BatteryLevel
     class LinkQuality(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -340,7 +217,6 @@ class FlexNodeState(_message.Message):
         LINK_POOR: _ClassVar[FlexNodeState.LinkQuality]
         LINK_GOOD: _ClassVar[FlexNodeState.LinkQuality]
         LINK_EXCELLENT: _ClassVar[FlexNodeState.LinkQuality]
-
     LINK_POOR: FlexNodeState.LinkQuality
     LINK_GOOD: FlexNodeState.LinkQuality
     LINK_EXCELLENT: FlexNodeState.LinkQuality
@@ -362,17 +238,4 @@ class FlexNodeState(_message.Message):
     battery_level: FlexNodeState.BatteryLevel
     link_quality: FlexNodeState.LinkQuality
     link_quality_reading: float
-    def __init__(
-        self,
-        flex_type: _Optional[_Union[FlexNodeState.FlexNodeType, str]] = ...,
-        device_id: _Optional[str] = ...,
-        flex_pin: _Optional[str] = ...,
-        paired: bool = ...,
-        correct_config: bool = ...,
-        last_heartbeat: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        battery_level: _Optional[_Union[FlexNodeState.BatteryLevel, str]] = ...,
-        link_quality: _Optional[_Union[FlexNodeState.LinkQuality, str]] = ...,
-        link_quality_reading: _Optional[float] = ...,
-    ) -> None: ...
+    def __init__(self, flex_type: _Optional[_Union[FlexNodeState.FlexNodeType, str]] = ..., device_id: _Optional[str] = ..., flex_pin: _Optional[str] = ..., paired: bool = ..., correct_config: bool = ..., last_heartbeat: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., battery_level: _Optional[_Union[FlexNodeState.BatteryLevel, str]] = ..., link_quality: _Optional[_Union[FlexNodeState.LinkQuality, str]] = ..., link_quality_reading: _Optional[float] = ...) -> None: ...

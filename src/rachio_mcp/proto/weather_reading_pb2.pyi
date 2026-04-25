@@ -12,36 +12,11 @@ class IReadingType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
     OBSERVED: _ClassVar[IReadingType]
     FORECASTED: _ClassVar[IReadingType]
-
 OBSERVED: IReadingType
 FORECASTED: IReadingType
 
 class WeatherReading(_message.Message):
-    __slots__ = (
-        "temperature_min",
-        "temperature_max",
-        "precip_intensity",
-        "precip_probability",
-        "calculated_precip",
-        "wind_speed",
-        "humidity",
-        "cloud_cover",
-        "dew_point",
-        "weather_summary",
-        "weather_type",
-        "weather_station_id",
-        "date",
-        "et",
-        "sunriseTime",
-        "sunriseDate",
-        "sunsetTime",
-        "sunsetDate",
-        "reading_type",
-        "is_metric",
-        "weather_type_url",
-        "zoned_sunrise_time",
-        "zoned_sunset_time",
-    )
+    __slots__ = ("temperature_min", "temperature_max", "precip_intensity", "precip_probability", "calculated_precip", "wind_speed", "humidity", "cloud_cover", "dew_point", "weather_summary", "weather_type", "weather_station_id", "date", "et", "sunriseTime", "sunriseDate", "sunsetTime", "sunsetDate", "reading_type", "is_metric", "weather_type_url", "zoned_sunrise_time", "zoned_sunset_time")
     TEMPERATURE_MIN_FIELD_NUMBER: _ClassVar[int]
     TEMPERATURE_MAX_FIELD_NUMBER: _ClassVar[int]
     PRECIP_INTENSITY_FIELD_NUMBER: _ClassVar[int]
@@ -88,43 +63,10 @@ class WeatherReading(_message.Message):
     weather_type_url: str
     zoned_sunrise_time: _core_pb2.Time
     zoned_sunset_time: _core_pb2.Time
-    def __init__(
-        self,
-        temperature_min: _Optional[int] = ...,
-        temperature_max: _Optional[int] = ...,
-        precip_intensity: _Optional[float] = ...,
-        precip_probability: _Optional[float] = ...,
-        calculated_precip: _Optional[float] = ...,
-        wind_speed: _Optional[float] = ...,
-        humidity: _Optional[float] = ...,
-        cloud_cover: _Optional[float] = ...,
-        dew_point: _Optional[float] = ...,
-        weather_summary: _Optional[str] = ...,
-        weather_type: _Optional[_Union[_weather_type_pb2.WeatherType, str]] = ...,
-        weather_station_id: _Optional[str] = ...,
-        date: _Optional[_Union[_core_pb2.Date, _Mapping]] = ...,
-        et: _Optional[float] = ...,
-        sunriseTime: _Optional[_Union[_core_pb2.Time, _Mapping]] = ...,
-        sunriseDate: _Optional[_Union[_core_pb2.Date, _Mapping]] = ...,
-        sunsetTime: _Optional[_Union[_core_pb2.Time, _Mapping]] = ...,
-        sunsetDate: _Optional[_Union[_core_pb2.Date, _Mapping]] = ...,
-        reading_type: _Optional[_Union[IReadingType, str]] = ...,
-        is_metric: bool = ...,
-        weather_type_url: _Optional[str] = ...,
-        zoned_sunrise_time: _Optional[_Union[_core_pb2.Time, _Mapping]] = ...,
-        zoned_sunset_time: _Optional[_Union[_core_pb2.Time, _Mapping]] = ...,
-    ) -> None: ...
+    def __init__(self, temperature_min: _Optional[int] = ..., temperature_max: _Optional[int] = ..., precip_intensity: _Optional[float] = ..., precip_probability: _Optional[float] = ..., calculated_precip: _Optional[float] = ..., wind_speed: _Optional[float] = ..., humidity: _Optional[float] = ..., cloud_cover: _Optional[float] = ..., dew_point: _Optional[float] = ..., weather_summary: _Optional[str] = ..., weather_type: _Optional[_Union[_weather_type_pb2.WeatherType, str]] = ..., weather_station_id: _Optional[str] = ..., date: _Optional[_Union[_core_pb2.Date, _Mapping]] = ..., et: _Optional[float] = ..., sunriseTime: _Optional[_Union[_core_pb2.Time, _Mapping]] = ..., sunriseDate: _Optional[_Union[_core_pb2.Date, _Mapping]] = ..., sunsetTime: _Optional[_Union[_core_pb2.Time, _Mapping]] = ..., sunsetDate: _Optional[_Union[_core_pb2.Date, _Mapping]] = ..., reading_type: _Optional[_Union[IReadingType, str]] = ..., is_metric: bool = ..., weather_type_url: _Optional[str] = ..., zoned_sunrise_time: _Optional[_Union[_core_pb2.Time, _Mapping]] = ..., zoned_sunset_time: _Optional[_Union[_core_pb2.Time, _Mapping]] = ...) -> None: ...
 
 class WeatherNormal(_message.Message):
-    __slots__ = (
-        "month",
-        "max_temp",
-        "min_temp",
-        "avg_temp",
-        "prcp",
-        "station_id",
-        "et",
-    )
+    __slots__ = ("month", "max_temp", "min_temp", "avg_temp", "prcp", "station_id", "et")
     MONTH_FIELD_NUMBER: _ClassVar[int]
     MAX_TEMP_FIELD_NUMBER: _ClassVar[int]
     MIN_TEMP_FIELD_NUMBER: _ClassVar[int]
@@ -139,13 +81,4 @@ class WeatherNormal(_message.Message):
     prcp: float
     station_id: str
     et: float
-    def __init__(
-        self,
-        month: _Optional[int] = ...,
-        max_temp: _Optional[float] = ...,
-        min_temp: _Optional[float] = ...,
-        avg_temp: _Optional[float] = ...,
-        prcp: _Optional[float] = ...,
-        station_id: _Optional[str] = ...,
-        et: _Optional[float] = ...,
-    ) -> None: ...
+    def __init__(self, month: _Optional[int] = ..., max_temp: _Optional[float] = ..., min_temp: _Optional[float] = ..., avg_temp: _Optional[float] = ..., prcp: _Optional[float] = ..., station_id: _Optional[str] = ..., et: _Optional[float] = ...) -> None: ...

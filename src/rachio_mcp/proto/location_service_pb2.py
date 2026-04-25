@@ -4,199 +4,186 @@
 # source: location_service.proto
 # Protobuf Python Version: 6.31.1
 """Generated protocol buffer code."""
-
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import runtime_version as _runtime_version
 from google.protobuf import symbol_database as _symbol_database
 from google.protobuf.internal import builder as _builder
-
 _runtime_version.ValidateProtobufRuntimeVersion(
-    _runtime_version.Domain.PUBLIC, 6, 31, 1, "", "location_service.proto"
+    _runtime_version.Domain.PUBLIC,
+    6,
+    31,
+    1,
+    '',
+    'location_service.proto'
 )
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
 
 
+import aggregation_pb2 as aggregation__pb2
+import core_pb2 as core__pb2
+import location_summary_pb2 as location__summary__pb2
+import weather_reading_pb2 as weather__reading__pb2
+import weather_station_pb2 as weather__station__pb2
+import user_pb2 as user__pb2
+import location_pb2 as location__pb2
+from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
+import schedule_restriction_criteria_pb2 as schedule__restriction__criteria__pb2
+import location_restriction_pb2 as location__restriction__pb2
+import location_threshold_pb2 as location__threshold__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+import auth_extension_pb2 as auth__extension__pb2
+import schedule_run_pb2 as schedule__run__pb2
+import skip_sequence_pb2 as skip__sequence__pb2
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
-    b'\n\x16location_service.proto\x1a\x11\x61ggregation.proto\x1a\ncore.proto\x1a\x16location_summary.proto\x1a\x15weather_reading.proto\x1a\x15weather_station.proto\x1a\nuser.proto\x1a\x0elocation.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a#schedule_restriction_criteria.proto\x1a\x1alocation_restriction.proto\x1a\x18location_threshold.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x14\x61uth_extension.proto\x1a\x12schedule_run.proto\x1a\x13skip_sequence.proto\x1a\x1cgoogle/api/annotations.proto"f\n\x1bGetWeatherByLocationRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x19\n\nstart_date\x18\x02 \x01(\x0b\x32\x05.Date\x12\x17\n\x08\x65nd_date\x18\x03 \x01(\x0b\x32\x05.Date"S\n GetClosestWeatherStationsRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x1a\n\x0e\x61llow_personal\x18\x02 \x01(\x08\x42\x02\x18\x01"F\n!GetClosestWeatherStationsResponse\x12!\n\x08stations\x18\x01 \x03(\x0b\x32\x0f.WeatherStation"?\n\x12GetWeatherResponse\x12)\n\x10weather_readings\x18\x01 \x03(\x0b\x32\x0f.WeatherReading"@\n\x12GetLocationRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x15\n\rinclude_state\x18\x02 \x01(\x08"A\n\x13GetLocationResponse\x12*\n\x10location_summary\x18\x01 \x01(\x0b\x32\x10.LocationSummary",\n\x15GetRestrictionRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t"C\n\x16GetRestrictionResponse\x12)\n\x0brestriction\x18\x01 \x01(\x0b\x32\x14.LocationRestriction"t\n\x18UpdateRestrictionRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x43\n\x1dschedule_restriction_criteria\x18\x02 \x01(\x0b\x32\x1c.ScheduleRestrictionCriteria"F\n\x19UpdateRestrictionResponse\x12)\n\x0brestriction\x18\x01 \x01(\x0b\x32\x14.LocationRestriction".\n\x17\x43learRestrictionRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t"+\n\x18\x43learRestrictionResponse\x12\x0f\n\x07\x63leared\x18\x01 \x01(\x08"-\n\x14ListLocationsRequest\x12\x15\n\rinclude_state\x18\x01 \x01(\x08"C\n\x15ListLocationsResponse\x12*\n\x10location_summary\x18\x01 \x03(\x0b\x32\x10.LocationSummary",\n\x15\x44\x65leteLocationRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t")\n\x16\x44\x65leteLocationResponse\x12\x0f\n\x07\x64\x65leted\x18\x01 \x01(\x08"\xeb\x02\n\x15UpdateLocationRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12*\n\x04name\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x19\n\x11\x64\x65vice_ids_to_add\x18\x03 \x03(\t\x12\x1c\n\x14\x64\x65vice_ids_to_remove\x18\x04 \x03(\t\x12\x19\n\x07\x61\x64\x64ress\x18\x05 \x01(\x0b\x32\x08.Address\x12\x1c\n\tgeo_point\x18\x06 \x01(\x0b\x32\t.GeoPoint\x12\x30\n\x0bphoto_bytes\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\x12@\n\x1cinclude_all_weather_stations\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12+\n\x12weather_station_id\x18\t \x01(\x0b\x32\x0f.NullableString"5\n\x16UpdateLocationResponse\x12\x1b\n\x08location\x18\x01 \x01(\x0b\x32\t.Location"e\n\x1eUpdateLocationThresholdRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12.\n\x12location_threshold\x18\x02 \x01(\x0b\x32\x12.LocationThreshold">\n\x1fUpdateLocationThresholdResponse\x12\x1b\n\x08location\x18\x01 \x01(\x0b\x32\t.Location"L\n"GetAvailableThresholdValuesRequest\x12&\n\x0ethreshold_name\x18\x01 \x01(\x0e\x32\x0e.ThresholdName"4\n#GetAvailableThresholdValuesResponse\x12\r\n\x05value\x18\x01 \x03(\x01"\x94\x03\n\x15\x43reateLocationRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tdevice_id\x18\x02 \x03(\t\x12\x1d\n\x07\x61\x64\x64ress\x18\x03 \x01(\x0b\x32\x08.AddressB\x02\x18\x01\x12\x1c\n\tgeo_point\x18\x04 \x01(\x0b\x32\t.GeoPoint\x12\x30\n\x0bphoto_bytes\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\x12\x1e\n\x12weather_station_id\x18\x06 \x01(\tB\x02\x18\x01\x12\x42\n\x18weather_station_latitude\x18\x07 \x01(\x0b\x32\x1c.google.protobuf.DoubleValueB\x02\x18\x01\x12\x43\n\x19weather_station_longitude\x18\x08 \x01(\x0b\x32\x1c.google.protobuf.DoubleValueB\x02\x18\x01\x12\x42\n\x1aweather_station_has_precip\x18\t \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\x02\x18\x01"5\n\x16\x43reateLocationResponse\x12\x1b\n\x08location\x18\x01 \x01(\x0b\x32\t.Location"@\n\x17GetLocationPhotoRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x10\n\x08photo_id\x18\x02 \x01(\t"L\n\x18GetLocationPhotoResponse\x12\x30\n\x0bphoto_bytes\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.BytesValue"`\n\x1dShareLocationWithEmailRequest\x12\x13\n\x0blocation_id\x18\x02 \x01(\t\x12\x13\n\x04role\x18\x03 \x01(\x0e\x32\x05.Role\x12\x15\n\remail_address\x18\x04 \x01(\t"p\n\x1eShareLocationWithEmailResponse\x12(\n\x0fshared_location\x18\x01 \x01(\x0b\x32\x0f.SharedLocation\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x13\n\x0buser_exists\x18\x03 \x01(\x08"d\n AskForYLMPhotoPermissionsRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12+\n\x07\x65xpires\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp"X\n!AskForYLMPhotoPermissionsResponse\x12\x33\n\x15shared_location_grant\x18\x01 \x01(\x0b\x32\x14.SharedLocationGrant"q\n\x16ShareLocationQRRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12+\n\x07\x65xpires\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x15\n\remail_address\x18\x03 \x01(\t"N\n\x17ShareLocationQRResponse\x12\x33\n\x15shared_location_grant\x18\x01 \x01(\x0b\x32\x14.SharedLocationGrant"+\n\x1b\x41\x63\x63\x65ptSharedLocationRequest\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t"H\n\x1c\x41\x63\x63\x65ptSharedLocationResponse\x12(\n\x0fshared_location\x18\x01 \x01(\x0b\x32\x0f.SharedLocation"1\n\x1aViewSharedLocationsRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t"H\n\x1bViewSharedLocationsResponse\x12)\n\x10shared_locations\x18\x01 \x03(\x0b\x32\x0f.SharedLocation"O\n\x1fViewSharedLocationGrantsRequest\x12\x17\n\x0finclude_pending\x18\x01 \x01(\x08\x12\x13\n\x0blocation_id\x18\x02 \x01(\t"X\n ViewSharedLocationGrantsResponse\x12\x34\n\x16shared_location_grants\x18\x01 \x03(\x0b\x32\x14.SharedLocationGrant"O\n\x1b\x44\x65leteSharedLocationRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x1b\n\x13\x61\x63\x63ount_shared_with\x18\x02 \x01(\t"/\n\x1c\x44\x65leteSharedLocationResponse\x12\x0f\n\x07\x64\x65leted\x18\x01 \x01(\x08"0\n DeleteSharedLocationGrantRequest\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t"4\n!DeleteSharedLocationGrantResponse\x12\x0f\n\x07\x64\x65leted\x18\x01 \x01(\x08"G\n\x1dUpdateLocationFavoriteRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x11\n\tfavorited\x18\x04 \x01(\x08" \n\x1eUpdateLocationFavoriteResponse"\x82\x01\n\x0eSharedLocation\x12\x13\n\x04user\x18\x01 \x01(\x0b\x32\x05.User\x12\x13\n\x0blocation_id\x18\x02 \x01(\t\x12\x13\n\x04role\x18\x03 \x01(\x0e\x32\x05.Role\x12\x31\n\raccepted_date\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp"\x9e\x01\n\x13SharedLocationGrant\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x13\n\x04role\x18\x03 \x01(\x0e\x32\x05.Role\x12+\n\x07\x65xpires\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0b\n\x03url\x18\x04 \x01(\t\x12\x15\n\remail_address\x18\x06 \x01(\t"A\n\x15GetLocationDayRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x13\n\x04\x64\x61te\x18\x02 \x01(\x0b\x32\x05.Date"\xaf\x01\n\x1eGetCalendarForTimeRangeRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12.\n\nstart_time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08\x65nd_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1a\n\x12include_historical\x18\x04 \x01(\x08"E\n\x1fGetCalendarForTimeRangeResponse\x12"\n\x0cwatering_day\x18\x01 \x03(\x0b\x32\x0c.WateringDay"\x8f\x01\n\x1aGetLocationCalendarRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12.\n\nstart_time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08\x65nd_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp"\xa7\x01\n\x1bGetLocationCalendarResponse\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x1a\n\x04runs\x18\x02 \x03(\x0b\x32\x0c.ScheduleRun\x12\x1c\n\x05skips\x18\x03 \x03(\x0b\x32\r.SkipSequence\x12\x39\n\x15rain_delay_expiration\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp":\n\x15ValidateQRCodeRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t"D\n\x16ValidateQRCodeResponse\x12*\n\x10location_summary\x18\x01 \x01(\x0b\x32\x10.LocationSummary";\n\x16ValidateYLMCodeRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t"E\n\x17ValidateYLMCodeResponse\x12*\n\x10location_summary\x18\x01 \x01(\x0b\x32\x10.LocationSummary"N\n#UpdateLocationWeatherStationRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x12\n\nstation_id\x18\x02 \x01(\t"]\n$UpdateLocationWeatherStationResponse\x12\x35\n\x15virtualWeatherStation\x18\x01 \x01(\x0b\x32\x16.VirtualWeatherStation")\n\x12GetYardAreaRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t"(\n\x13GetYardAreaResponse\x12\x11\n\tyard_area\x18\x01 \x01(\x01"P\n7DeleteLocationByIrrigationControllerSerialNumberRequest\x12\x15\n\rserial_number\x18\x01 \x01(\t"K\n8DeleteLocationByIrrigationControllerSerialNumberResponse\x12\x0f\n\x07\x64\x65leted\x18\x01 \x01(\x08*Z\n\x04Role\x12\x0b\n\x07MANAGER\x10\x00\x12\r\n\tQUICK_RUN\x10\x01\x12\t\n\x05OWNER\x10\x02\x12\x16\n\x12TRANSFER_OWNERSHIP\x10\x03\x12\x13\n\x0fYARDS_LIKE_MINE\x10\x04\x32\xcf\x13\n\x0fLocationService\x12\x38\n\x0bGetLocation\x12\x13.GetLocationRequest\x1a\x14.GetLocationResponse\x12\x41\n\x0e\x43reateLocation\x12\x16.CreateLocationRequest\x1a\x17.CreateLocationResponse\x12\x41\n\x0e\x44\x65leteLocation\x12\x16.DeleteLocationRequest\x1a\x17.DeleteLocationResponse\x12\x41\n\x0eUpdateLocation\x12\x16.UpdateLocationRequest\x1a\x17.UpdateLocationResponse\x12>\n\rListLocations\x12\x15.ListLocationsRequest\x1a\x16.ListLocationsResponse\x12\x41\n\x0eGetRestriction\x12\x16.GetRestrictionRequest\x1a\x17.GetRestrictionResponse\x12J\n\x11UpdateRestriction\x12\x19.UpdateRestrictionRequest\x1a\x1a.UpdateRestrictionResponse\x12G\n\x10\x43learRestriction\x12\x18.ClearRestrictionRequest\x1a\x19.ClearRestrictionResponse\x12I\n\x14GetWeatherByLocation\x12\x1c.GetWeatherByLocationRequest\x1a\x13.GetWeatherResponse\x12\x62\n\x19GetClosestWeatherStations\x12!.GetClosestWeatherStationsRequest\x1a".GetClosestWeatherStationsResponse\x12G\n\x10GetLocationPhoto\x12\x18.GetLocationPhotoRequest\x1a\x19.GetLocationPhotoResponse\x12Y\n\x16ShareLocationWithEmail\x12\x1e.ShareLocationWithEmailRequest\x1a\x1f.ShareLocationWithEmailResponse\x12\x44\n\x0fShareLocationQR\x12\x17.ShareLocationQRRequest\x1a\x18.ShareLocationQRResponse\x12S\n\x14\x41\x63\x63\x65ptSharedLocation\x12\x1c.AcceptSharedLocationRequest\x1a\x1d.AcceptSharedLocationResponse\x12P\n\x13ViewSharedLocations\x12\x1b.ViewSharedLocationsRequest\x1a\x1c.ViewSharedLocationsResponse\x12_\n\x18ViewSharedLocationGrants\x12 .ViewSharedLocationGrantsRequest\x1a!.ViewSharedLocationGrantsResponse\x12S\n\x14\x44\x65leteSharedLocation\x12\x1c.DeleteSharedLocationRequest\x1a\x1d.DeleteSharedLocationResponse\x12\x62\n\x19\x44\x65leteSharedLocationGrant\x12!.DeleteSharedLocationGrantRequest\x1a".DeleteSharedLocationGrantResponse\x12Y\n\x16UpdateLocationFavorite\x12\x1e.UpdateLocationFavoriteRequest\x1a\x1f.UpdateLocationFavoriteResponse\x12\x41\n\x0eValidateQRCode\x12\x16.ValidateQRCodeRequest\x1a\x17.ValidateQRCodeResponse\x12\\\n\x17UpdateLocationThreshold\x12\x1f.UpdateLocationThresholdRequest\x1a .UpdateLocationThresholdResponse\x12\\\n\x17GetCalendarForTimeRange\x12\x1f.GetCalendarForTimeRangeRequest\x1a .GetCalendarForTimeRangeResponse\x12H\n\x0bGetCalendar\x12\x1b.GetLocationCalendarRequest\x1a\x1c.GetLocationCalendarResponse\x12>\n\x06GetDay\x12\x16.GetLocationDayRequest\x1a\x1c.GetLocationCalendarResponse\x12k\n\x1cUpdateLocationWeatherStation\x12$.UpdateLocationWeatherStationRequest\x1a%.UpdateLocationWeatherStationResponse\x12h\n\x1bGetAvailableThresholdValues\x12#.GetAvailableThresholdValuesRequest\x1a$.GetAvailableThresholdValuesResponse\x12\x44\n\x0fValidateYLMCode\x12\x17.ValidateYLMCodeRequest\x1a\x18.ValidateYLMCodeResponse\x12\x62\n\x19\x41skForYLMPhotoPermissions\x12!.AskForYLMPhotoPermissionsRequest\x1a".AskForYLMPhotoPermissionsResponse\x12\x38\n\x0bGetYardArea\x12\x13.GetYardAreaRequest\x1a\x14.GetYardAreaResponse\x12\xa7\x01\n0DeleteLocationByIrrigationControllerSerialNumber\x12\x38.DeleteLocationByIrrigationControllerSerialNumberRequest\x1a\x39.DeleteLocationByIrrigationControllerSerialNumberResponseB\x1b\n\x17\x63om.rachio.api.locationP\x01\x62\x06proto3'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16location_service.proto\x1a\x11\x61ggregation.proto\x1a\ncore.proto\x1a\x16location_summary.proto\x1a\x15weather_reading.proto\x1a\x15weather_station.proto\x1a\nuser.proto\x1a\x0elocation.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a#schedule_restriction_criteria.proto\x1a\x1alocation_restriction.proto\x1a\x18location_threshold.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x14\x61uth_extension.proto\x1a\x12schedule_run.proto\x1a\x13skip_sequence.proto\x1a\x1cgoogle/api/annotations.proto\"f\n\x1bGetWeatherByLocationRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x19\n\nstart_date\x18\x02 \x01(\x0b\x32\x05.Date\x12\x17\n\x08\x65nd_date\x18\x03 \x01(\x0b\x32\x05.Date\"S\n GetClosestWeatherStationsRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x1a\n\x0e\x61llow_personal\x18\x02 \x01(\x08\x42\x02\x18\x01\"F\n!GetClosestWeatherStationsResponse\x12!\n\x08stations\x18\x01 \x03(\x0b\x32\x0f.WeatherStation\"?\n\x12GetWeatherResponse\x12)\n\x10weather_readings\x18\x01 \x03(\x0b\x32\x0f.WeatherReading\"@\n\x12GetLocationRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x15\n\rinclude_state\x18\x02 \x01(\x08\"A\n\x13GetLocationResponse\x12*\n\x10location_summary\x18\x01 \x01(\x0b\x32\x10.LocationSummary\",\n\x15GetRestrictionRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\"C\n\x16GetRestrictionResponse\x12)\n\x0brestriction\x18\x01 \x01(\x0b\x32\x14.LocationRestriction\"t\n\x18UpdateRestrictionRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x43\n\x1dschedule_restriction_criteria\x18\x02 \x01(\x0b\x32\x1c.ScheduleRestrictionCriteria\"F\n\x19UpdateRestrictionResponse\x12)\n\x0brestriction\x18\x01 \x01(\x0b\x32\x14.LocationRestriction\".\n\x17\x43learRestrictionRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\"+\n\x18\x43learRestrictionResponse\x12\x0f\n\x07\x63leared\x18\x01 \x01(\x08\"-\n\x14ListLocationsRequest\x12\x15\n\rinclude_state\x18\x01 \x01(\x08\"C\n\x15ListLocationsResponse\x12*\n\x10location_summary\x18\x01 \x03(\x0b\x32\x10.LocationSummary\",\n\x15\x44\x65leteLocationRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\")\n\x16\x44\x65leteLocationResponse\x12\x0f\n\x07\x64\x65leted\x18\x01 \x01(\x08\"\xeb\x02\n\x15UpdateLocationRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12*\n\x04name\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x19\n\x11\x64\x65vice_ids_to_add\x18\x03 \x03(\t\x12\x1c\n\x14\x64\x65vice_ids_to_remove\x18\x04 \x03(\t\x12\x19\n\x07\x61\x64\x64ress\x18\x05 \x01(\x0b\x32\x08.Address\x12\x1c\n\tgeo_point\x18\x06 \x01(\x0b\x32\t.GeoPoint\x12\x30\n\x0bphoto_bytes\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\x12@\n\x1cinclude_all_weather_stations\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12+\n\x12weather_station_id\x18\t \x01(\x0b\x32\x0f.NullableString\"5\n\x16UpdateLocationResponse\x12\x1b\n\x08location\x18\x01 \x01(\x0b\x32\t.Location\"e\n\x1eUpdateLocationThresholdRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12.\n\x12location_threshold\x18\x02 \x01(\x0b\x32\x12.LocationThreshold\">\n\x1fUpdateLocationThresholdResponse\x12\x1b\n\x08location\x18\x01 \x01(\x0b\x32\t.Location\"L\n\"GetAvailableThresholdValuesRequest\x12&\n\x0ethreshold_name\x18\x01 \x01(\x0e\x32\x0e.ThresholdName\"4\n#GetAvailableThresholdValuesResponse\x12\r\n\x05value\x18\x01 \x03(\x01\"\x94\x03\n\x15\x43reateLocationRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tdevice_id\x18\x02 \x03(\t\x12\x1d\n\x07\x61\x64\x64ress\x18\x03 \x01(\x0b\x32\x08.AddressB\x02\x18\x01\x12\x1c\n\tgeo_point\x18\x04 \x01(\x0b\x32\t.GeoPoint\x12\x30\n\x0bphoto_bytes\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\x12\x1e\n\x12weather_station_id\x18\x06 \x01(\tB\x02\x18\x01\x12\x42\n\x18weather_station_latitude\x18\x07 \x01(\x0b\x32\x1c.google.protobuf.DoubleValueB\x02\x18\x01\x12\x43\n\x19weather_station_longitude\x18\x08 \x01(\x0b\x32\x1c.google.protobuf.DoubleValueB\x02\x18\x01\x12\x42\n\x1aweather_station_has_precip\x18\t \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\x02\x18\x01\"5\n\x16\x43reateLocationResponse\x12\x1b\n\x08location\x18\x01 \x01(\x0b\x32\t.Location\"@\n\x17GetLocationPhotoRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x10\n\x08photo_id\x18\x02 \x01(\t\"L\n\x18GetLocationPhotoResponse\x12\x30\n\x0bphoto_bytes\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\"`\n\x1dShareLocationWithEmailRequest\x12\x13\n\x0blocation_id\x18\x02 \x01(\t\x12\x13\n\x04role\x18\x03 \x01(\x0e\x32\x05.Role\x12\x15\n\remail_address\x18\x04 \x01(\t\"p\n\x1eShareLocationWithEmailResponse\x12(\n\x0fshared_location\x18\x01 \x01(\x0b\x32\x0f.SharedLocation\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x13\n\x0buser_exists\x18\x03 \x01(\x08\"d\n AskForYLMPhotoPermissionsRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12+\n\x07\x65xpires\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"X\n!AskForYLMPhotoPermissionsResponse\x12\x33\n\x15shared_location_grant\x18\x01 \x01(\x0b\x32\x14.SharedLocationGrant\"q\n\x16ShareLocationQRRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12+\n\x07\x65xpires\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x15\n\remail_address\x18\x03 \x01(\t\"N\n\x17ShareLocationQRResponse\x12\x33\n\x15shared_location_grant\x18\x01 \x01(\x0b\x32\x14.SharedLocationGrant\"+\n\x1b\x41\x63\x63\x65ptSharedLocationRequest\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\"H\n\x1c\x41\x63\x63\x65ptSharedLocationResponse\x12(\n\x0fshared_location\x18\x01 \x01(\x0b\x32\x0f.SharedLocation\"1\n\x1aViewSharedLocationsRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\"H\n\x1bViewSharedLocationsResponse\x12)\n\x10shared_locations\x18\x01 \x03(\x0b\x32\x0f.SharedLocation\"O\n\x1fViewSharedLocationGrantsRequest\x12\x17\n\x0finclude_pending\x18\x01 \x01(\x08\x12\x13\n\x0blocation_id\x18\x02 \x01(\t\"X\n ViewSharedLocationGrantsResponse\x12\x34\n\x16shared_location_grants\x18\x01 \x03(\x0b\x32\x14.SharedLocationGrant\"O\n\x1b\x44\x65leteSharedLocationRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x1b\n\x13\x61\x63\x63ount_shared_with\x18\x02 \x01(\t\"/\n\x1c\x44\x65leteSharedLocationResponse\x12\x0f\n\x07\x64\x65leted\x18\x01 \x01(\x08\"0\n DeleteSharedLocationGrantRequest\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\"4\n!DeleteSharedLocationGrantResponse\x12\x0f\n\x07\x64\x65leted\x18\x01 \x01(\x08\"G\n\x1dUpdateLocationFavoriteRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x11\n\tfavorited\x18\x04 \x01(\x08\" \n\x1eUpdateLocationFavoriteResponse\"\x82\x01\n\x0eSharedLocation\x12\x13\n\x04user\x18\x01 \x01(\x0b\x32\x05.User\x12\x13\n\x0blocation_id\x18\x02 \x01(\t\x12\x13\n\x04role\x18\x03 \x01(\x0e\x32\x05.Role\x12\x31\n\raccepted_date\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x9e\x01\n\x13SharedLocationGrant\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x13\n\x04role\x18\x03 \x01(\x0e\x32\x05.Role\x12+\n\x07\x65xpires\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0b\n\x03url\x18\x04 \x01(\t\x12\x15\n\remail_address\x18\x06 \x01(\t\"A\n\x15GetLocationDayRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x13\n\x04\x64\x61te\x18\x02 \x01(\x0b\x32\x05.Date\"\xaf\x01\n\x1eGetCalendarForTimeRangeRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12.\n\nstart_time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08\x65nd_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1a\n\x12include_historical\x18\x04 \x01(\x08\"E\n\x1fGetCalendarForTimeRangeResponse\x12\"\n\x0cwatering_day\x18\x01 \x03(\x0b\x32\x0c.WateringDay\"\x8f\x01\n\x1aGetLocationCalendarRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12.\n\nstart_time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08\x65nd_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xa7\x01\n\x1bGetLocationCalendarResponse\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x1a\n\x04runs\x18\x02 \x03(\x0b\x32\x0c.ScheduleRun\x12\x1c\n\x05skips\x18\x03 \x03(\x0b\x32\r.SkipSequence\x12\x39\n\x15rain_delay_expiration\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\":\n\x15ValidateQRCodeRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\"D\n\x16ValidateQRCodeResponse\x12*\n\x10location_summary\x18\x01 \x01(\x0b\x32\x10.LocationSummary\";\n\x16ValidateYLMCodeRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\"E\n\x17ValidateYLMCodeResponse\x12*\n\x10location_summary\x18\x01 \x01(\x0b\x32\x10.LocationSummary\"N\n#UpdateLocationWeatherStationRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\x12\x12\n\nstation_id\x18\x02 \x01(\t\"]\n$UpdateLocationWeatherStationResponse\x12\x35\n\x15virtualWeatherStation\x18\x01 \x01(\x0b\x32\x16.VirtualWeatherStation\")\n\x12GetYardAreaRequest\x12\x13\n\x0blocation_id\x18\x01 \x01(\t\"(\n\x13GetYardAreaResponse\x12\x11\n\tyard_area\x18\x01 \x01(\x01\"P\n7DeleteLocationByIrrigationControllerSerialNumberRequest\x12\x15\n\rserial_number\x18\x01 \x01(\t\"K\n8DeleteLocationByIrrigationControllerSerialNumberResponse\x12\x0f\n\x07\x64\x65leted\x18\x01 \x01(\x08*Z\n\x04Role\x12\x0b\n\x07MANAGER\x10\x00\x12\r\n\tQUICK_RUN\x10\x01\x12\t\n\x05OWNER\x10\x02\x12\x16\n\x12TRANSFER_OWNERSHIP\x10\x03\x12\x13\n\x0fYARDS_LIKE_MINE\x10\x04\x32\xcf\x13\n\x0fLocationService\x12\x38\n\x0bGetLocation\x12\x13.GetLocationRequest\x1a\x14.GetLocationResponse\x12\x41\n\x0e\x43reateLocation\x12\x16.CreateLocationRequest\x1a\x17.CreateLocationResponse\x12\x41\n\x0e\x44\x65leteLocation\x12\x16.DeleteLocationRequest\x1a\x17.DeleteLocationResponse\x12\x41\n\x0eUpdateLocation\x12\x16.UpdateLocationRequest\x1a\x17.UpdateLocationResponse\x12>\n\rListLocations\x12\x15.ListLocationsRequest\x1a\x16.ListLocationsResponse\x12\x41\n\x0eGetRestriction\x12\x16.GetRestrictionRequest\x1a\x17.GetRestrictionResponse\x12J\n\x11UpdateRestriction\x12\x19.UpdateRestrictionRequest\x1a\x1a.UpdateRestrictionResponse\x12G\n\x10\x43learRestriction\x12\x18.ClearRestrictionRequest\x1a\x19.ClearRestrictionResponse\x12I\n\x14GetWeatherByLocation\x12\x1c.GetWeatherByLocationRequest\x1a\x13.GetWeatherResponse\x12\x62\n\x19GetClosestWeatherStations\x12!.GetClosestWeatherStationsRequest\x1a\".GetClosestWeatherStationsResponse\x12G\n\x10GetLocationPhoto\x12\x18.GetLocationPhotoRequest\x1a\x19.GetLocationPhotoResponse\x12Y\n\x16ShareLocationWithEmail\x12\x1e.ShareLocationWithEmailRequest\x1a\x1f.ShareLocationWithEmailResponse\x12\x44\n\x0fShareLocationQR\x12\x17.ShareLocationQRRequest\x1a\x18.ShareLocationQRResponse\x12S\n\x14\x41\x63\x63\x65ptSharedLocation\x12\x1c.AcceptSharedLocationRequest\x1a\x1d.AcceptSharedLocationResponse\x12P\n\x13ViewSharedLocations\x12\x1b.ViewSharedLocationsRequest\x1a\x1c.ViewSharedLocationsResponse\x12_\n\x18ViewSharedLocationGrants\x12 .ViewSharedLocationGrantsRequest\x1a!.ViewSharedLocationGrantsResponse\x12S\n\x14\x44\x65leteSharedLocation\x12\x1c.DeleteSharedLocationRequest\x1a\x1d.DeleteSharedLocationResponse\x12\x62\n\x19\x44\x65leteSharedLocationGrant\x12!.DeleteSharedLocationGrantRequest\x1a\".DeleteSharedLocationGrantResponse\x12Y\n\x16UpdateLocationFavorite\x12\x1e.UpdateLocationFavoriteRequest\x1a\x1f.UpdateLocationFavoriteResponse\x12\x41\n\x0eValidateQRCode\x12\x16.ValidateQRCodeRequest\x1a\x17.ValidateQRCodeResponse\x12\\\n\x17UpdateLocationThreshold\x12\x1f.UpdateLocationThresholdRequest\x1a .UpdateLocationThresholdResponse\x12\\\n\x17GetCalendarForTimeRange\x12\x1f.GetCalendarForTimeRangeRequest\x1a .GetCalendarForTimeRangeResponse\x12H\n\x0bGetCalendar\x12\x1b.GetLocationCalendarRequest\x1a\x1c.GetLocationCalendarResponse\x12>\n\x06GetDay\x12\x16.GetLocationDayRequest\x1a\x1c.GetLocationCalendarResponse\x12k\n\x1cUpdateLocationWeatherStation\x12$.UpdateLocationWeatherStationRequest\x1a%.UpdateLocationWeatherStationResponse\x12h\n\x1bGetAvailableThresholdValues\x12#.GetAvailableThresholdValuesRequest\x1a$.GetAvailableThresholdValuesResponse\x12\x44\n\x0fValidateYLMCode\x12\x17.ValidateYLMCodeRequest\x1a\x18.ValidateYLMCodeResponse\x12\x62\n\x19\x41skForYLMPhotoPermissions\x12!.AskForYLMPhotoPermissionsRequest\x1a\".AskForYLMPhotoPermissionsResponse\x12\x38\n\x0bGetYardArea\x12\x13.GetYardAreaRequest\x1a\x14.GetYardAreaResponse\x12\xa7\x01\n0DeleteLocationByIrrigationControllerSerialNumber\x12\x38.DeleteLocationByIrrigationControllerSerialNumberRequest\x1a\x39.DeleteLocationByIrrigationControllerSerialNumberResponseB\x1b\n\x17\x63om.rachio.api.locationP\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
-_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, "location_service_pb2", _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'location_service_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-    _globals["DESCRIPTOR"]._loaded_options = None
-    _globals["DESCRIPTOR"]._serialized_options = b"\n\027com.rachio.api.locationP\001"
-    _globals["_GETCLOSESTWEATHERSTATIONSREQUEST"].fields_by_name[
-        "allow_personal"
-    ]._loaded_options = None
-    _globals["_GETCLOSESTWEATHERSTATIONSREQUEST"].fields_by_name[
-        "allow_personal"
-    ]._serialized_options = b"\030\001"
-    _globals["_CREATELOCATIONREQUEST"].fields_by_name["address"]._loaded_options = None
-    _globals["_CREATELOCATIONREQUEST"].fields_by_name[
-        "address"
-    ]._serialized_options = b"\030\001"
-    _globals["_CREATELOCATIONREQUEST"].fields_by_name[
-        "weather_station_id"
-    ]._loaded_options = None
-    _globals["_CREATELOCATIONREQUEST"].fields_by_name[
-        "weather_station_id"
-    ]._serialized_options = b"\030\001"
-    _globals["_CREATELOCATIONREQUEST"].fields_by_name[
-        "weather_station_latitude"
-    ]._loaded_options = None
-    _globals["_CREATELOCATIONREQUEST"].fields_by_name[
-        "weather_station_latitude"
-    ]._serialized_options = b"\030\001"
-    _globals["_CREATELOCATIONREQUEST"].fields_by_name[
-        "weather_station_longitude"
-    ]._loaded_options = None
-    _globals["_CREATELOCATIONREQUEST"].fields_by_name[
-        "weather_station_longitude"
-    ]._serialized_options = b"\030\001"
-    _globals["_CREATELOCATIONREQUEST"].fields_by_name[
-        "weather_station_has_precip"
-    ]._loaded_options = None
-    _globals["_CREATELOCATIONREQUEST"].fields_by_name[
-        "weather_station_has_precip"
-    ]._serialized_options = b"\030\001"
-    _globals["_ROLE"]._serialized_start = 5754
-    _globals["_ROLE"]._serialized_end = 5844
-    _globals["_GETWEATHERBYLOCATIONREQUEST"]._serialized_start = 404
-    _globals["_GETWEATHERBYLOCATIONREQUEST"]._serialized_end = 506
-    _globals["_GETCLOSESTWEATHERSTATIONSREQUEST"]._serialized_start = 508
-    _globals["_GETCLOSESTWEATHERSTATIONSREQUEST"]._serialized_end = 591
-    _globals["_GETCLOSESTWEATHERSTATIONSRESPONSE"]._serialized_start = 593
-    _globals["_GETCLOSESTWEATHERSTATIONSRESPONSE"]._serialized_end = 663
-    _globals["_GETWEATHERRESPONSE"]._serialized_start = 665
-    _globals["_GETWEATHERRESPONSE"]._serialized_end = 728
-    _globals["_GETLOCATIONREQUEST"]._serialized_start = 730
-    _globals["_GETLOCATIONREQUEST"]._serialized_end = 794
-    _globals["_GETLOCATIONRESPONSE"]._serialized_start = 796
-    _globals["_GETLOCATIONRESPONSE"]._serialized_end = 861
-    _globals["_GETRESTRICTIONREQUEST"]._serialized_start = 863
-    _globals["_GETRESTRICTIONREQUEST"]._serialized_end = 907
-    _globals["_GETRESTRICTIONRESPONSE"]._serialized_start = 909
-    _globals["_GETRESTRICTIONRESPONSE"]._serialized_end = 976
-    _globals["_UPDATERESTRICTIONREQUEST"]._serialized_start = 978
-    _globals["_UPDATERESTRICTIONREQUEST"]._serialized_end = 1094
-    _globals["_UPDATERESTRICTIONRESPONSE"]._serialized_start = 1096
-    _globals["_UPDATERESTRICTIONRESPONSE"]._serialized_end = 1166
-    _globals["_CLEARRESTRICTIONREQUEST"]._serialized_start = 1168
-    _globals["_CLEARRESTRICTIONREQUEST"]._serialized_end = 1214
-    _globals["_CLEARRESTRICTIONRESPONSE"]._serialized_start = 1216
-    _globals["_CLEARRESTRICTIONRESPONSE"]._serialized_end = 1259
-    _globals["_LISTLOCATIONSREQUEST"]._serialized_start = 1261
-    _globals["_LISTLOCATIONSREQUEST"]._serialized_end = 1306
-    _globals["_LISTLOCATIONSRESPONSE"]._serialized_start = 1308
-    _globals["_LISTLOCATIONSRESPONSE"]._serialized_end = 1375
-    _globals["_DELETELOCATIONREQUEST"]._serialized_start = 1377
-    _globals["_DELETELOCATIONREQUEST"]._serialized_end = 1421
-    _globals["_DELETELOCATIONRESPONSE"]._serialized_start = 1423
-    _globals["_DELETELOCATIONRESPONSE"]._serialized_end = 1464
-    _globals["_UPDATELOCATIONREQUEST"]._serialized_start = 1467
-    _globals["_UPDATELOCATIONREQUEST"]._serialized_end = 1830
-    _globals["_UPDATELOCATIONRESPONSE"]._serialized_start = 1832
-    _globals["_UPDATELOCATIONRESPONSE"]._serialized_end = 1885
-    _globals["_UPDATELOCATIONTHRESHOLDREQUEST"]._serialized_start = 1887
-    _globals["_UPDATELOCATIONTHRESHOLDREQUEST"]._serialized_end = 1988
-    _globals["_UPDATELOCATIONTHRESHOLDRESPONSE"]._serialized_start = 1990
-    _globals["_UPDATELOCATIONTHRESHOLDRESPONSE"]._serialized_end = 2052
-    _globals["_GETAVAILABLETHRESHOLDVALUESREQUEST"]._serialized_start = 2054
-    _globals["_GETAVAILABLETHRESHOLDVALUESREQUEST"]._serialized_end = 2130
-    _globals["_GETAVAILABLETHRESHOLDVALUESRESPONSE"]._serialized_start = 2132
-    _globals["_GETAVAILABLETHRESHOLDVALUESRESPONSE"]._serialized_end = 2184
-    _globals["_CREATELOCATIONREQUEST"]._serialized_start = 2187
-    _globals["_CREATELOCATIONREQUEST"]._serialized_end = 2591
-    _globals["_CREATELOCATIONRESPONSE"]._serialized_start = 2593
-    _globals["_CREATELOCATIONRESPONSE"]._serialized_end = 2646
-    _globals["_GETLOCATIONPHOTOREQUEST"]._serialized_start = 2648
-    _globals["_GETLOCATIONPHOTOREQUEST"]._serialized_end = 2712
-    _globals["_GETLOCATIONPHOTORESPONSE"]._serialized_start = 2714
-    _globals["_GETLOCATIONPHOTORESPONSE"]._serialized_end = 2790
-    _globals["_SHARELOCATIONWITHEMAILREQUEST"]._serialized_start = 2792
-    _globals["_SHARELOCATIONWITHEMAILREQUEST"]._serialized_end = 2888
-    _globals["_SHARELOCATIONWITHEMAILRESPONSE"]._serialized_start = 2890
-    _globals["_SHARELOCATIONWITHEMAILRESPONSE"]._serialized_end = 3002
-    _globals["_ASKFORYLMPHOTOPERMISSIONSREQUEST"]._serialized_start = 3004
-    _globals["_ASKFORYLMPHOTOPERMISSIONSREQUEST"]._serialized_end = 3104
-    _globals["_ASKFORYLMPHOTOPERMISSIONSRESPONSE"]._serialized_start = 3106
-    _globals["_ASKFORYLMPHOTOPERMISSIONSRESPONSE"]._serialized_end = 3194
-    _globals["_SHARELOCATIONQRREQUEST"]._serialized_start = 3196
-    _globals["_SHARELOCATIONQRREQUEST"]._serialized_end = 3309
-    _globals["_SHARELOCATIONQRRESPONSE"]._serialized_start = 3311
-    _globals["_SHARELOCATIONQRRESPONSE"]._serialized_end = 3389
-    _globals["_ACCEPTSHAREDLOCATIONREQUEST"]._serialized_start = 3391
-    _globals["_ACCEPTSHAREDLOCATIONREQUEST"]._serialized_end = 3434
-    _globals["_ACCEPTSHAREDLOCATIONRESPONSE"]._serialized_start = 3436
-    _globals["_ACCEPTSHAREDLOCATIONRESPONSE"]._serialized_end = 3508
-    _globals["_VIEWSHAREDLOCATIONSREQUEST"]._serialized_start = 3510
-    _globals["_VIEWSHAREDLOCATIONSREQUEST"]._serialized_end = 3559
-    _globals["_VIEWSHAREDLOCATIONSRESPONSE"]._serialized_start = 3561
-    _globals["_VIEWSHAREDLOCATIONSRESPONSE"]._serialized_end = 3633
-    _globals["_VIEWSHAREDLOCATIONGRANTSREQUEST"]._serialized_start = 3635
-    _globals["_VIEWSHAREDLOCATIONGRANTSREQUEST"]._serialized_end = 3714
-    _globals["_VIEWSHAREDLOCATIONGRANTSRESPONSE"]._serialized_start = 3716
-    _globals["_VIEWSHAREDLOCATIONGRANTSRESPONSE"]._serialized_end = 3804
-    _globals["_DELETESHAREDLOCATIONREQUEST"]._serialized_start = 3806
-    _globals["_DELETESHAREDLOCATIONREQUEST"]._serialized_end = 3885
-    _globals["_DELETESHAREDLOCATIONRESPONSE"]._serialized_start = 3887
-    _globals["_DELETESHAREDLOCATIONRESPONSE"]._serialized_end = 3934
-    _globals["_DELETESHAREDLOCATIONGRANTREQUEST"]._serialized_start = 3936
-    _globals["_DELETESHAREDLOCATIONGRANTREQUEST"]._serialized_end = 3984
-    _globals["_DELETESHAREDLOCATIONGRANTRESPONSE"]._serialized_start = 3986
-    _globals["_DELETESHAREDLOCATIONGRANTRESPONSE"]._serialized_end = 4038
-    _globals["_UPDATELOCATIONFAVORITEREQUEST"]._serialized_start = 4040
-    _globals["_UPDATELOCATIONFAVORITEREQUEST"]._serialized_end = 4111
-    _globals["_UPDATELOCATIONFAVORITERESPONSE"]._serialized_start = 4113
-    _globals["_UPDATELOCATIONFAVORITERESPONSE"]._serialized_end = 4145
-    _globals["_SHAREDLOCATION"]._serialized_start = 4148
-    _globals["_SHAREDLOCATION"]._serialized_end = 4278
-    _globals["_SHAREDLOCATIONGRANT"]._serialized_start = 4281
-    _globals["_SHAREDLOCATIONGRANT"]._serialized_end = 4439
-    _globals["_GETLOCATIONDAYREQUEST"]._serialized_start = 4441
-    _globals["_GETLOCATIONDAYREQUEST"]._serialized_end = 4506
-    _globals["_GETCALENDARFORTIMERANGEREQUEST"]._serialized_start = 4509
-    _globals["_GETCALENDARFORTIMERANGEREQUEST"]._serialized_end = 4684
-    _globals["_GETCALENDARFORTIMERANGERESPONSE"]._serialized_start = 4686
-    _globals["_GETCALENDARFORTIMERANGERESPONSE"]._serialized_end = 4755
-    _globals["_GETLOCATIONCALENDARREQUEST"]._serialized_start = 4758
-    _globals["_GETLOCATIONCALENDARREQUEST"]._serialized_end = 4901
-    _globals["_GETLOCATIONCALENDARRESPONSE"]._serialized_start = 4904
-    _globals["_GETLOCATIONCALENDARRESPONSE"]._serialized_end = 5071
-    _globals["_VALIDATEQRCODEREQUEST"]._serialized_start = 5073
-    _globals["_VALIDATEQRCODEREQUEST"]._serialized_end = 5131
-    _globals["_VALIDATEQRCODERESPONSE"]._serialized_start = 5133
-    _globals["_VALIDATEQRCODERESPONSE"]._serialized_end = 5201
-    _globals["_VALIDATEYLMCODEREQUEST"]._serialized_start = 5203
-    _globals["_VALIDATEYLMCODEREQUEST"]._serialized_end = 5262
-    _globals["_VALIDATEYLMCODERESPONSE"]._serialized_start = 5264
-    _globals["_VALIDATEYLMCODERESPONSE"]._serialized_end = 5333
-    _globals["_UPDATELOCATIONWEATHERSTATIONREQUEST"]._serialized_start = 5335
-    _globals["_UPDATELOCATIONWEATHERSTATIONREQUEST"]._serialized_end = 5413
-    _globals["_UPDATELOCATIONWEATHERSTATIONRESPONSE"]._serialized_start = 5415
-    _globals["_UPDATELOCATIONWEATHERSTATIONRESPONSE"]._serialized_end = 5508
-    _globals["_GETYARDAREAREQUEST"]._serialized_start = 5510
-    _globals["_GETYARDAREAREQUEST"]._serialized_end = 5551
-    _globals["_GETYARDAREARESPONSE"]._serialized_start = 5553
-    _globals["_GETYARDAREARESPONSE"]._serialized_end = 5593
-    _globals[
-        "_DELETELOCATIONBYIRRIGATIONCONTROLLERSERIALNUMBERREQUEST"
-    ]._serialized_start = 5595
-    _globals[
-        "_DELETELOCATIONBYIRRIGATIONCONTROLLERSERIALNUMBERREQUEST"
-    ]._serialized_end = 5675
-    _globals[
-        "_DELETELOCATIONBYIRRIGATIONCONTROLLERSERIALNUMBERRESPONSE"
-    ]._serialized_start = 5677
-    _globals[
-        "_DELETELOCATIONBYIRRIGATIONCONTROLLERSERIALNUMBERRESPONSE"
-    ]._serialized_end = 5752
-    _globals["_LOCATIONSERVICE"]._serialized_start = 5847
-    _globals["_LOCATIONSERVICE"]._serialized_end = 8358
+  _globals['DESCRIPTOR']._loaded_options = None
+  _globals['DESCRIPTOR']._serialized_options = b'\n\027com.rachio.api.locationP\001'
+  _globals['_GETCLOSESTWEATHERSTATIONSREQUEST'].fields_by_name['allow_personal']._loaded_options = None
+  _globals['_GETCLOSESTWEATHERSTATIONSREQUEST'].fields_by_name['allow_personal']._serialized_options = b'\030\001'
+  _globals['_CREATELOCATIONREQUEST'].fields_by_name['address']._loaded_options = None
+  _globals['_CREATELOCATIONREQUEST'].fields_by_name['address']._serialized_options = b'\030\001'
+  _globals['_CREATELOCATIONREQUEST'].fields_by_name['weather_station_id']._loaded_options = None
+  _globals['_CREATELOCATIONREQUEST'].fields_by_name['weather_station_id']._serialized_options = b'\030\001'
+  _globals['_CREATELOCATIONREQUEST'].fields_by_name['weather_station_latitude']._loaded_options = None
+  _globals['_CREATELOCATIONREQUEST'].fields_by_name['weather_station_latitude']._serialized_options = b'\030\001'
+  _globals['_CREATELOCATIONREQUEST'].fields_by_name['weather_station_longitude']._loaded_options = None
+  _globals['_CREATELOCATIONREQUEST'].fields_by_name['weather_station_longitude']._serialized_options = b'\030\001'
+  _globals['_CREATELOCATIONREQUEST'].fields_by_name['weather_station_has_precip']._loaded_options = None
+  _globals['_CREATELOCATIONREQUEST'].fields_by_name['weather_station_has_precip']._serialized_options = b'\030\001'
+  _globals['_ROLE']._serialized_start=5754
+  _globals['_ROLE']._serialized_end=5844
+  _globals['_GETWEATHERBYLOCATIONREQUEST']._serialized_start=404
+  _globals['_GETWEATHERBYLOCATIONREQUEST']._serialized_end=506
+  _globals['_GETCLOSESTWEATHERSTATIONSREQUEST']._serialized_start=508
+  _globals['_GETCLOSESTWEATHERSTATIONSREQUEST']._serialized_end=591
+  _globals['_GETCLOSESTWEATHERSTATIONSRESPONSE']._serialized_start=593
+  _globals['_GETCLOSESTWEATHERSTATIONSRESPONSE']._serialized_end=663
+  _globals['_GETWEATHERRESPONSE']._serialized_start=665
+  _globals['_GETWEATHERRESPONSE']._serialized_end=728
+  _globals['_GETLOCATIONREQUEST']._serialized_start=730
+  _globals['_GETLOCATIONREQUEST']._serialized_end=794
+  _globals['_GETLOCATIONRESPONSE']._serialized_start=796
+  _globals['_GETLOCATIONRESPONSE']._serialized_end=861
+  _globals['_GETRESTRICTIONREQUEST']._serialized_start=863
+  _globals['_GETRESTRICTIONREQUEST']._serialized_end=907
+  _globals['_GETRESTRICTIONRESPONSE']._serialized_start=909
+  _globals['_GETRESTRICTIONRESPONSE']._serialized_end=976
+  _globals['_UPDATERESTRICTIONREQUEST']._serialized_start=978
+  _globals['_UPDATERESTRICTIONREQUEST']._serialized_end=1094
+  _globals['_UPDATERESTRICTIONRESPONSE']._serialized_start=1096
+  _globals['_UPDATERESTRICTIONRESPONSE']._serialized_end=1166
+  _globals['_CLEARRESTRICTIONREQUEST']._serialized_start=1168
+  _globals['_CLEARRESTRICTIONREQUEST']._serialized_end=1214
+  _globals['_CLEARRESTRICTIONRESPONSE']._serialized_start=1216
+  _globals['_CLEARRESTRICTIONRESPONSE']._serialized_end=1259
+  _globals['_LISTLOCATIONSREQUEST']._serialized_start=1261
+  _globals['_LISTLOCATIONSREQUEST']._serialized_end=1306
+  _globals['_LISTLOCATIONSRESPONSE']._serialized_start=1308
+  _globals['_LISTLOCATIONSRESPONSE']._serialized_end=1375
+  _globals['_DELETELOCATIONREQUEST']._serialized_start=1377
+  _globals['_DELETELOCATIONREQUEST']._serialized_end=1421
+  _globals['_DELETELOCATIONRESPONSE']._serialized_start=1423
+  _globals['_DELETELOCATIONRESPONSE']._serialized_end=1464
+  _globals['_UPDATELOCATIONREQUEST']._serialized_start=1467
+  _globals['_UPDATELOCATIONREQUEST']._serialized_end=1830
+  _globals['_UPDATELOCATIONRESPONSE']._serialized_start=1832
+  _globals['_UPDATELOCATIONRESPONSE']._serialized_end=1885
+  _globals['_UPDATELOCATIONTHRESHOLDREQUEST']._serialized_start=1887
+  _globals['_UPDATELOCATIONTHRESHOLDREQUEST']._serialized_end=1988
+  _globals['_UPDATELOCATIONTHRESHOLDRESPONSE']._serialized_start=1990
+  _globals['_UPDATELOCATIONTHRESHOLDRESPONSE']._serialized_end=2052
+  _globals['_GETAVAILABLETHRESHOLDVALUESREQUEST']._serialized_start=2054
+  _globals['_GETAVAILABLETHRESHOLDVALUESREQUEST']._serialized_end=2130
+  _globals['_GETAVAILABLETHRESHOLDVALUESRESPONSE']._serialized_start=2132
+  _globals['_GETAVAILABLETHRESHOLDVALUESRESPONSE']._serialized_end=2184
+  _globals['_CREATELOCATIONREQUEST']._serialized_start=2187
+  _globals['_CREATELOCATIONREQUEST']._serialized_end=2591
+  _globals['_CREATELOCATIONRESPONSE']._serialized_start=2593
+  _globals['_CREATELOCATIONRESPONSE']._serialized_end=2646
+  _globals['_GETLOCATIONPHOTOREQUEST']._serialized_start=2648
+  _globals['_GETLOCATIONPHOTOREQUEST']._serialized_end=2712
+  _globals['_GETLOCATIONPHOTORESPONSE']._serialized_start=2714
+  _globals['_GETLOCATIONPHOTORESPONSE']._serialized_end=2790
+  _globals['_SHARELOCATIONWITHEMAILREQUEST']._serialized_start=2792
+  _globals['_SHARELOCATIONWITHEMAILREQUEST']._serialized_end=2888
+  _globals['_SHARELOCATIONWITHEMAILRESPONSE']._serialized_start=2890
+  _globals['_SHARELOCATIONWITHEMAILRESPONSE']._serialized_end=3002
+  _globals['_ASKFORYLMPHOTOPERMISSIONSREQUEST']._serialized_start=3004
+  _globals['_ASKFORYLMPHOTOPERMISSIONSREQUEST']._serialized_end=3104
+  _globals['_ASKFORYLMPHOTOPERMISSIONSRESPONSE']._serialized_start=3106
+  _globals['_ASKFORYLMPHOTOPERMISSIONSRESPONSE']._serialized_end=3194
+  _globals['_SHARELOCATIONQRREQUEST']._serialized_start=3196
+  _globals['_SHARELOCATIONQRREQUEST']._serialized_end=3309
+  _globals['_SHARELOCATIONQRRESPONSE']._serialized_start=3311
+  _globals['_SHARELOCATIONQRRESPONSE']._serialized_end=3389
+  _globals['_ACCEPTSHAREDLOCATIONREQUEST']._serialized_start=3391
+  _globals['_ACCEPTSHAREDLOCATIONREQUEST']._serialized_end=3434
+  _globals['_ACCEPTSHAREDLOCATIONRESPONSE']._serialized_start=3436
+  _globals['_ACCEPTSHAREDLOCATIONRESPONSE']._serialized_end=3508
+  _globals['_VIEWSHAREDLOCATIONSREQUEST']._serialized_start=3510
+  _globals['_VIEWSHAREDLOCATIONSREQUEST']._serialized_end=3559
+  _globals['_VIEWSHAREDLOCATIONSRESPONSE']._serialized_start=3561
+  _globals['_VIEWSHAREDLOCATIONSRESPONSE']._serialized_end=3633
+  _globals['_VIEWSHAREDLOCATIONGRANTSREQUEST']._serialized_start=3635
+  _globals['_VIEWSHAREDLOCATIONGRANTSREQUEST']._serialized_end=3714
+  _globals['_VIEWSHAREDLOCATIONGRANTSRESPONSE']._serialized_start=3716
+  _globals['_VIEWSHAREDLOCATIONGRANTSRESPONSE']._serialized_end=3804
+  _globals['_DELETESHAREDLOCATIONREQUEST']._serialized_start=3806
+  _globals['_DELETESHAREDLOCATIONREQUEST']._serialized_end=3885
+  _globals['_DELETESHAREDLOCATIONRESPONSE']._serialized_start=3887
+  _globals['_DELETESHAREDLOCATIONRESPONSE']._serialized_end=3934
+  _globals['_DELETESHAREDLOCATIONGRANTREQUEST']._serialized_start=3936
+  _globals['_DELETESHAREDLOCATIONGRANTREQUEST']._serialized_end=3984
+  _globals['_DELETESHAREDLOCATIONGRANTRESPONSE']._serialized_start=3986
+  _globals['_DELETESHAREDLOCATIONGRANTRESPONSE']._serialized_end=4038
+  _globals['_UPDATELOCATIONFAVORITEREQUEST']._serialized_start=4040
+  _globals['_UPDATELOCATIONFAVORITEREQUEST']._serialized_end=4111
+  _globals['_UPDATELOCATIONFAVORITERESPONSE']._serialized_start=4113
+  _globals['_UPDATELOCATIONFAVORITERESPONSE']._serialized_end=4145
+  _globals['_SHAREDLOCATION']._serialized_start=4148
+  _globals['_SHAREDLOCATION']._serialized_end=4278
+  _globals['_SHAREDLOCATIONGRANT']._serialized_start=4281
+  _globals['_SHAREDLOCATIONGRANT']._serialized_end=4439
+  _globals['_GETLOCATIONDAYREQUEST']._serialized_start=4441
+  _globals['_GETLOCATIONDAYREQUEST']._serialized_end=4506
+  _globals['_GETCALENDARFORTIMERANGEREQUEST']._serialized_start=4509
+  _globals['_GETCALENDARFORTIMERANGEREQUEST']._serialized_end=4684
+  _globals['_GETCALENDARFORTIMERANGERESPONSE']._serialized_start=4686
+  _globals['_GETCALENDARFORTIMERANGERESPONSE']._serialized_end=4755
+  _globals['_GETLOCATIONCALENDARREQUEST']._serialized_start=4758
+  _globals['_GETLOCATIONCALENDARREQUEST']._serialized_end=4901
+  _globals['_GETLOCATIONCALENDARRESPONSE']._serialized_start=4904
+  _globals['_GETLOCATIONCALENDARRESPONSE']._serialized_end=5071
+  _globals['_VALIDATEQRCODEREQUEST']._serialized_start=5073
+  _globals['_VALIDATEQRCODEREQUEST']._serialized_end=5131
+  _globals['_VALIDATEQRCODERESPONSE']._serialized_start=5133
+  _globals['_VALIDATEQRCODERESPONSE']._serialized_end=5201
+  _globals['_VALIDATEYLMCODEREQUEST']._serialized_start=5203
+  _globals['_VALIDATEYLMCODEREQUEST']._serialized_end=5262
+  _globals['_VALIDATEYLMCODERESPONSE']._serialized_start=5264
+  _globals['_VALIDATEYLMCODERESPONSE']._serialized_end=5333
+  _globals['_UPDATELOCATIONWEATHERSTATIONREQUEST']._serialized_start=5335
+  _globals['_UPDATELOCATIONWEATHERSTATIONREQUEST']._serialized_end=5413
+  _globals['_UPDATELOCATIONWEATHERSTATIONRESPONSE']._serialized_start=5415
+  _globals['_UPDATELOCATIONWEATHERSTATIONRESPONSE']._serialized_end=5508
+  _globals['_GETYARDAREAREQUEST']._serialized_start=5510
+  _globals['_GETYARDAREAREQUEST']._serialized_end=5551
+  _globals['_GETYARDAREARESPONSE']._serialized_start=5553
+  _globals['_GETYARDAREARESPONSE']._serialized_end=5593
+  _globals['_DELETELOCATIONBYIRRIGATIONCONTROLLERSERIALNUMBERREQUEST']._serialized_start=5595
+  _globals['_DELETELOCATIONBYIRRIGATIONCONTROLLERSERIALNUMBERREQUEST']._serialized_end=5675
+  _globals['_DELETELOCATIONBYIRRIGATIONCONTROLLERSERIALNUMBERRESPONSE']._serialized_start=5677
+  _globals['_DELETELOCATIONBYIRRIGATIONCONTROLLERSERIALNUMBERRESPONSE']._serialized_end=5752
+  _globals['_LOCATIONSERVICE']._serialized_start=5847
+  _globals['_LOCATIONSERVICE']._serialized_end=8358
 # @@protoc_insertion_point(module_scope)

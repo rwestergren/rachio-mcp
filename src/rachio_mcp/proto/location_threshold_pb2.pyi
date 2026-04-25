@@ -10,7 +10,6 @@ class ThresholdName(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     IRRIGATION_CONTROLLER_PRECIPITATION: _ClassVar[ThresholdName]
     IRRIGATION_CONTROLLER_TEMPERATURE: _ClassVar[ThresholdName]
     IRRIGATION_CONTROLLER_WIND: _ClassVar[ThresholdName]
-
 IRRIGATION_CONTROLLER_PRECIPITATION: ThresholdName
 IRRIGATION_CONTROLLER_TEMPERATURE: ThresholdName
 IRRIGATION_CONTROLLER_WIND: ThresholdName
@@ -21,8 +20,4 @@ class LocationThreshold(_message.Message):
     VALUE_FIELD_NUMBER: _ClassVar[int]
     name: ThresholdName
     value: float
-    def __init__(
-        self,
-        name: _Optional[_Union[ThresholdName, str]] = ...,
-        value: _Optional[float] = ...,
-    ) -> None: ...
+    def __init__(self, name: _Optional[_Union[ThresholdName, str]] = ..., value: _Optional[float] = ...) -> None: ...

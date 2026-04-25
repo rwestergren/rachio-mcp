@@ -9,29 +9,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateFlowProvisionRequest(_message.Message):
-    __slots__ = (
-        "serial_number",
-        "pin",
-        "mac_address",
-        "key",
-        "model",
-        "status",
-        "pcb_manufacturer",
-        "final_assembly",
-        "mfg_config_bytes",
-        "type",
-        "profile",
-        "preamble_len",
-        "interval",
-        "resp_interval_num_wake",
-        "use_ch_num",
-        "ecpt_cnt_max",
-        "crc_cnt_max",
-        "wake_cnt_max",
-        "hb_interval",
-        "hb_timeout",
-        "status_interval",
-    )
+    __slots__ = ("serial_number", "pin", "mac_address", "key", "model", "status", "pcb_manufacturer", "final_assembly", "mfg_config_bytes", "type", "profile", "preamble_len", "interval", "resp_interval_num_wake", "use_ch_num", "ecpt_cnt_max", "crc_cnt_max", "wake_cnt_max", "hb_interval", "hb_timeout", "status_interval")
     SERIAL_NUMBER_FIELD_NUMBER: _ClassVar[int]
     PIN_FIELD_NUMBER: _ClassVar[int]
     MAC_ADDRESS_FIELD_NUMBER: _ClassVar[int]
@@ -74,40 +52,10 @@ class CreateFlowProvisionRequest(_message.Message):
     hb_interval: int
     hb_timeout: int
     status_interval: int
-    def __init__(
-        self,
-        serial_number: _Optional[str] = ...,
-        pin: _Optional[str] = ...,
-        mac_address: _Optional[str] = ...,
-        key: _Optional[str] = ...,
-        model: _Optional[_Union[_flow_provision_model_pb2.FlowModel, str]] = ...,
-        status: _Optional[_Union[_provision_pb2.ProvisionStatus, str]] = ...,
-        pcb_manufacturer: _Optional[_Union[_provision_pb2.Manufacturer, str]] = ...,
-        final_assembly: _Optional[
-            _Union[_flow_provision_model_pb2.FinalAssembly, str]
-        ] = ...,
-        mfg_config_bytes: _Optional[_Union[_wrappers_pb2.BytesValue, _Mapping]] = ...,
-        type: _Optional[int] = ...,
-        profile: _Optional[int] = ...,
-        preamble_len: _Optional[int] = ...,
-        interval: _Optional[int] = ...,
-        resp_interval_num_wake: _Optional[int] = ...,
-        use_ch_num: bool = ...,
-        ecpt_cnt_max: _Optional[int] = ...,
-        crc_cnt_max: _Optional[int] = ...,
-        wake_cnt_max: _Optional[int] = ...,
-        hb_interval: _Optional[int] = ...,
-        hb_timeout: _Optional[int] = ...,
-        status_interval: _Optional[int] = ...,
-    ) -> None: ...
+    def __init__(self, serial_number: _Optional[str] = ..., pin: _Optional[str] = ..., mac_address: _Optional[str] = ..., key: _Optional[str] = ..., model: _Optional[_Union[_flow_provision_model_pb2.FlowModel, str]] = ..., status: _Optional[_Union[_provision_pb2.ProvisionStatus, str]] = ..., pcb_manufacturer: _Optional[_Union[_provision_pb2.Manufacturer, str]] = ..., final_assembly: _Optional[_Union[_flow_provision_model_pb2.FinalAssembly, str]] = ..., mfg_config_bytes: _Optional[_Union[_wrappers_pb2.BytesValue, _Mapping]] = ..., type: _Optional[int] = ..., profile: _Optional[int] = ..., preamble_len: _Optional[int] = ..., interval: _Optional[int] = ..., resp_interval_num_wake: _Optional[int] = ..., use_ch_num: bool = ..., ecpt_cnt_max: _Optional[int] = ..., crc_cnt_max: _Optional[int] = ..., wake_cnt_max: _Optional[int] = ..., hb_interval: _Optional[int] = ..., hb_timeout: _Optional[int] = ..., status_interval: _Optional[int] = ...) -> None: ...
 
 class CreateFlowProvisionResponse(_message.Message):
     __slots__ = ("provision",)
     PROVISION_FIELD_NUMBER: _ClassVar[int]
     provision: _flow_provision_model_pb2.FlowProvision
-    def __init__(
-        self,
-        provision: _Optional[
-            _Union[_flow_provision_model_pb2.FlowProvision, _Mapping]
-        ] = ...,
-    ) -> None: ...
+    def __init__(self, provision: _Optional[_Union[_flow_provision_model_pb2.FlowProvision, _Mapping]] = ...) -> None: ...

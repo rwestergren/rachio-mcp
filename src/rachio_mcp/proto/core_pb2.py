@@ -4,63 +4,66 @@
 # source: core.proto
 # Protobuf Python Version: 6.31.1
 """Generated protocol buffer code."""
-
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import runtime_version as _runtime_version
 from google.protobuf import symbol_database as _symbol_database
 from google.protobuf.internal import builder as _builder
-
 _runtime_version.ValidateProtobufRuntimeVersion(
-    _runtime_version.Domain.PUBLIC, 6, 31, 1, "", "core.proto"
+    _runtime_version.Domain.PUBLIC,
+    6,
+    31,
+    1,
+    '',
+    'core.proto'
 )
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
-    b'\n\ncore.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cgoogle/protobuf/struct.proto"/\n\x08GeoPoint\x12\x10\n\x08latitude\x18\x01 \x01(\x01\x12\x11\n\tlongitude\x18\x02 \x01(\x01"\xa0\x01\n\x07\x41\x64\x64ress\x12\x16\n\x0e\x61\x64\x64ress_line_1\x18\x01 \x01(\t\x12\x16\n\x0e\x61\x64\x64ress_line_2\x18\x02 \x01(\t\x12\x0c\n\x04\x63ity\x18\x03 \x01(\t\x12\x0e\n\x06\x63ounty\x18\x04 \x01(\t\x12\x17\n\x06region\x18\x05 \x01(\x0b\x32\x07.Region\x12\x13\n\x0bpostal_code\x18\x06 \x01(\t\x12\x19\n\x07\x63ountry\x18\x07 \x01(\x0b\x32\x08.Country"$\n\x06Region\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t"%\n\x07\x43ountry\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t"\x1f\n\x08TimeList\x12\x13\n\x04time\x18\x01 \x03(\x0b\x32\x05.Time"\x18\n\nStringList\x12\n\n\x02id\x18\x01 \x03(\t"8\n\x0cTimeInterval\x12\x14\n\x05start\x18\x01 \x01(\x0b\x32\x05.Time\x12\x12\n\x03\x65nd\x18\x02 \x01(\x0b\x32\x05.Time"8\n\x0c\x44\x61teInterval\x12\x14\n\x05start\x18\x01 \x01(\x0b\x32\x05.Date\x12\x12\n\x03\x65nd\x18\x02 \x01(\x0b\x32\x05.Date"g\n\x11TimestampInterval\x12)\n\x05start\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\'\n\x03\x65nd\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp"0\n\x04\x44\x61te\x12\x0c\n\x04year\x18\x01 \x01(\x05\x12\r\n\x05month\x18\x02 \x01(\x05\x12\x0b\n\x03\x64\x61y\x18\x03 \x01(\x05"*\n\x0c\x43\x61lendarDate\x12\r\n\x05month\x18\x01 \x01(\x05\x12\x0b\n\x03\x64\x61y\x18\x02 \x01(\x05"D\n\x04Time\x12\x0c\n\x04hour\x18\x01 \x01(\x05\x12\x0e\n\x06minute\x18\x02 \x01(\x05\x12\x0e\n\x06second\x18\x03 \x01(\x05\x12\x0e\n\x06millis\x18\x04 \x01(\x05"T\n\x0eNullableString\x12*\n\x04null\x18\x01 \x01(\x0e\x32\x1a.google.protobuf.NullValueH\x00\x12\x0e\n\x04\x64\x61ta\x18\x02 \x01(\tH\x00\x42\x06\n\x04kind*\'\n\x0b\x44isplayUnit\x12\n\n\x06METRIC\x10\x00\x12\x0c\n\x08IMPERIAL\x10\x01*g\n\tDayOfWeek\x12\n\n\x06MONDAY\x10\x00\x12\x0b\n\x07TUESDAY\x10\x01\x12\r\n\tWEDNESDAY\x10\x02\x12\x0c\n\x08THURSDAY\x10\x03\x12\n\n\x06\x46RIDAY\x10\x04\x12\x0c\n\x08SATURDAY\x10\x05\x12\n\n\x06SUNDAY\x10\x06*1\n\x06OddDay\x12\x14\n\x10ODD_DAY_DISABLED\x10\x00\x12\x07\n\x03ODD\x10\x01\x12\x08\n\x04\x45VEN\x10\x02\x42\x17\n\x13\x63om.rachio.api.coreP\x01\x62\x06proto3'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\ncore.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cgoogle/protobuf/struct.proto\"/\n\x08GeoPoint\x12\x10\n\x08latitude\x18\x01 \x01(\x01\x12\x11\n\tlongitude\x18\x02 \x01(\x01\"\xa0\x01\n\x07\x41\x64\x64ress\x12\x16\n\x0e\x61\x64\x64ress_line_1\x18\x01 \x01(\t\x12\x16\n\x0e\x61\x64\x64ress_line_2\x18\x02 \x01(\t\x12\x0c\n\x04\x63ity\x18\x03 \x01(\t\x12\x0e\n\x06\x63ounty\x18\x04 \x01(\t\x12\x17\n\x06region\x18\x05 \x01(\x0b\x32\x07.Region\x12\x13\n\x0bpostal_code\x18\x06 \x01(\t\x12\x19\n\x07\x63ountry\x18\x07 \x01(\x0b\x32\x08.Country\"$\n\x06Region\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\"%\n\x07\x43ountry\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\"\x1f\n\x08TimeList\x12\x13\n\x04time\x18\x01 \x03(\x0b\x32\x05.Time\"\x18\n\nStringList\x12\n\n\x02id\x18\x01 \x03(\t\"8\n\x0cTimeInterval\x12\x14\n\x05start\x18\x01 \x01(\x0b\x32\x05.Time\x12\x12\n\x03\x65nd\x18\x02 \x01(\x0b\x32\x05.Time\"8\n\x0c\x44\x61teInterval\x12\x14\n\x05start\x18\x01 \x01(\x0b\x32\x05.Date\x12\x12\n\x03\x65nd\x18\x02 \x01(\x0b\x32\x05.Date\"g\n\x11TimestampInterval\x12)\n\x05start\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\'\n\x03\x65nd\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"0\n\x04\x44\x61te\x12\x0c\n\x04year\x18\x01 \x01(\x05\x12\r\n\x05month\x18\x02 \x01(\x05\x12\x0b\n\x03\x64\x61y\x18\x03 \x01(\x05\"*\n\x0c\x43\x61lendarDate\x12\r\n\x05month\x18\x01 \x01(\x05\x12\x0b\n\x03\x64\x61y\x18\x02 \x01(\x05\"D\n\x04Time\x12\x0c\n\x04hour\x18\x01 \x01(\x05\x12\x0e\n\x06minute\x18\x02 \x01(\x05\x12\x0e\n\x06second\x18\x03 \x01(\x05\x12\x0e\n\x06millis\x18\x04 \x01(\x05\"T\n\x0eNullableString\x12*\n\x04null\x18\x01 \x01(\x0e\x32\x1a.google.protobuf.NullValueH\x00\x12\x0e\n\x04\x64\x61ta\x18\x02 \x01(\tH\x00\x42\x06\n\x04kind*\'\n\x0b\x44isplayUnit\x12\n\n\x06METRIC\x10\x00\x12\x0c\n\x08IMPERIAL\x10\x01*g\n\tDayOfWeek\x12\n\n\x06MONDAY\x10\x00\x12\x0b\n\x07TUESDAY\x10\x01\x12\r\n\tWEDNESDAY\x10\x02\x12\x0c\n\x08THURSDAY\x10\x03\x12\n\n\x06\x46RIDAY\x10\x04\x12\x0c\n\x08SATURDAY\x10\x05\x12\n\n\x06SUNDAY\x10\x06*1\n\x06OddDay\x12\x14\n\x10ODD_DAY_DISABLED\x10\x00\x12\x07\n\x03ODD\x10\x01\x12\x08\n\x04\x45VEN\x10\x02\x42\x17\n\x13\x63om.rachio.api.coreP\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
-_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, "core_pb2", _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'core_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-    _globals["DESCRIPTOR"]._loaded_options = None
-    _globals["DESCRIPTOR"]._serialized_options = b"\n\023com.rachio.api.coreP\001"
-    _globals["_DISPLAYUNIT"]._serialized_start = 896
-    _globals["_DISPLAYUNIT"]._serialized_end = 935
-    _globals["_DAYOFWEEK"]._serialized_start = 937
-    _globals["_DAYOFWEEK"]._serialized_end = 1040
-    _globals["_ODDDAY"]._serialized_start = 1042
-    _globals["_ODDDAY"]._serialized_end = 1091
-    _globals["_GEOPOINT"]._serialized_start = 77
-    _globals["_GEOPOINT"]._serialized_end = 124
-    _globals["_ADDRESS"]._serialized_start = 127
-    _globals["_ADDRESS"]._serialized_end = 287
-    _globals["_REGION"]._serialized_start = 289
-    _globals["_REGION"]._serialized_end = 325
-    _globals["_COUNTRY"]._serialized_start = 327
-    _globals["_COUNTRY"]._serialized_end = 364
-    _globals["_TIMELIST"]._serialized_start = 366
-    _globals["_TIMELIST"]._serialized_end = 397
-    _globals["_STRINGLIST"]._serialized_start = 399
-    _globals["_STRINGLIST"]._serialized_end = 423
-    _globals["_TIMEINTERVAL"]._serialized_start = 425
-    _globals["_TIMEINTERVAL"]._serialized_end = 481
-    _globals["_DATEINTERVAL"]._serialized_start = 483
-    _globals["_DATEINTERVAL"]._serialized_end = 539
-    _globals["_TIMESTAMPINTERVAL"]._serialized_start = 541
-    _globals["_TIMESTAMPINTERVAL"]._serialized_end = 644
-    _globals["_DATE"]._serialized_start = 646
-    _globals["_DATE"]._serialized_end = 694
-    _globals["_CALENDARDATE"]._serialized_start = 696
-    _globals["_CALENDARDATE"]._serialized_end = 738
-    _globals["_TIME"]._serialized_start = 740
-    _globals["_TIME"]._serialized_end = 808
-    _globals["_NULLABLESTRING"]._serialized_start = 810
-    _globals["_NULLABLESTRING"]._serialized_end = 894
+  _globals['DESCRIPTOR']._loaded_options = None
+  _globals['DESCRIPTOR']._serialized_options = b'\n\023com.rachio.api.coreP\001'
+  _globals['_DISPLAYUNIT']._serialized_start=896
+  _globals['_DISPLAYUNIT']._serialized_end=935
+  _globals['_DAYOFWEEK']._serialized_start=937
+  _globals['_DAYOFWEEK']._serialized_end=1040
+  _globals['_ODDDAY']._serialized_start=1042
+  _globals['_ODDDAY']._serialized_end=1091
+  _globals['_GEOPOINT']._serialized_start=77
+  _globals['_GEOPOINT']._serialized_end=124
+  _globals['_ADDRESS']._serialized_start=127
+  _globals['_ADDRESS']._serialized_end=287
+  _globals['_REGION']._serialized_start=289
+  _globals['_REGION']._serialized_end=325
+  _globals['_COUNTRY']._serialized_start=327
+  _globals['_COUNTRY']._serialized_end=364
+  _globals['_TIMELIST']._serialized_start=366
+  _globals['_TIMELIST']._serialized_end=397
+  _globals['_STRINGLIST']._serialized_start=399
+  _globals['_STRINGLIST']._serialized_end=423
+  _globals['_TIMEINTERVAL']._serialized_start=425
+  _globals['_TIMEINTERVAL']._serialized_end=481
+  _globals['_DATEINTERVAL']._serialized_start=483
+  _globals['_DATEINTERVAL']._serialized_end=539
+  _globals['_TIMESTAMPINTERVAL']._serialized_start=541
+  _globals['_TIMESTAMPINTERVAL']._serialized_end=644
+  _globals['_DATE']._serialized_start=646
+  _globals['_DATE']._serialized_end=694
+  _globals['_CALENDARDATE']._serialized_start=696
+  _globals['_CALENDARDATE']._serialized_end=738
+  _globals['_TIME']._serialized_start=740
+  _globals['_TIME']._serialized_end=808
+  _globals['_NULLABLESTRING']._serialized_start=810
+  _globals['_NULLABLESTRING']._serialized_end=894
 # @@protoc_insertion_point(module_scope)

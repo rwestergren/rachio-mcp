@@ -21,7 +21,6 @@ class WebhookEventType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     WEATHER_INTELLIGENCE: _ClassVar[WebhookEventType]
     ZONE_DELTA: _ClassVar[WebhookEventType]
     DELTA: _ClassVar[WebhookEventType]
-
 ZONE_STATUS: WebhookEventType
 SCHEDULE_STATUS: WebhookEventType
 DEVICE_STATUS: WebhookEventType
@@ -43,14 +42,7 @@ class CreateWebhookRequest(_message.Message):
     url: str
     external_id: str
     event: _containers.RepeatedCompositeFieldContainer[WebhookEvent]
-    def __init__(
-        self,
-        id: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...,
-        device_id: _Optional[str] = ...,
-        url: _Optional[str] = ...,
-        external_id: _Optional[str] = ...,
-        event: _Optional[_Iterable[_Union[WebhookEvent, _Mapping]]] = ...,
-    ) -> None: ...
+    def __init__(self, id: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., device_id: _Optional[str] = ..., url: _Optional[str] = ..., external_id: _Optional[str] = ..., event: _Optional[_Iterable[_Union[WebhookEvent, _Mapping]]] = ...) -> None: ...
 
 class CreateWebhookResponse(_message.Message):
     __slots__ = ("webhook",)
@@ -68,13 +60,7 @@ class UpdateWebhookRequest(_message.Message):
     url: _wrappers_pb2.StringValue
     external_id: _wrappers_pb2.StringValue
     event: _containers.RepeatedCompositeFieldContainer[WebhookEvent]
-    def __init__(
-        self,
-        id: _Optional[str] = ...,
-        url: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...,
-        external_id: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...,
-        event: _Optional[_Iterable[_Union[WebhookEvent, _Mapping]]] = ...,
-    ) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., url: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., external_id: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., event: _Optional[_Iterable[_Union[WebhookEvent, _Mapping]]] = ...) -> None: ...
 
 class UpdateWebhookResponse(_message.Message):
     __slots__ = ("webhook",)
@@ -122,28 +108,13 @@ class Webhook(_message.Message):
     event: _containers.RepeatedCompositeFieldContainer[WebhookEvent]
     created: _timestamp_pb2.Timestamp
     updated: _timestamp_pb2.Timestamp
-    def __init__(
-        self,
-        id: _Optional[str] = ...,
-        device_id: _Optional[str] = ...,
-        url: _Optional[str] = ...,
-        external_id: _Optional[str] = ...,
-        event: _Optional[_Iterable[_Union[WebhookEvent, _Mapping]]] = ...,
-        created: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        updated: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-    ) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., device_id: _Optional[str] = ..., url: _Optional[str] = ..., external_id: _Optional[str] = ..., event: _Optional[_Iterable[_Union[WebhookEvent, _Mapping]]] = ..., created: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class WebhookEvent(_message.Message):
     __slots__ = ("type",)
     TYPE_FIELD_NUMBER: _ClassVar[int]
     type: WebhookEventType
-    def __init__(
-        self, type: _Optional[_Union[WebhookEventType, str]] = ...
-    ) -> None: ...
+    def __init__(self, type: _Optional[_Union[WebhookEventType, str]] = ...) -> None: ...
 
 class GetWebhooksForDeviceRequest(_message.Message):
     __slots__ = ("device_id",)
@@ -155,6 +126,4 @@ class GetWebhooksForDeviceResponse(_message.Message):
     __slots__ = ("webhook",)
     WEBHOOK_FIELD_NUMBER: _ClassVar[int]
     webhook: _containers.RepeatedCompositeFieldContainer[Webhook]
-    def __init__(
-        self, webhook: _Optional[_Iterable[_Union[Webhook, _Mapping]]] = ...
-    ) -> None: ...
+    def __init__(self, webhook: _Optional[_Iterable[_Union[Webhook, _Mapping]]] = ...) -> None: ...

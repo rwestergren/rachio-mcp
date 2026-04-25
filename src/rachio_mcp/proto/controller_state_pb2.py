@@ -4,65 +4,68 @@
 # source: controller_state.proto
 # Protobuf Python Version: 6.31.1
 """Generated protocol buffer code."""
-
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import runtime_version as _runtime_version
 from google.protobuf import symbol_database as _symbol_database
 from google.protobuf.internal import builder as _builder
-
 _runtime_version.ValidateProtobufRuntimeVersion(
-    _runtime_version.Domain.PUBLIC, 6, 31, 1, "", "controller_state.proto"
+    _runtime_version.Domain.PUBLIC,
+    6,
+    31,
+    1,
+    '',
+    'controller_state.proto'
 )
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
-    b'\n\x16\x63ontroller_state.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto"\xd5\t\n\x0f\x43ontrollerState\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12\'\n\x06health\x18\x02 \x01(\x0e\x32\x17.ControllerState.Health\x12%\n\x05state\x18\x03 \x01(\x0e\x32\x16.ControllerState.State\x12\x39\n\x15rain_delay_expiration\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x18\n\x10\x63orrect_firmware\x18\x05 \x01(\x08\x12\x1a\n\x12\x63orrect_rain_delay\x18\x06 \x01(\x08\x12\x18\n\x10\x63orrect_schedule\x18\x07 \x01(\x08\x12&\n\x14\x63urrent_running_zone\x18\x08 \x01(\x0b\x32\x08.ZoneRun\x12\x37\n\x18\x63urrent_running_schedule\x18\t \x01(\x0b\x32\x15.ImmediateScheduleRun\x12,\n\x08last_run\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08next_run\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x18\n\x10\x66irmware_version\x18\x0c \x01(\t\x12\x1b\n\x13rain_sensor_tripped\x18\r \x01(\x08\x12\x0c\n\x04rssi\x18\x0e \x01(\x05\x12\x34\n\rdesired_state\x18\x0f \x01(\x0e\x32\x1d.ControllerState.DesiredState\x12\x41\n\x1d\x64\x65sired_rain_delay_expiration\x18\x10 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12"\n\nflex_nodes\x18\x11 \x03(\x0b\x32\x0e.FlexNodeState\x12\x1b\n\x13\x64\x65sired_settle_time\x18\x12 \x01(\x05\x12\x1d\n\x15\x66low_firmware_version\x18\x13 \x01(\t\x12#\n\x1b\x64\x65sired_idle_leak_detection\x18\x14 \x01(\x08\x12\x1e\n\x16\x64\x65sired_idle_leak_time\x18\x15 \x01(\x05\x12\x43\n\x19\x64\x65sired_light_bar_setting\x18\x16 \x01(\x0e\x32 .ControllerState.LightBarSetting"\xac\x01\n\x05State\x12\x0c\n\x08NO_STATE\x10\x00\x12\x0b\n\x07STANDBY\x10\n\x12\x08\n\x04IDLE\x10\x14\x12\t\n\x05\x44\x45LAY\x10\x1e\x12\n\n\x06PAUSED\x10(\x12\x0c\n\x08WATERING\x10\x32\x12\n\n\x06UNBORN\x10<\x12\x0b\n\x07STARTUP\x10\x46\x12\x0b\n\x07UNKNOWN\x10P\x12\x0b\n\x07OFFLINE\x10Z\x12\x14\n\x10\x45XTENDED_OFFLINE\x10\x64\x12\x10\n\x0cPROVISIONING\x10n"7\n\x0c\x44\x65siredState\x12\x12\n\x0e\x44\x45SIRED_ACTIVE\x10\x00\x12\x13\n\x0f\x44\x45SIRED_STANDBY\x10\n"9\n\x06Health\x12\r\n\tNO_HEALTH\x10\x00\x12\x08\n\x04GOOD\x10\n\x12\x0b\n\x07WARNING\x10\x14\x12\t\n\x05\x45RROR\x10\x1e"L\n\x0fLightBarSetting\x12\x17\n\x13ONE_HUNDRED_PERCENT\x10\x00\x12\x07\n\x03OFF\x10\x01\x12\x17\n\x13TWENTY_FIVE_PERCENT\x10\x02"\x9f\x01\n\x14ImmediateScheduleRun\x12\x30\n\x04type\x18\x01 \x01(\x0e\x32".ImmediateScheduleRun.ScheduleType\x12\x13\n\x0bschedule_id\x18\x02 \x01(\t\x12\x15\n\x03run\x18\x03 \x03(\x0b\x32\x08.ZoneRun")\n\x0cScheduleType\x12\r\n\tSCHEDULED\x10\x00\x12\n\n\x06MANUAL\x10\x01"\xdf\x01\n\x07ZoneRun\x12\r\n\x05index\x18\x01 \x01(\x05\x12\x13\n\x0bzone_number\x18\x02 \x01(\x05\x12\x0e\n\x06paused\x18\x03 \x01(\x08\x12)\n\x05start\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\'\n\x03\x65nd\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1e\n\x04type\x18\x06 \x01(\x0e\x32\x10.ZoneRun.RunType",\n\x07RunType\x12\x0c\n\x08IRRIGATE\x10\x00\x12\x08\n\x04SOAK\x10\x01\x12\t\n\x05PAUSE\x10\x02"\xd5\x03\n\tZoneState\x12,\n\x08last_run\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08next_run\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12%\n\x06health\x18\x03 \x01(\x0e\x32\x11.ZoneState.HealthB\x02\x18\x01\x12\x1e\n\x16last_run_start_current\x18\x04 \x01(\x05\x12\x1c\n\x14last_run_end_current\x18\x05 \x01(\x05\x12\x43\n\x1elast_current_reading_milliamps\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12\x35\n\x11last_run_end_time\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12 \n\x0bwire_status\x18\x08 \x01(\x0e\x32\x0b.WireStatus"i\n\x06Health\x12\x08\n\x04GOOD\x10\x00\x12\x0b\n\x07WARNING\x10\x01\x12\t\n\x05\x45RROR\x10\x02\x12\r\n\tOPEN_LINE\x10\x03\x12\x10\n\x0cOVER_CURRENT\x10\x04\x12\x11\n\rUNDER_CURRENT\x10\x05\x12\t\n\x05\x43HECK\x10\x06"\xd2\x03\n\rFlexNodeState\x12.\n\tflex_type\x18\x01 \x01(\x0e\x32\x1b.FlexNodeState.FlexNodeType\x12\x11\n\tdevice_id\x18\x02 \x01(\t\x12\x10\n\x08\x66lex_pin\x18\x03 \x01(\t\x12\x0e\n\x06paired\x18\x04 \x01(\x08\x12\x16\n\x0e\x63orrect_config\x18\x05 \x01(\x08\x12\x32\n\x0elast_heartbeat\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x32\n\rbattery_level\x18\x07 \x01(\x0e\x32\x1b.FlexNodeState.BatteryLevel\x12\x30\n\x0clink_quality\x18\x08 \x01(\x0e\x32\x1a.FlexNodeState.LinkQuality\x12\x1c\n\x14link_quality_reading\x18\t \x01(\x02"\x18\n\x0c\x46lexNodeType\x12\x08\n\x04\x46LOW\x10\x00"1\n\x0c\x42\x61tteryLevel\x12\x0f\n\x0b\x42\x41TTERY_LOW\x10\x00\x12\x10\n\x0c\x42\x41TTERY_GOOD\x10\x01"?\n\x0bLinkQuality\x12\r\n\tLINK_POOR\x10\x00\x12\r\n\tLINK_GOOD\x10\x01\x12\x12\n\x0eLINK_EXCELLENT\x10\x02*i\n\nWireStatus\x12\x08\n\x04GOOD\x10\x00\x12\r\n\tOPEN_LINE\x10\x01\x12\x11\n\rUNDER_CURRENT\x10\x02\x12\r\n\tCHECK_LOW\x10\x03\x12\x0e\n\nCHECK_HIGH\x10\x04\x12\x10\n\x0cOVER_CURRENT\x10\x05\x42\x19\n\x15\x63om.rachio.api.deviceP\x01\x62\x06proto3'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x63ontroller_state.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\xd5\t\n\x0f\x43ontrollerState\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12\'\n\x06health\x18\x02 \x01(\x0e\x32\x17.ControllerState.Health\x12%\n\x05state\x18\x03 \x01(\x0e\x32\x16.ControllerState.State\x12\x39\n\x15rain_delay_expiration\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x18\n\x10\x63orrect_firmware\x18\x05 \x01(\x08\x12\x1a\n\x12\x63orrect_rain_delay\x18\x06 \x01(\x08\x12\x18\n\x10\x63orrect_schedule\x18\x07 \x01(\x08\x12&\n\x14\x63urrent_running_zone\x18\x08 \x01(\x0b\x32\x08.ZoneRun\x12\x37\n\x18\x63urrent_running_schedule\x18\t \x01(\x0b\x32\x15.ImmediateScheduleRun\x12,\n\x08last_run\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08next_run\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x18\n\x10\x66irmware_version\x18\x0c \x01(\t\x12\x1b\n\x13rain_sensor_tripped\x18\r \x01(\x08\x12\x0c\n\x04rssi\x18\x0e \x01(\x05\x12\x34\n\rdesired_state\x18\x0f \x01(\x0e\x32\x1d.ControllerState.DesiredState\x12\x41\n\x1d\x64\x65sired_rain_delay_expiration\x18\x10 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\"\n\nflex_nodes\x18\x11 \x03(\x0b\x32\x0e.FlexNodeState\x12\x1b\n\x13\x64\x65sired_settle_time\x18\x12 \x01(\x05\x12\x1d\n\x15\x66low_firmware_version\x18\x13 \x01(\t\x12#\n\x1b\x64\x65sired_idle_leak_detection\x18\x14 \x01(\x08\x12\x1e\n\x16\x64\x65sired_idle_leak_time\x18\x15 \x01(\x05\x12\x43\n\x19\x64\x65sired_light_bar_setting\x18\x16 \x01(\x0e\x32 .ControllerState.LightBarSetting\"\xac\x01\n\x05State\x12\x0c\n\x08NO_STATE\x10\x00\x12\x0b\n\x07STANDBY\x10\n\x12\x08\n\x04IDLE\x10\x14\x12\t\n\x05\x44\x45LAY\x10\x1e\x12\n\n\x06PAUSED\x10(\x12\x0c\n\x08WATERING\x10\x32\x12\n\n\x06UNBORN\x10<\x12\x0b\n\x07STARTUP\x10\x46\x12\x0b\n\x07UNKNOWN\x10P\x12\x0b\n\x07OFFLINE\x10Z\x12\x14\n\x10\x45XTENDED_OFFLINE\x10\x64\x12\x10\n\x0cPROVISIONING\x10n\"7\n\x0c\x44\x65siredState\x12\x12\n\x0e\x44\x45SIRED_ACTIVE\x10\x00\x12\x13\n\x0f\x44\x45SIRED_STANDBY\x10\n\"9\n\x06Health\x12\r\n\tNO_HEALTH\x10\x00\x12\x08\n\x04GOOD\x10\n\x12\x0b\n\x07WARNING\x10\x14\x12\t\n\x05\x45RROR\x10\x1e\"L\n\x0fLightBarSetting\x12\x17\n\x13ONE_HUNDRED_PERCENT\x10\x00\x12\x07\n\x03OFF\x10\x01\x12\x17\n\x13TWENTY_FIVE_PERCENT\x10\x02\"\x9f\x01\n\x14ImmediateScheduleRun\x12\x30\n\x04type\x18\x01 \x01(\x0e\x32\".ImmediateScheduleRun.ScheduleType\x12\x13\n\x0bschedule_id\x18\x02 \x01(\t\x12\x15\n\x03run\x18\x03 \x03(\x0b\x32\x08.ZoneRun\")\n\x0cScheduleType\x12\r\n\tSCHEDULED\x10\x00\x12\n\n\x06MANUAL\x10\x01\"\xdf\x01\n\x07ZoneRun\x12\r\n\x05index\x18\x01 \x01(\x05\x12\x13\n\x0bzone_number\x18\x02 \x01(\x05\x12\x0e\n\x06paused\x18\x03 \x01(\x08\x12)\n\x05start\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\'\n\x03\x65nd\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1e\n\x04type\x18\x06 \x01(\x0e\x32\x10.ZoneRun.RunType\",\n\x07RunType\x12\x0c\n\x08IRRIGATE\x10\x00\x12\x08\n\x04SOAK\x10\x01\x12\t\n\x05PAUSE\x10\x02\"\xd5\x03\n\tZoneState\x12,\n\x08last_run\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08next_run\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12%\n\x06health\x18\x03 \x01(\x0e\x32\x11.ZoneState.HealthB\x02\x18\x01\x12\x1e\n\x16last_run_start_current\x18\x04 \x01(\x05\x12\x1c\n\x14last_run_end_current\x18\x05 \x01(\x05\x12\x43\n\x1elast_current_reading_milliamps\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12\x35\n\x11last_run_end_time\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12 \n\x0bwire_status\x18\x08 \x01(\x0e\x32\x0b.WireStatus\"i\n\x06Health\x12\x08\n\x04GOOD\x10\x00\x12\x0b\n\x07WARNING\x10\x01\x12\t\n\x05\x45RROR\x10\x02\x12\r\n\tOPEN_LINE\x10\x03\x12\x10\n\x0cOVER_CURRENT\x10\x04\x12\x11\n\rUNDER_CURRENT\x10\x05\x12\t\n\x05\x43HECK\x10\x06\"\xd2\x03\n\rFlexNodeState\x12.\n\tflex_type\x18\x01 \x01(\x0e\x32\x1b.FlexNodeState.FlexNodeType\x12\x11\n\tdevice_id\x18\x02 \x01(\t\x12\x10\n\x08\x66lex_pin\x18\x03 \x01(\t\x12\x0e\n\x06paired\x18\x04 \x01(\x08\x12\x16\n\x0e\x63orrect_config\x18\x05 \x01(\x08\x12\x32\n\x0elast_heartbeat\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x32\n\rbattery_level\x18\x07 \x01(\x0e\x32\x1b.FlexNodeState.BatteryLevel\x12\x30\n\x0clink_quality\x18\x08 \x01(\x0e\x32\x1a.FlexNodeState.LinkQuality\x12\x1c\n\x14link_quality_reading\x18\t \x01(\x02\"\x18\n\x0c\x46lexNodeType\x12\x08\n\x04\x46LOW\x10\x00\"1\n\x0c\x42\x61tteryLevel\x12\x0f\n\x0b\x42\x41TTERY_LOW\x10\x00\x12\x10\n\x0c\x42\x41TTERY_GOOD\x10\x01\"?\n\x0bLinkQuality\x12\r\n\tLINK_POOR\x10\x00\x12\r\n\tLINK_GOOD\x10\x01\x12\x12\n\x0eLINK_EXCELLENT\x10\x02*i\n\nWireStatus\x12\x08\n\x04GOOD\x10\x00\x12\r\n\tOPEN_LINE\x10\x01\x12\x11\n\rUNDER_CURRENT\x10\x02\x12\r\n\tCHECK_LOW\x10\x03\x12\x0e\n\nCHECK_HIGH\x10\x04\x12\x10\n\x0cOVER_CURRENT\x10\x05\x42\x19\n\x15\x63om.rachio.api.deviceP\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
-_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, "controller_state_pb2", _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'controller_state_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-    _globals["DESCRIPTOR"]._loaded_options = None
-    _globals["DESCRIPTOR"]._serialized_options = b"\n\025com.rachio.api.deviceP\001"
-    _globals["_ZONESTATE"].fields_by_name["health"]._loaded_options = None
-    _globals["_ZONESTATE"].fields_by_name["health"]._serialized_options = b"\030\001"
-    _globals["_WIRESTATUS"]._serialized_start = 2660
-    _globals["_WIRESTATUS"]._serialized_end = 2765
-    _globals["_CONTROLLERSTATE"]._serialized_start = 92
-    _globals["_CONTROLLERSTATE"]._serialized_end = 1329
-    _globals["_CONTROLLERSTATE_STATE"]._serialized_start = 963
-    _globals["_CONTROLLERSTATE_STATE"]._serialized_end = 1135
-    _globals["_CONTROLLERSTATE_DESIREDSTATE"]._serialized_start = 1137
-    _globals["_CONTROLLERSTATE_DESIREDSTATE"]._serialized_end = 1192
-    _globals["_CONTROLLERSTATE_HEALTH"]._serialized_start = 1194
-    _globals["_CONTROLLERSTATE_HEALTH"]._serialized_end = 1251
-    _globals["_CONTROLLERSTATE_LIGHTBARSETTING"]._serialized_start = 1253
-    _globals["_CONTROLLERSTATE_LIGHTBARSETTING"]._serialized_end = 1329
-    _globals["_IMMEDIATESCHEDULERUN"]._serialized_start = 1332
-    _globals["_IMMEDIATESCHEDULERUN"]._serialized_end = 1491
-    _globals["_IMMEDIATESCHEDULERUN_SCHEDULETYPE"]._serialized_start = 1450
-    _globals["_IMMEDIATESCHEDULERUN_SCHEDULETYPE"]._serialized_end = 1491
-    _globals["_ZONERUN"]._serialized_start = 1494
-    _globals["_ZONERUN"]._serialized_end = 1717
-    _globals["_ZONERUN_RUNTYPE"]._serialized_start = 1673
-    _globals["_ZONERUN_RUNTYPE"]._serialized_end = 1717
-    _globals["_ZONESTATE"]._serialized_start = 1720
-    _globals["_ZONESTATE"]._serialized_end = 2189
-    _globals["_ZONESTATE_HEALTH"]._serialized_start = 2084
-    _globals["_ZONESTATE_HEALTH"]._serialized_end = 2189
-    _globals["_FLEXNODESTATE"]._serialized_start = 2192
-    _globals["_FLEXNODESTATE"]._serialized_end = 2658
-    _globals["_FLEXNODESTATE_FLEXNODETYPE"]._serialized_start = 2518
-    _globals["_FLEXNODESTATE_FLEXNODETYPE"]._serialized_end = 2542
-    _globals["_FLEXNODESTATE_BATTERYLEVEL"]._serialized_start = 2544
-    _globals["_FLEXNODESTATE_BATTERYLEVEL"]._serialized_end = 2593
-    _globals["_FLEXNODESTATE_LINKQUALITY"]._serialized_start = 2595
-    _globals["_FLEXNODESTATE_LINKQUALITY"]._serialized_end = 2658
+  _globals['DESCRIPTOR']._loaded_options = None
+  _globals['DESCRIPTOR']._serialized_options = b'\n\025com.rachio.api.deviceP\001'
+  _globals['_ZONESTATE'].fields_by_name['health']._loaded_options = None
+  _globals['_ZONESTATE'].fields_by_name['health']._serialized_options = b'\030\001'
+  _globals['_WIRESTATUS']._serialized_start=2660
+  _globals['_WIRESTATUS']._serialized_end=2765
+  _globals['_CONTROLLERSTATE']._serialized_start=92
+  _globals['_CONTROLLERSTATE']._serialized_end=1329
+  _globals['_CONTROLLERSTATE_STATE']._serialized_start=963
+  _globals['_CONTROLLERSTATE_STATE']._serialized_end=1135
+  _globals['_CONTROLLERSTATE_DESIREDSTATE']._serialized_start=1137
+  _globals['_CONTROLLERSTATE_DESIREDSTATE']._serialized_end=1192
+  _globals['_CONTROLLERSTATE_HEALTH']._serialized_start=1194
+  _globals['_CONTROLLERSTATE_HEALTH']._serialized_end=1251
+  _globals['_CONTROLLERSTATE_LIGHTBARSETTING']._serialized_start=1253
+  _globals['_CONTROLLERSTATE_LIGHTBARSETTING']._serialized_end=1329
+  _globals['_IMMEDIATESCHEDULERUN']._serialized_start=1332
+  _globals['_IMMEDIATESCHEDULERUN']._serialized_end=1491
+  _globals['_IMMEDIATESCHEDULERUN_SCHEDULETYPE']._serialized_start=1450
+  _globals['_IMMEDIATESCHEDULERUN_SCHEDULETYPE']._serialized_end=1491
+  _globals['_ZONERUN']._serialized_start=1494
+  _globals['_ZONERUN']._serialized_end=1717
+  _globals['_ZONERUN_RUNTYPE']._serialized_start=1673
+  _globals['_ZONERUN_RUNTYPE']._serialized_end=1717
+  _globals['_ZONESTATE']._serialized_start=1720
+  _globals['_ZONESTATE']._serialized_end=2189
+  _globals['_ZONESTATE_HEALTH']._serialized_start=2084
+  _globals['_ZONESTATE_HEALTH']._serialized_end=2189
+  _globals['_FLEXNODESTATE']._serialized_start=2192
+  _globals['_FLEXNODESTATE']._serialized_end=2658
+  _globals['_FLEXNODESTATE_FLEXNODETYPE']._serialized_start=2518
+  _globals['_FLEXNODESTATE_FLEXNODETYPE']._serialized_end=2542
+  _globals['_FLEXNODESTATE_BATTERYLEVEL']._serialized_start=2544
+  _globals['_FLEXNODESTATE_BATTERYLEVEL']._serialized_end=2593
+  _globals['_FLEXNODESTATE_LINKQUALITY']._serialized_start=2595
+  _globals['_FLEXNODESTATE_LINKQUALITY']._serialized_end=2658
 # @@protoc_insertion_point(module_scope)

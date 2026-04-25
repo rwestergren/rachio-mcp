@@ -15,23 +15,12 @@ class WeatherStationType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     NATIONAL: _ClassVar[WeatherStationType]
     PWS: _ClassVar[WeatherStationType]
     WEATHER_FLOW: _ClassVar[WeatherStationType]
-
 NATIONAL: WeatherStationType
 PWS: WeatherStationType
 WEATHER_FLOW: WeatherStationType
 
 class VirtualWeatherStation(_message.Message):
-    __slots__ = (
-        "id",
-        "station_id",
-        "geo_point",
-        "location_id",
-        "has_precip",
-        "stationType",
-        "created",
-        "updated",
-        "distance",
-    )
+    __slots__ = ("id", "station_id", "geo_point", "location_id", "has_precip", "stationType", "created", "updated", "distance")
     ID_FIELD_NUMBER: _ClassVar[int]
     STATION_ID_FIELD_NUMBER: _ClassVar[int]
     GEO_POINT_FIELD_NUMBER: _ClassVar[int]
@@ -50,36 +39,10 @@ class VirtualWeatherStation(_message.Message):
     created: _timestamp_pb2.Timestamp
     updated: _timestamp_pb2.Timestamp
     distance: float
-    def __init__(
-        self,
-        id: _Optional[str] = ...,
-        station_id: _Optional[str] = ...,
-        geo_point: _Optional[_Union[_core_pb2.GeoPoint, _Mapping]] = ...,
-        location_id: _Optional[str] = ...,
-        has_precip: bool = ...,
-        stationType: _Optional[_Union[WeatherStationType, str]] = ...,
-        created: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        updated: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        distance: _Optional[float] = ...,
-    ) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., station_id: _Optional[str] = ..., geo_point: _Optional[_Union[_core_pb2.GeoPoint, _Mapping]] = ..., location_id: _Optional[str] = ..., has_precip: bool = ..., stationType: _Optional[_Union[WeatherStationType, str]] = ..., created: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., distance: _Optional[float] = ...) -> None: ...
 
 class WeatherStation(_message.Message):
-    __slots__ = (
-        "station_id",
-        "geo_point",
-        "city",
-        "state",
-        "country",
-        "has_precip",
-        "stationType",
-        "more_info_url",
-        "distance",
-        "elevation",
-    )
+    __slots__ = ("station_id", "geo_point", "city", "state", "country", "has_precip", "stationType", "more_info_url", "distance", "elevation")
     STATION_ID_FIELD_NUMBER: _ClassVar[int]
     GEO_POINT_FIELD_NUMBER: _ClassVar[int]
     CITY_FIELD_NUMBER: _ClassVar[int]
@@ -100,16 +63,4 @@ class WeatherStation(_message.Message):
     more_info_url: str
     distance: float
     elevation: int
-    def __init__(
-        self,
-        station_id: _Optional[str] = ...,
-        geo_point: _Optional[_Union[_core_pb2.GeoPoint, _Mapping]] = ...,
-        city: _Optional[str] = ...,
-        state: _Optional[str] = ...,
-        country: _Optional[str] = ...,
-        has_precip: bool = ...,
-        stationType: _Optional[_Union[WeatherStationType, str]] = ...,
-        more_info_url: _Optional[str] = ...,
-        distance: _Optional[float] = ...,
-        elevation: _Optional[int] = ...,
-    ) -> None: ...
+    def __init__(self, station_id: _Optional[str] = ..., geo_point: _Optional[_Union[_core_pb2.GeoPoint, _Mapping]] = ..., city: _Optional[str] = ..., state: _Optional[str] = ..., country: _Optional[str] = ..., has_precip: bool = ..., stationType: _Optional[_Union[WeatherStationType, str]] = ..., more_info_url: _Optional[str] = ..., distance: _Optional[float] = ..., elevation: _Optional[int] = ...) -> None: ...

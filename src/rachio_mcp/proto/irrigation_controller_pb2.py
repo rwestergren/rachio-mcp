@@ -4,111 +4,96 @@
 # source: irrigation_controller.proto
 # Protobuf Python Version: 6.31.1
 """Generated protocol buffer code."""
-
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import runtime_version as _runtime_version
 from google.protobuf import symbol_database as _symbol_database
 from google.protobuf.internal import builder as _builder
-
 _runtime_version.ValidateProtobufRuntimeVersion(
-    _runtime_version.Domain.PUBLIC, 6, 31, 1, "", "irrigation_controller.proto"
+    _runtime_version.Domain.PUBLIC,
+    6,
+    31,
+    1,
+    '',
+    'irrigation_controller.proto'
 )
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+import core_pb2 as core__pb2
+import alert_pb2 as alert__pb2
+from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
+import media_model_pb2 as media__model__pb2
+import feature_pb2 as feature__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
-    b'\n\x1birrigation_controller.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\ncore.proto\x1a\x0b\x61lert.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x11media_model.proto\x1a\rfeature.proto"\xf3\x03\n\x1bNascentIrrigationController\x12\x15\n\rserial_number\x18\x01 \x01(\t\x12\x13\n\x0bmac_address\x18\x02 \x01(\t\x12-\n\x05model\x18\x03 \x01(\x0e\x32\x1e.IrrigationControllerModelType\x12\x36\n\x10\x66irmware_version\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x31\n\x0bhomekit_pin\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x11\n\tactivated\x18\x06 \x01(\x08\x12\x42\n\x1c\x64\x65\x66\x61ult_firmware_version_url\x18\x07 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12>\n\x18\x64\x65\x66\x61ult_firmware_version\x18\x08 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12 \n\x18\x61\x63tivation_code_required\x18\t \x01(\x08\x12\x12\n\nprogram_id\x18\n \x01(\t\x12\x41\n\x1blast_known_firmware_version\x18\x0b \x01(\x0b\x32\x1c.google.protobuf.StringValue"\xb9\x05\n\x18Gen1IrrigationController\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1c\n\tgeo_point\x18\x03 \x01(\x0b\x32\t.GeoPoint\x12\x13\n\x0blocation_id\x18\x04 \x01(\t\x12+\n\x07\x63reated\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07zone_id\x18\x07 \x03(\t\x12\x13\n\x0bmac_address\x18\x08 \x01(\t\x12-\n\x05model\x18\t \x01(\x0e\x32\x1e.IrrigationControllerModelType\x12\x15\n\rserial_number\x18\n \x01(\t\x12\x14\n\x0cmaster_valve\x18\x0b \x01(\x08\x12,\n$linked_sensor_wiring_position_one_id\x18\x0c \x01(\t\x12\x0f\n\x07standby\x18\r \x01(\x08\x12\x14\n\x0cwater_hammer\x18\x0e \x01(\x08\x12\x14\n\x08\x61gent_id\x18\x0f \x01(\tB\x02\x18\x01\x12\x18\n\x10\x65xternal_plan_id\x18\x10 \x01(\t\x12\x0b\n\x03pin\x18\x11 \x01(\t\x12!\n\x19weather_intelligence_plus\x18\x12 \x01(\x08\x12\x1d\n\x15wellpump_delay_active\x18\x13 \x01(\x08\x12\x39\n\x13usda_hardiness_zone\x18\x14 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x37\n\x0e\x63limate_region\x18\x15 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\x02\x18\x01\x12,\n\x06koppen\x18\x16 \x01(\x0b\x32\x1c.google.protobuf.StringValue"\xcc\x05\n\x18Gen2IrrigationController\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1c\n\tgeo_point\x18\x03 \x01(\x0b\x32\t.GeoPoint\x12\x13\n\x0blocation_id\x18\x04 \x01(\t\x12+\n\x07\x63reated\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07zone_id\x18\x07 \x03(\t\x12\x13\n\x0bmac_address\x18\x08 \x01(\t\x12-\n\x05model\x18\t \x01(\x0e\x32\x1e.IrrigationControllerModelType\x12\x15\n\rserial_number\x18\n \x01(\t\x12\x14\n\x0cmaster_valve\x18\x0b \x01(\x08\x12,\n$linked_sensor_wiring_position_one_id\x18\x0c \x01(\t\x12,\n$linked_sensor_wiring_position_two_id\x18\r \x01(\t\x12\x0f\n\x07standby\x18\x0e \x01(\x08\x12\x14\n\x0cwater_hammer\x18\x0f \x01(\x08\x12\x0b\n\x03pin\x18\x10 \x01(\t\x12\x13\n\x0bhomekit_pin\x18\x11 \x01(\t\x12!\n\x19weather_intelligence_plus\x18\x12 \x01(\x08\x12\x1d\n\x15wellpump_delay_active\x18\x13 \x01(\x08\x12\x39\n\x13usda_hardiness_zone\x18\x14 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x37\n\x0e\x63limate_region\x18\x15 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\x02\x18\x01\x12,\n\x06koppen\x18\x16 \x01(\x0b\x32\x1c.google.protobuf.StringValue"\xed\x05\n\x18Gen3IrrigationController\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1c\n\tgeo_point\x18\x03 \x01(\x0b\x32\t.GeoPoint\x12\x13\n\x0blocation_id\x18\x04 \x01(\t\x12+\n\x07\x63reated\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07zone_id\x18\x07 \x03(\t\x12\x13\n\x0bmac_address\x18\x08 \x01(\t\x12-\n\x05model\x18\t \x01(\x0e\x32\x1e.IrrigationControllerModelType\x12\x15\n\rserial_number\x18\n \x01(\t\x12\x14\n\x0cmaster_valve\x18\x0b \x01(\x08\x12,\n$linked_sensor_wiring_position_one_id\x18\x0c \x01(\t\x12,\n$linked_sensor_wiring_position_two_id\x18\r \x01(\t\x12\x0f\n\x07standby\x18\x0e \x01(\x08\x12\x14\n\x0cwater_hammer\x18\x0f \x01(\x08\x12\x0b\n\x03pin\x18\x10 \x01(\t\x12\x13\n\x0bhomekit_pin\x18\x11 \x01(\t\x12!\n\x19weather_intelligence_plus\x18\x12 \x01(\x08\x12\x1d\n\x15wellpump_delay_active\x18\x13 \x01(\x08\x12\x1f\n\x17wireless_flow_sensor_id\x18\x14 \x03(\t\x12\x39\n\x13usda_hardiness_zone\x18\x15 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x37\n\x0e\x63limate_region\x18\x16 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\x02\x18\x01\x12,\n\x06koppen\x18\x17 \x01(\x0b\x32\x1c.google.protobuf.StringValue"\xbd\x03\n\x1bVirtualIrrigationController\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1c\n\tgeo_point\x18\x03 \x01(\x0b\x32\t.GeoPoint\x12\x13\n\x0blocation_id\x18\x04 \x01(\t\x12+\n\x07\x63reated\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07zone_id\x18\x07 \x03(\t\x12-\n\x05model\x18\x08 \x01(\x0e\x32\x1e.IrrigationControllerModelType\x12\x15\n\rserial_number\x18\t \x01(\t\x12\x39\n\x13usda_hardiness_zone\x18\n \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x37\n\x0e\x63limate_region\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\x02\x18\x01\x12,\n\x06koppen\x18\x0c \x01(\x0b\x32\x1c.google.protobuf.StringValue"\xc6\x01\n\x10\x41ppMessageBanner\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tentity_id\x18\x02 \x01(\t\x12\x18\n\x04type\x18\x03 \x01(\x0e\x32\n.AlertType\x12\r\n\x05title\x18\x04 \x01(\t\x12\x10\n\x08\x61rchived\x18\x05 \x01(\x08\x12+\n\x07\x63reated\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp"E\n\x1c\x46lowCalibrationResultWrapper\x12%\n\x05value\x18\x01 \x01(\x0e\x32\x16.FlowCalibrationResult"5\n\x14\x41\x63tivityLevelWrapper\x12\x1d\n\x05value\x18\x01 \x01(\x0e\x32\x0e.ActivityLevel"/\n\x11YardHealthWrapper\x12\x1a\n\x05value\x18\x01 \x01(\x0e\x32\x0b.YardHealth"+\n\x0fSoilTypeWrapper\x12\x18\n\x05value\x18\x01 \x01(\x0e\x32\t.SoilType"+\n\x0f\x43ropTypeWrapper\x12\x18\n\x05value\x18\x01 \x01(\x0e\x32\t.CropType"/\n\x11NozzleTypeWrapper\x12\x1a\n\x05value\x18\x01 \x01(\x0e\x32\x0b.NozzleType"3\n\x13\x45xposureTypeWrapper\x12\x1c\n\x05value\x18\x01 \x01(\x0e\x32\r.ExposureType"-\n\x10SlopeTypeWrapper\x12\x19\n\x05value\x18\x01 \x01(\x0e\x32\n.SlopeType"\x8c\x01\n\x1eIrrigationControllerProperties\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12-\n\x05model\x18\x02 \x01(\x0e\x32\x1e.IrrigationControllerModelType\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x1a\n\x08\x66\x65\x61tures\x18\x04 \x03(\x0b\x32\x08.Feature*\xa5\x01\n\x15\x46lowCalibrationResult\x12\x17\n\x13\x43\x41LIBRATION_SUCCESS\x10\x00\x12#\n\x1f\x43\x41LIBRATION_COMMUNICATION_ERROR\x10\x01\x12\x1c\n\x18\x43\x41LIBRATION_ZERO_READING\x10\x02\x12\x18\n\x14\x43\x41LIBRATION_OVERFLOW\x10\x03\x12\x16\n\x12\x43\x41LIBRATION_MANUAL\x10\x04*I\n\rActivityLevel\x12\x11\n\rHIGH_ACTIVITY\x10\x00\x12\x13\n\x0fMEDIUM_ACTIVITY\x10\x01\x12\x10\n\x0cLOW_ACTIVITY\x10\x02*>\n\nYardHealth\x12\x10\n\x0cHEALTHY_YARD\x10\x00\x12\x0f\n\x0bPATCHY_YARD\x10\x01\x12\r\n\tBARE_YARD\x10\x02*g\n\x08SoilType\x12\x08\n\x04SAND\x10\x00\x12\x08\n\x04LOAM\x10\x01\x12\x08\n\x04\x43LAY\x10\x02\x12\x0e\n\nLOAMY_SAND\x10\x04\x12\x0e\n\nSANDY_LOAM\x10\x05\x12\r\n\tCLAY_LOAM\x10\x06\x12\x0e\n\nSILTY_CLAY\x10\x07*\x96\x01\n\x08\x43ropType\x12\x15\n\x11\x43OOL_SEASON_GRASS\x10\x00\x12\x15\n\x11WARM_SEASON_GRASS\x10\x01\x12\n\n\x06SHRUBS\x10\x02\x12\r\n\tPERENNIAL\x10\x03\x12\t\n\x05TREES\x10\x04\x12\n\n\x06\x41NNUAL\x10\x05\x12\r\n\tXERISCAPE\x10\x06\x12\n\n\x06GARDEN\x10\x07\x12\x0f\n\x0b\x46LOWER_BEDS\x10\x08*\xb9\x01\n\nNozzleType\x12\x14\n\x10\x46IXED_SPRAY_HEAD\x10\x00\x12\x0e\n\nROTOR_HEAD\x10\x01\x12\x11\n\rROTARY_NOZZLE\x10\x02\x12\x0b\n\x07\x45MITTER\x10\x03\x12\x0b\n\x07\x42UBBLER\x10\x04\x12\n\n\x06MISTER\x10\x05\x12\x0c\n\x08\x44RIPLINE\x10\x06\x12\n\n\x06K_RAIN\x10\x07\x12\x15\n\x11HUNTER_MP_ROTATOR\x10\x08\x12\x1b\n\x17RAIN_BIRD_ROTARY_NOZZLE\x10\t*T\n\x0c\x45xposureType\x12\x10\n\x0cMOSTLY_SHADE\x10\x00\x12\x11\n\rLOTS_OF_SHADE\x10\x01\x12\x0e\n\nSOME_SHADE\x10\x02\x12\x0f\n\x0bLOTS_OF_SUN\x10\x03*L\n\tSlopeType\x12\x0e\n\nZERO_THREE\x10\x00\x12\x0c\n\x08\x46OUR_SIX\x10\x01\x12\x10\n\x0cSEVEN_TWELVE\x10\x02\x12\x0f\n\x0bOVER_TWELVE\x10\x03*\xff\x05\n\x1dIrrigationControllerModelType\x12\x15\n\x11GENERATION1_8ZONE\x10\x00\x12\x16\n\x12GENERATION1_16ZONE\x10\x01\x12\x15\n\x11GENERATION2_8ZONE\x10\x02\x12\x16\n\x12GENERATION2_16ZONE\x10\x03\x12\x11\n\rVIRTUAL_8ZONE\x10\x0c\x12\x12\n\x0eVIRTUAL_12ZONE\x10\r\x12\x12\n\x0eVIRTUAL_16ZONE\x10\x0e\x12\x15\n\x11GENERATION3_4ZONE\x10\x06\x12\x15\n\x11GENERATION3_6ZONE\x10\x07\x12\x15\n\x11GENERATION3_8ZONE\x10\x04\x12\x16\n\x12GENERATION3_10ZONE\x10\x08\x12\x16\n\x12GENERATION3_12ZONE\x10\t\x12\x16\n\x12GENERATION3_14ZONE\x10\n\x12\x16\n\x12GENERATION3_16ZONE\x10\x05\x12\x19\n\x15GENERATION3_4ZONE_USI\x10\x14\x12\x19\n\x15GENERATION3_6ZONE_USI\x10\x15\x12\x19\n\x15GENERATION3_8ZONE_USI\x10\x10\x12\x1a\n\x16GENERATION3_10ZONE_USI\x10\x16\x12\x1a\n\x16GENERATION3_12ZONE_USI\x10\x17\x12\x1a\n\x16GENERATION3_14ZONE_USI\x10\x18\x12\x1a\n\x16GENERATION3_16ZONE_USI\x10\x11\x12\x1a\n\x16GENERATION3_8ZONE_LITE\x10\x0f\x12\x19\n\x15GENERATION3_6ZONE_PRO\x10\x1b\x12\x19\n\x15GENERATION3_8ZONE_PRO\x10\x12\x12\x1a\n\x16GENERATION3_16ZONE_PRO\x10\x13\x12\x1d\n\x19GENERATION3_6ZONE_USI_PRO\x10\x1c\x12\x1d\n\x19GENERATION3_8ZONE_USI_PRO\x10\x19\x12\x1e\n\x1aGENERATION3_16ZONE_USI_PRO\x10\x1a\x12\x13\n\x0fUNASSIGNED_GEN3\x10\x0b\x42\x19\n\x15\x63om.rachio.api.deviceP\x01\x62\x06proto3'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1birrigation_controller.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\ncore.proto\x1a\x0b\x61lert.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x11media_model.proto\x1a\rfeature.proto\"\xf3\x03\n\x1bNascentIrrigationController\x12\x15\n\rserial_number\x18\x01 \x01(\t\x12\x13\n\x0bmac_address\x18\x02 \x01(\t\x12-\n\x05model\x18\x03 \x01(\x0e\x32\x1e.IrrigationControllerModelType\x12\x36\n\x10\x66irmware_version\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x31\n\x0bhomekit_pin\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x11\n\tactivated\x18\x06 \x01(\x08\x12\x42\n\x1c\x64\x65\x66\x61ult_firmware_version_url\x18\x07 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12>\n\x18\x64\x65\x66\x61ult_firmware_version\x18\x08 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12 \n\x18\x61\x63tivation_code_required\x18\t \x01(\x08\x12\x12\n\nprogram_id\x18\n \x01(\t\x12\x41\n\x1blast_known_firmware_version\x18\x0b \x01(\x0b\x32\x1c.google.protobuf.StringValue\"\xb9\x05\n\x18Gen1IrrigationController\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1c\n\tgeo_point\x18\x03 \x01(\x0b\x32\t.GeoPoint\x12\x13\n\x0blocation_id\x18\x04 \x01(\t\x12+\n\x07\x63reated\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07zone_id\x18\x07 \x03(\t\x12\x13\n\x0bmac_address\x18\x08 \x01(\t\x12-\n\x05model\x18\t \x01(\x0e\x32\x1e.IrrigationControllerModelType\x12\x15\n\rserial_number\x18\n \x01(\t\x12\x14\n\x0cmaster_valve\x18\x0b \x01(\x08\x12,\n$linked_sensor_wiring_position_one_id\x18\x0c \x01(\t\x12\x0f\n\x07standby\x18\r \x01(\x08\x12\x14\n\x0cwater_hammer\x18\x0e \x01(\x08\x12\x14\n\x08\x61gent_id\x18\x0f \x01(\tB\x02\x18\x01\x12\x18\n\x10\x65xternal_plan_id\x18\x10 \x01(\t\x12\x0b\n\x03pin\x18\x11 \x01(\t\x12!\n\x19weather_intelligence_plus\x18\x12 \x01(\x08\x12\x1d\n\x15wellpump_delay_active\x18\x13 \x01(\x08\x12\x39\n\x13usda_hardiness_zone\x18\x14 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x37\n\x0e\x63limate_region\x18\x15 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\x02\x18\x01\x12,\n\x06koppen\x18\x16 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"\xcc\x05\n\x18Gen2IrrigationController\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1c\n\tgeo_point\x18\x03 \x01(\x0b\x32\t.GeoPoint\x12\x13\n\x0blocation_id\x18\x04 \x01(\t\x12+\n\x07\x63reated\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07zone_id\x18\x07 \x03(\t\x12\x13\n\x0bmac_address\x18\x08 \x01(\t\x12-\n\x05model\x18\t \x01(\x0e\x32\x1e.IrrigationControllerModelType\x12\x15\n\rserial_number\x18\n \x01(\t\x12\x14\n\x0cmaster_valve\x18\x0b \x01(\x08\x12,\n$linked_sensor_wiring_position_one_id\x18\x0c \x01(\t\x12,\n$linked_sensor_wiring_position_two_id\x18\r \x01(\t\x12\x0f\n\x07standby\x18\x0e \x01(\x08\x12\x14\n\x0cwater_hammer\x18\x0f \x01(\x08\x12\x0b\n\x03pin\x18\x10 \x01(\t\x12\x13\n\x0bhomekit_pin\x18\x11 \x01(\t\x12!\n\x19weather_intelligence_plus\x18\x12 \x01(\x08\x12\x1d\n\x15wellpump_delay_active\x18\x13 \x01(\x08\x12\x39\n\x13usda_hardiness_zone\x18\x14 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x37\n\x0e\x63limate_region\x18\x15 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\x02\x18\x01\x12,\n\x06koppen\x18\x16 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"\xed\x05\n\x18Gen3IrrigationController\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1c\n\tgeo_point\x18\x03 \x01(\x0b\x32\t.GeoPoint\x12\x13\n\x0blocation_id\x18\x04 \x01(\t\x12+\n\x07\x63reated\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07zone_id\x18\x07 \x03(\t\x12\x13\n\x0bmac_address\x18\x08 \x01(\t\x12-\n\x05model\x18\t \x01(\x0e\x32\x1e.IrrigationControllerModelType\x12\x15\n\rserial_number\x18\n \x01(\t\x12\x14\n\x0cmaster_valve\x18\x0b \x01(\x08\x12,\n$linked_sensor_wiring_position_one_id\x18\x0c \x01(\t\x12,\n$linked_sensor_wiring_position_two_id\x18\r \x01(\t\x12\x0f\n\x07standby\x18\x0e \x01(\x08\x12\x14\n\x0cwater_hammer\x18\x0f \x01(\x08\x12\x0b\n\x03pin\x18\x10 \x01(\t\x12\x13\n\x0bhomekit_pin\x18\x11 \x01(\t\x12!\n\x19weather_intelligence_plus\x18\x12 \x01(\x08\x12\x1d\n\x15wellpump_delay_active\x18\x13 \x01(\x08\x12\x1f\n\x17wireless_flow_sensor_id\x18\x14 \x03(\t\x12\x39\n\x13usda_hardiness_zone\x18\x15 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x37\n\x0e\x63limate_region\x18\x16 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\x02\x18\x01\x12,\n\x06koppen\x18\x17 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"\xbd\x03\n\x1bVirtualIrrigationController\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1c\n\tgeo_point\x18\x03 \x01(\x0b\x32\t.GeoPoint\x12\x13\n\x0blocation_id\x18\x04 \x01(\t\x12+\n\x07\x63reated\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07zone_id\x18\x07 \x03(\t\x12-\n\x05model\x18\x08 \x01(\x0e\x32\x1e.IrrigationControllerModelType\x12\x15\n\rserial_number\x18\t \x01(\t\x12\x39\n\x13usda_hardiness_zone\x18\n \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x37\n\x0e\x63limate_region\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB\x02\x18\x01\x12,\n\x06koppen\x18\x0c \x01(\x0b\x32\x1c.google.protobuf.StringValue\"\xc6\x01\n\x10\x41ppMessageBanner\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tentity_id\x18\x02 \x01(\t\x12\x18\n\x04type\x18\x03 \x01(\x0e\x32\n.AlertType\x12\r\n\x05title\x18\x04 \x01(\t\x12\x10\n\x08\x61rchived\x18\x05 \x01(\x08\x12+\n\x07\x63reated\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"E\n\x1c\x46lowCalibrationResultWrapper\x12%\n\x05value\x18\x01 \x01(\x0e\x32\x16.FlowCalibrationResult\"5\n\x14\x41\x63tivityLevelWrapper\x12\x1d\n\x05value\x18\x01 \x01(\x0e\x32\x0e.ActivityLevel\"/\n\x11YardHealthWrapper\x12\x1a\n\x05value\x18\x01 \x01(\x0e\x32\x0b.YardHealth\"+\n\x0fSoilTypeWrapper\x12\x18\n\x05value\x18\x01 \x01(\x0e\x32\t.SoilType\"+\n\x0f\x43ropTypeWrapper\x12\x18\n\x05value\x18\x01 \x01(\x0e\x32\t.CropType\"/\n\x11NozzleTypeWrapper\x12\x1a\n\x05value\x18\x01 \x01(\x0e\x32\x0b.NozzleType\"3\n\x13\x45xposureTypeWrapper\x12\x1c\n\x05value\x18\x01 \x01(\x0e\x32\r.ExposureType\"-\n\x10SlopeTypeWrapper\x12\x19\n\x05value\x18\x01 \x01(\x0e\x32\n.SlopeType\"\x8c\x01\n\x1eIrrigationControllerProperties\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12-\n\x05model\x18\x02 \x01(\x0e\x32\x1e.IrrigationControllerModelType\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x1a\n\x08\x66\x65\x61tures\x18\x04 \x03(\x0b\x32\x08.Feature*\xa5\x01\n\x15\x46lowCalibrationResult\x12\x17\n\x13\x43\x41LIBRATION_SUCCESS\x10\x00\x12#\n\x1f\x43\x41LIBRATION_COMMUNICATION_ERROR\x10\x01\x12\x1c\n\x18\x43\x41LIBRATION_ZERO_READING\x10\x02\x12\x18\n\x14\x43\x41LIBRATION_OVERFLOW\x10\x03\x12\x16\n\x12\x43\x41LIBRATION_MANUAL\x10\x04*I\n\rActivityLevel\x12\x11\n\rHIGH_ACTIVITY\x10\x00\x12\x13\n\x0fMEDIUM_ACTIVITY\x10\x01\x12\x10\n\x0cLOW_ACTIVITY\x10\x02*>\n\nYardHealth\x12\x10\n\x0cHEALTHY_YARD\x10\x00\x12\x0f\n\x0bPATCHY_YARD\x10\x01\x12\r\n\tBARE_YARD\x10\x02*g\n\x08SoilType\x12\x08\n\x04SAND\x10\x00\x12\x08\n\x04LOAM\x10\x01\x12\x08\n\x04\x43LAY\x10\x02\x12\x0e\n\nLOAMY_SAND\x10\x04\x12\x0e\n\nSANDY_LOAM\x10\x05\x12\r\n\tCLAY_LOAM\x10\x06\x12\x0e\n\nSILTY_CLAY\x10\x07*\x96\x01\n\x08\x43ropType\x12\x15\n\x11\x43OOL_SEASON_GRASS\x10\x00\x12\x15\n\x11WARM_SEASON_GRASS\x10\x01\x12\n\n\x06SHRUBS\x10\x02\x12\r\n\tPERENNIAL\x10\x03\x12\t\n\x05TREES\x10\x04\x12\n\n\x06\x41NNUAL\x10\x05\x12\r\n\tXERISCAPE\x10\x06\x12\n\n\x06GARDEN\x10\x07\x12\x0f\n\x0b\x46LOWER_BEDS\x10\x08*\xb9\x01\n\nNozzleType\x12\x14\n\x10\x46IXED_SPRAY_HEAD\x10\x00\x12\x0e\n\nROTOR_HEAD\x10\x01\x12\x11\n\rROTARY_NOZZLE\x10\x02\x12\x0b\n\x07\x45MITTER\x10\x03\x12\x0b\n\x07\x42UBBLER\x10\x04\x12\n\n\x06MISTER\x10\x05\x12\x0c\n\x08\x44RIPLINE\x10\x06\x12\n\n\x06K_RAIN\x10\x07\x12\x15\n\x11HUNTER_MP_ROTATOR\x10\x08\x12\x1b\n\x17RAIN_BIRD_ROTARY_NOZZLE\x10\t*T\n\x0c\x45xposureType\x12\x10\n\x0cMOSTLY_SHADE\x10\x00\x12\x11\n\rLOTS_OF_SHADE\x10\x01\x12\x0e\n\nSOME_SHADE\x10\x02\x12\x0f\n\x0bLOTS_OF_SUN\x10\x03*L\n\tSlopeType\x12\x0e\n\nZERO_THREE\x10\x00\x12\x0c\n\x08\x46OUR_SIX\x10\x01\x12\x10\n\x0cSEVEN_TWELVE\x10\x02\x12\x0f\n\x0bOVER_TWELVE\x10\x03*\xff\x05\n\x1dIrrigationControllerModelType\x12\x15\n\x11GENERATION1_8ZONE\x10\x00\x12\x16\n\x12GENERATION1_16ZONE\x10\x01\x12\x15\n\x11GENERATION2_8ZONE\x10\x02\x12\x16\n\x12GENERATION2_16ZONE\x10\x03\x12\x11\n\rVIRTUAL_8ZONE\x10\x0c\x12\x12\n\x0eVIRTUAL_12ZONE\x10\r\x12\x12\n\x0eVIRTUAL_16ZONE\x10\x0e\x12\x15\n\x11GENERATION3_4ZONE\x10\x06\x12\x15\n\x11GENERATION3_6ZONE\x10\x07\x12\x15\n\x11GENERATION3_8ZONE\x10\x04\x12\x16\n\x12GENERATION3_10ZONE\x10\x08\x12\x16\n\x12GENERATION3_12ZONE\x10\t\x12\x16\n\x12GENERATION3_14ZONE\x10\n\x12\x16\n\x12GENERATION3_16ZONE\x10\x05\x12\x19\n\x15GENERATION3_4ZONE_USI\x10\x14\x12\x19\n\x15GENERATION3_6ZONE_USI\x10\x15\x12\x19\n\x15GENERATION3_8ZONE_USI\x10\x10\x12\x1a\n\x16GENERATION3_10ZONE_USI\x10\x16\x12\x1a\n\x16GENERATION3_12ZONE_USI\x10\x17\x12\x1a\n\x16GENERATION3_14ZONE_USI\x10\x18\x12\x1a\n\x16GENERATION3_16ZONE_USI\x10\x11\x12\x1a\n\x16GENERATION3_8ZONE_LITE\x10\x0f\x12\x19\n\x15GENERATION3_6ZONE_PRO\x10\x1b\x12\x19\n\x15GENERATION3_8ZONE_PRO\x10\x12\x12\x1a\n\x16GENERATION3_16ZONE_PRO\x10\x13\x12\x1d\n\x19GENERATION3_6ZONE_USI_PRO\x10\x1c\x12\x1d\n\x19GENERATION3_8ZONE_USI_PRO\x10\x19\x12\x1e\n\x1aGENERATION3_16ZONE_USI_PRO\x10\x1a\x12\x13\n\x0fUNASSIGNED_GEN3\x10\x0b\x42\x19\n\x15\x63om.rachio.api.deviceP\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
-_builder.BuildTopDescriptorsAndMessages(
-    DESCRIPTOR, "irrigation_controller_pb2", _globals
-)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'irrigation_controller_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-    _globals["DESCRIPTOR"]._loaded_options = None
-    _globals["DESCRIPTOR"]._serialized_options = b"\n\025com.rachio.api.deviceP\001"
-    _globals["_GEN1IRRIGATIONCONTROLLER"].fields_by_name[
-        "agent_id"
-    ]._loaded_options = None
-    _globals["_GEN1IRRIGATIONCONTROLLER"].fields_by_name[
-        "agent_id"
-    ]._serialized_options = b"\030\001"
-    _globals["_GEN1IRRIGATIONCONTROLLER"].fields_by_name[
-        "climate_region"
-    ]._loaded_options = None
-    _globals["_GEN1IRRIGATIONCONTROLLER"].fields_by_name[
-        "climate_region"
-    ]._serialized_options = b"\030\001"
-    _globals["_GEN2IRRIGATIONCONTROLLER"].fields_by_name[
-        "climate_region"
-    ]._loaded_options = None
-    _globals["_GEN2IRRIGATIONCONTROLLER"].fields_by_name[
-        "climate_region"
-    ]._serialized_options = b"\030\001"
-    _globals["_GEN3IRRIGATIONCONTROLLER"].fields_by_name[
-        "climate_region"
-    ]._loaded_options = None
-    _globals["_GEN3IRRIGATIONCONTROLLER"].fields_by_name[
-        "climate_region"
-    ]._serialized_options = b"\030\001"
-    _globals["_VIRTUALIRRIGATIONCONTROLLER"].fields_by_name[
-        "climate_region"
-    ]._loaded_options = None
-    _globals["_VIRTUALIRRIGATIONCONTROLLER"].fields_by_name[
-        "climate_region"
-    ]._serialized_options = b"\030\001"
-    _globals["_FLOWCALIBRATIONRESULT"]._serialized_start = 4035
-    _globals["_FLOWCALIBRATIONRESULT"]._serialized_end = 4200
-    _globals["_ACTIVITYLEVEL"]._serialized_start = 4202
-    _globals["_ACTIVITYLEVEL"]._serialized_end = 4275
-    _globals["_YARDHEALTH"]._serialized_start = 4277
-    _globals["_YARDHEALTH"]._serialized_end = 4339
-    _globals["_SOILTYPE"]._serialized_start = 4341
-    _globals["_SOILTYPE"]._serialized_end = 4444
-    _globals["_CROPTYPE"]._serialized_start = 4447
-    _globals["_CROPTYPE"]._serialized_end = 4597
-    _globals["_NOZZLETYPE"]._serialized_start = 4600
-    _globals["_NOZZLETYPE"]._serialized_end = 4785
-    _globals["_EXPOSURETYPE"]._serialized_start = 4787
-    _globals["_EXPOSURETYPE"]._serialized_end = 4871
-    _globals["_SLOPETYPE"]._serialized_start = 4873
-    _globals["_SLOPETYPE"]._serialized_end = 4949
-    _globals["_IRRIGATIONCONTROLLERMODELTYPE"]._serialized_start = 4952
-    _globals["_IRRIGATIONCONTROLLERMODELTYPE"]._serialized_end = 5719
-    _globals["_NASCENTIRRIGATIONCONTROLLER"]._serialized_start = 156
-    _globals["_NASCENTIRRIGATIONCONTROLLER"]._serialized_end = 655
-    _globals["_GEN1IRRIGATIONCONTROLLER"]._serialized_start = 658
-    _globals["_GEN1IRRIGATIONCONTROLLER"]._serialized_end = 1355
-    _globals["_GEN2IRRIGATIONCONTROLLER"]._serialized_start = 1358
-    _globals["_GEN2IRRIGATIONCONTROLLER"]._serialized_end = 2074
-    _globals["_GEN3IRRIGATIONCONTROLLER"]._serialized_start = 2077
-    _globals["_GEN3IRRIGATIONCONTROLLER"]._serialized_end = 2826
-    _globals["_VIRTUALIRRIGATIONCONTROLLER"]._serialized_start = 2829
-    _globals["_VIRTUALIRRIGATIONCONTROLLER"]._serialized_end = 3274
-    _globals["_APPMESSAGEBANNER"]._serialized_start = 3277
-    _globals["_APPMESSAGEBANNER"]._serialized_end = 3475
-    _globals["_FLOWCALIBRATIONRESULTWRAPPER"]._serialized_start = 3477
-    _globals["_FLOWCALIBRATIONRESULTWRAPPER"]._serialized_end = 3546
-    _globals["_ACTIVITYLEVELWRAPPER"]._serialized_start = 3548
-    _globals["_ACTIVITYLEVELWRAPPER"]._serialized_end = 3601
-    _globals["_YARDHEALTHWRAPPER"]._serialized_start = 3603
-    _globals["_YARDHEALTHWRAPPER"]._serialized_end = 3650
-    _globals["_SOILTYPEWRAPPER"]._serialized_start = 3652
-    _globals["_SOILTYPEWRAPPER"]._serialized_end = 3695
-    _globals["_CROPTYPEWRAPPER"]._serialized_start = 3697
-    _globals["_CROPTYPEWRAPPER"]._serialized_end = 3740
-    _globals["_NOZZLETYPEWRAPPER"]._serialized_start = 3742
-    _globals["_NOZZLETYPEWRAPPER"]._serialized_end = 3789
-    _globals["_EXPOSURETYPEWRAPPER"]._serialized_start = 3791
-    _globals["_EXPOSURETYPEWRAPPER"]._serialized_end = 3842
-    _globals["_SLOPETYPEWRAPPER"]._serialized_start = 3844
-    _globals["_SLOPETYPEWRAPPER"]._serialized_end = 3889
-    _globals["_IRRIGATIONCONTROLLERPROPERTIES"]._serialized_start = 3892
-    _globals["_IRRIGATIONCONTROLLERPROPERTIES"]._serialized_end = 4032
+  _globals['DESCRIPTOR']._loaded_options = None
+  _globals['DESCRIPTOR']._serialized_options = b'\n\025com.rachio.api.deviceP\001'
+  _globals['_GEN1IRRIGATIONCONTROLLER'].fields_by_name['agent_id']._loaded_options = None
+  _globals['_GEN1IRRIGATIONCONTROLLER'].fields_by_name['agent_id']._serialized_options = b'\030\001'
+  _globals['_GEN1IRRIGATIONCONTROLLER'].fields_by_name['climate_region']._loaded_options = None
+  _globals['_GEN1IRRIGATIONCONTROLLER'].fields_by_name['climate_region']._serialized_options = b'\030\001'
+  _globals['_GEN2IRRIGATIONCONTROLLER'].fields_by_name['climate_region']._loaded_options = None
+  _globals['_GEN2IRRIGATIONCONTROLLER'].fields_by_name['climate_region']._serialized_options = b'\030\001'
+  _globals['_GEN3IRRIGATIONCONTROLLER'].fields_by_name['climate_region']._loaded_options = None
+  _globals['_GEN3IRRIGATIONCONTROLLER'].fields_by_name['climate_region']._serialized_options = b'\030\001'
+  _globals['_VIRTUALIRRIGATIONCONTROLLER'].fields_by_name['climate_region']._loaded_options = None
+  _globals['_VIRTUALIRRIGATIONCONTROLLER'].fields_by_name['climate_region']._serialized_options = b'\030\001'
+  _globals['_FLOWCALIBRATIONRESULT']._serialized_start=4035
+  _globals['_FLOWCALIBRATIONRESULT']._serialized_end=4200
+  _globals['_ACTIVITYLEVEL']._serialized_start=4202
+  _globals['_ACTIVITYLEVEL']._serialized_end=4275
+  _globals['_YARDHEALTH']._serialized_start=4277
+  _globals['_YARDHEALTH']._serialized_end=4339
+  _globals['_SOILTYPE']._serialized_start=4341
+  _globals['_SOILTYPE']._serialized_end=4444
+  _globals['_CROPTYPE']._serialized_start=4447
+  _globals['_CROPTYPE']._serialized_end=4597
+  _globals['_NOZZLETYPE']._serialized_start=4600
+  _globals['_NOZZLETYPE']._serialized_end=4785
+  _globals['_EXPOSURETYPE']._serialized_start=4787
+  _globals['_EXPOSURETYPE']._serialized_end=4871
+  _globals['_SLOPETYPE']._serialized_start=4873
+  _globals['_SLOPETYPE']._serialized_end=4949
+  _globals['_IRRIGATIONCONTROLLERMODELTYPE']._serialized_start=4952
+  _globals['_IRRIGATIONCONTROLLERMODELTYPE']._serialized_end=5719
+  _globals['_NASCENTIRRIGATIONCONTROLLER']._serialized_start=156
+  _globals['_NASCENTIRRIGATIONCONTROLLER']._serialized_end=655
+  _globals['_GEN1IRRIGATIONCONTROLLER']._serialized_start=658
+  _globals['_GEN1IRRIGATIONCONTROLLER']._serialized_end=1355
+  _globals['_GEN2IRRIGATIONCONTROLLER']._serialized_start=1358
+  _globals['_GEN2IRRIGATIONCONTROLLER']._serialized_end=2074
+  _globals['_GEN3IRRIGATIONCONTROLLER']._serialized_start=2077
+  _globals['_GEN3IRRIGATIONCONTROLLER']._serialized_end=2826
+  _globals['_VIRTUALIRRIGATIONCONTROLLER']._serialized_start=2829
+  _globals['_VIRTUALIRRIGATIONCONTROLLER']._serialized_end=3274
+  _globals['_APPMESSAGEBANNER']._serialized_start=3277
+  _globals['_APPMESSAGEBANNER']._serialized_end=3475
+  _globals['_FLOWCALIBRATIONRESULTWRAPPER']._serialized_start=3477
+  _globals['_FLOWCALIBRATIONRESULTWRAPPER']._serialized_end=3546
+  _globals['_ACTIVITYLEVELWRAPPER']._serialized_start=3548
+  _globals['_ACTIVITYLEVELWRAPPER']._serialized_end=3601
+  _globals['_YARDHEALTHWRAPPER']._serialized_start=3603
+  _globals['_YARDHEALTHWRAPPER']._serialized_end=3650
+  _globals['_SOILTYPEWRAPPER']._serialized_start=3652
+  _globals['_SOILTYPEWRAPPER']._serialized_end=3695
+  _globals['_CROPTYPEWRAPPER']._serialized_start=3697
+  _globals['_CROPTYPEWRAPPER']._serialized_end=3740
+  _globals['_NOZZLETYPEWRAPPER']._serialized_start=3742
+  _globals['_NOZZLETYPEWRAPPER']._serialized_end=3789
+  _globals['_EXPOSURETYPEWRAPPER']._serialized_start=3791
+  _globals['_EXPOSURETYPEWRAPPER']._serialized_end=3842
+  _globals['_SLOPETYPEWRAPPER']._serialized_start=3844
+  _globals['_SLOPETYPEWRAPPER']._serialized_end=3889
+  _globals['_IRRIGATIONCONTROLLERPROPERTIES']._serialized_start=3892
+  _globals['_IRRIGATIONCONTROLLERPROPERTIES']._serialized_end=4032
 # @@protoc_insertion_point(module_scope)

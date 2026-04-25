@@ -16,23 +16,7 @@ class LocationRestriction(_message.Message):
     CREATED_FIELD_NUMBER: _ClassVar[int]
     UPDATED_FIELD_NUMBER: _ClassVar[int]
     location_id: str
-    schedule_restriction_criteria: (
-        _schedule_restriction_criteria_pb2.ScheduleRestrictionCriteria
-    )
+    schedule_restriction_criteria: _schedule_restriction_criteria_pb2.ScheduleRestrictionCriteria
     created: _timestamp_pb2.Timestamp
     updated: _timestamp_pb2.Timestamp
-    def __init__(
-        self,
-        location_id: _Optional[str] = ...,
-        schedule_restriction_criteria: _Optional[
-            _Union[
-                _schedule_restriction_criteria_pb2.ScheduleRestrictionCriteria, _Mapping
-            ]
-        ] = ...,
-        created: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        updated: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-    ) -> None: ...
+    def __init__(self, location_id: _Optional[str] = ..., schedule_restriction_criteria: _Optional[_Union[_schedule_restriction_criteria_pb2.ScheduleRestrictionCriteria, _Mapping]] = ..., created: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...

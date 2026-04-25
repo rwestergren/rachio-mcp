@@ -4,53 +4,48 @@
 # source: weather_reading.proto
 # Protobuf Python Version: 6.31.1
 """Generated protocol buffer code."""
-
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import runtime_version as _runtime_version
 from google.protobuf import symbol_database as _symbol_database
 from google.protobuf.internal import builder as _builder
-
 _runtime_version.ValidateProtobufRuntimeVersion(
-    _runtime_version.Domain.PUBLIC, 6, 31, 1, "", "weather_reading.proto"
+    _runtime_version.Domain.PUBLIC,
+    6,
+    31,
+    1,
+    '',
+    'weather_reading.proto'
 )
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
 
 
+import core_pb2 as core__pb2
+import weather_type_pb2 as weather__type__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
-    b'\n\x15weather_reading.proto\x1a\ncore.proto\x1a\x12weather_type.proto"\xf0\x04\n\x0eWeatherReading\x12\x17\n\x0ftemperature_min\x18\x01 \x01(\x05\x12\x17\n\x0ftemperature_max\x18\x02 \x01(\x05\x12\x18\n\x10precip_intensity\x18\x03 \x01(\x01\x12\x1a\n\x12precip_probability\x18\x04 \x01(\x01\x12\x19\n\x11\x63\x61lculated_precip\x18\x05 \x01(\x01\x12\x12\n\nwind_speed\x18\x08 \x01(\x01\x12\x10\n\x08humidity\x18\t \x01(\x01\x12\x13\n\x0b\x63loud_cover\x18\n \x01(\x01\x12\x11\n\tdew_point\x18\x0b \x01(\x01\x12\x17\n\x0fweather_summary\x18\r \x01(\t\x12"\n\x0cweather_type\x18\x10 \x01(\x0e\x32\x0c.WeatherType\x12\x1a\n\x12weather_station_id\x18\x11 \x01(\t\x12\x13\n\x04\x64\x61te\x18\x14 \x01(\x0b\x32\x05.Date\x12\n\n\x02\x65t\x18\x15 \x01(\x01\x12\x1e\n\x0bsunriseTime\x18\x16 \x01(\x0b\x32\x05.TimeB\x02\x18\x01\x12\x1e\n\x0bsunriseDate\x18\x17 \x01(\x0b\x32\x05.DateB\x02\x18\x01\x12\x1d\n\nsunsetTime\x18\x18 \x01(\x0b\x32\x05.TimeB\x02\x18\x01\x12\x1d\n\nsunsetDate\x18\x19 \x01(\x0b\x32\x05.DateB\x02\x18\x01\x12#\n\x0creading_type\x18\x1a \x01(\x0e\x32\r.IReadingType\x12\x11\n\tis_metric\x18\x1b \x01(\x08\x12\x18\n\x10weather_type_url\x18\x1c \x01(\t\x12!\n\x12zoned_sunrise_time\x18\x1d \x01(\x0b\x32\x05.Time\x12 \n\x11zoned_sunset_time\x18\x1e \x01(\x0b\x32\x05.Time"\x82\x01\n\rWeatherNormal\x12\r\n\x05month\x18\x01 \x01(\x05\x12\x10\n\x08max_temp\x18\x02 \x01(\x01\x12\x10\n\x08min_temp\x18\x03 \x01(\x01\x12\x10\n\x08\x61vg_temp\x18\x04 \x01(\x01\x12\x0c\n\x04prcp\x18\x05 \x01(\x01\x12\x12\n\nstation_id\x18\x06 \x01(\t\x12\n\n\x02\x65t\x18\x07 \x01(\x01*,\n\x0cIReadingType\x12\x0c\n\x08OBSERVED\x10\x00\x12\x0e\n\nFORECASTED\x10\x01\x42\x1a\n\x16\x63om.rachio.api.weatherP\x01\x62\x06proto3'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15weather_reading.proto\x1a\ncore.proto\x1a\x12weather_type.proto\"\xf0\x04\n\x0eWeatherReading\x12\x17\n\x0ftemperature_min\x18\x01 \x01(\x05\x12\x17\n\x0ftemperature_max\x18\x02 \x01(\x05\x12\x18\n\x10precip_intensity\x18\x03 \x01(\x01\x12\x1a\n\x12precip_probability\x18\x04 \x01(\x01\x12\x19\n\x11\x63\x61lculated_precip\x18\x05 \x01(\x01\x12\x12\n\nwind_speed\x18\x08 \x01(\x01\x12\x10\n\x08humidity\x18\t \x01(\x01\x12\x13\n\x0b\x63loud_cover\x18\n \x01(\x01\x12\x11\n\tdew_point\x18\x0b \x01(\x01\x12\x17\n\x0fweather_summary\x18\r \x01(\t\x12\"\n\x0cweather_type\x18\x10 \x01(\x0e\x32\x0c.WeatherType\x12\x1a\n\x12weather_station_id\x18\x11 \x01(\t\x12\x13\n\x04\x64\x61te\x18\x14 \x01(\x0b\x32\x05.Date\x12\n\n\x02\x65t\x18\x15 \x01(\x01\x12\x1e\n\x0bsunriseTime\x18\x16 \x01(\x0b\x32\x05.TimeB\x02\x18\x01\x12\x1e\n\x0bsunriseDate\x18\x17 \x01(\x0b\x32\x05.DateB\x02\x18\x01\x12\x1d\n\nsunsetTime\x18\x18 \x01(\x0b\x32\x05.TimeB\x02\x18\x01\x12\x1d\n\nsunsetDate\x18\x19 \x01(\x0b\x32\x05.DateB\x02\x18\x01\x12#\n\x0creading_type\x18\x1a \x01(\x0e\x32\r.IReadingType\x12\x11\n\tis_metric\x18\x1b \x01(\x08\x12\x18\n\x10weather_type_url\x18\x1c \x01(\t\x12!\n\x12zoned_sunrise_time\x18\x1d \x01(\x0b\x32\x05.Time\x12 \n\x11zoned_sunset_time\x18\x1e \x01(\x0b\x32\x05.Time\"\x82\x01\n\rWeatherNormal\x12\r\n\x05month\x18\x01 \x01(\x05\x12\x10\n\x08max_temp\x18\x02 \x01(\x01\x12\x10\n\x08min_temp\x18\x03 \x01(\x01\x12\x10\n\x08\x61vg_temp\x18\x04 \x01(\x01\x12\x0c\n\x04prcp\x18\x05 \x01(\x01\x12\x12\n\nstation_id\x18\x06 \x01(\t\x12\n\n\x02\x65t\x18\x07 \x01(\x01*,\n\x0cIReadingType\x12\x0c\n\x08OBSERVED\x10\x00\x12\x0e\n\nFORECASTED\x10\x01\x42\x1a\n\x16\x63om.rachio.api.weatherP\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
-_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, "weather_reading_pb2", _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'weather_reading_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-    _globals["DESCRIPTOR"]._loaded_options = None
-    _globals["DESCRIPTOR"]._serialized_options = b"\n\026com.rachio.api.weatherP\001"
-    _globals["_WEATHERREADING"].fields_by_name["sunriseTime"]._loaded_options = None
-    _globals["_WEATHERREADING"].fields_by_name[
-        "sunriseTime"
-    ]._serialized_options = b"\030\001"
-    _globals["_WEATHERREADING"].fields_by_name["sunriseDate"]._loaded_options = None
-    _globals["_WEATHERREADING"].fields_by_name[
-        "sunriseDate"
-    ]._serialized_options = b"\030\001"
-    _globals["_WEATHERREADING"].fields_by_name["sunsetTime"]._loaded_options = None
-    _globals["_WEATHERREADING"].fields_by_name[
-        "sunsetTime"
-    ]._serialized_options = b"\030\001"
-    _globals["_WEATHERREADING"].fields_by_name["sunsetDate"]._loaded_options = None
-    _globals["_WEATHERREADING"].fields_by_name[
-        "sunsetDate"
-    ]._serialized_options = b"\030\001"
-    _globals["_IREADINGTYPE"]._serialized_start = 817
-    _globals["_IREADINGTYPE"]._serialized_end = 861
-    _globals["_WEATHERREADING"]._serialized_start = 58
-    _globals["_WEATHERREADING"]._serialized_end = 682
-    _globals["_WEATHERNORMAL"]._serialized_start = 685
-    _globals["_WEATHERNORMAL"]._serialized_end = 815
+  _globals['DESCRIPTOR']._loaded_options = None
+  _globals['DESCRIPTOR']._serialized_options = b'\n\026com.rachio.api.weatherP\001'
+  _globals['_WEATHERREADING'].fields_by_name['sunriseTime']._loaded_options = None
+  _globals['_WEATHERREADING'].fields_by_name['sunriseTime']._serialized_options = b'\030\001'
+  _globals['_WEATHERREADING'].fields_by_name['sunriseDate']._loaded_options = None
+  _globals['_WEATHERREADING'].fields_by_name['sunriseDate']._serialized_options = b'\030\001'
+  _globals['_WEATHERREADING'].fields_by_name['sunsetTime']._loaded_options = None
+  _globals['_WEATHERREADING'].fields_by_name['sunsetTime']._serialized_options = b'\030\001'
+  _globals['_WEATHERREADING'].fields_by_name['sunsetDate']._loaded_options = None
+  _globals['_WEATHERREADING'].fields_by_name['sunsetDate']._serialized_options = b'\030\001'
+  _globals['_IREADINGTYPE']._serialized_start=817
+  _globals['_IREADINGTYPE']._serialized_end=861
+  _globals['_WEATHERREADING']._serialized_start=58
+  _globals['_WEATHERREADING']._serialized_end=682
+  _globals['_WEATHERNORMAL']._serialized_start=685
+  _globals['_WEATHERNORMAL']._serialized_end=815
 # @@protoc_insertion_point(module_scope)

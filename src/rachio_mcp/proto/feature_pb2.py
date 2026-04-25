@@ -4,37 +4,40 @@
 # source: feature.proto
 # Protobuf Python Version: 6.31.1
 """Generated protocol buffer code."""
-
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import runtime_version as _runtime_version
 from google.protobuf import symbol_database as _symbol_database
 from google.protobuf.internal import builder as _builder
-
 _runtime_version.ValidateProtobufRuntimeVersion(
-    _runtime_version.Domain.PUBLIC, 6, 31, 1, "", "feature.proto"
+    _runtime_version.Domain.PUBLIC,
+    6,
+    31,
+    1,
+    '',
+    'feature.proto'
 )
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
-    b'\n\rfeature.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto"\xf3\x07\n\x07\x46\x65\x61ture\x12\n\n\x02id\x18\x01 \x01(\t\x12"\n\x04name\x18\x02 \x01(\x0e\x32\x14.Feature.FeatureName\x12$\n\x05group\x18\x03 \x01(\x0e\x32\x15.Feature.FeatureGroup\x12.\n\nexpiration\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07\x63reated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp"\xa7\x01\n\x0c\x46\x65\x61tureGroup\x12\x08\n\x04\x46LOW\x10\x00\x12\x18\n\x14WEATHER_INTELLIGENCE\x10\x01\x12\x0f\n\x0bYARD_MAPPER\x10\x02\x12\x11\n\rMUNI_INSIGHTS\x10\x03\x12\x07\n\x03PRO\x10\x04\x12\n\n\x06GROWTH\x10\x05\x12\r\n\tYARD_CARE\x10\x06\x12\x0c\n\x08\x46IRMWARE\x10\x07\x12\x0c\n\x08SCHEDULE\x10\x08\x12\x0f\n\x0bINTEGRATION\x10\t"\xdd\x04\n\x0b\x46\x65\x61tureName\x12\x1a\n\x16\x41\x43TUAL_USAGE_DETECTION\x10\x00\x12\x12\n\x0eLEAK_DETECTION\x10\x01\x12\x10\n\x0c\x41UTO_SHUTOFF\x10\x02\x12\x1d\n\x19WEATHER_INTELLIGENCE_PLUS\x10\x03\x12\x17\n\x13IDLE_FLOW_DETECTION\x10\x04\x12\x0c\n\x08YARD_MAP\x10\x05\x12\x0c\n\x08SEGMENTS\x10\x06\x12\x12\n\x0e\x43\x41LIBRATION_V2\x10\x07\x12\x0b\n\x07PRO_MAP\x10\x08\x12\x13\n\x0fYARDS_LIKE_MINE\x10\t\x12\x10\n\x0cYARD_CARE_UI\x10\n\x12\x1d\n\x19YARDCARE_DASHBOARD_WIDGET\x10\x0b\x12\x1c\n\x18YARDCARE_QUICK_RUN_ALERT\x10\x0c\x12\x0b\n\x07HOMEKIT\x10\r\x12\x08\n\x04LORA\x10\x0e\x12\x0b\n\x07PGG_LED\x10\x0f\x12\x17\n\x13\x46LEX_DAILY_SCHEDULE\x10\x10\x12\x19\n\x15\x46LEX_MONTHLY_SCHEDULE\x10\x11\x12\x12\n\x0e\x46IXED_SCHEDULE\x10\x12\x12\x18\n\x14WIRELESS_FLOW_SENSOR\x10\x13\x12\x16\n\x12GENERATION_HOMEKIT\x10\x14\x12\r\n\tTHRIVE_UI\x10\x15\x12\x1a\n\x16THRIVE_IN_APP_PURCHASE\x10\x16\x12\x0e\n\nWATER_PARK\x10\x17\x12\x17\n\x13\x41\x44\x41PTIVE_SCHEDULING\x10\x18\x12\x14\n\x10KUSTOMER_SUPPORT\x10\x19\x12\x17\n\x13\x41MPERAGE_MONITORING\x10\x1a\x12\x12\n\x0eWEATHER_ADJUST\x10\x1b\x42\x19\n\x15\x63om.rachio.api.deviceP\x01\x62\x06proto3'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rfeature.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\xf3\x07\n\x07\x46\x65\x61ture\x12\n\n\x02id\x18\x01 \x01(\t\x12\"\n\x04name\x18\x02 \x01(\x0e\x32\x14.Feature.FeatureName\x12$\n\x05group\x18\x03 \x01(\x0e\x32\x15.Feature.FeatureGroup\x12.\n\nexpiration\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07\x63reated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xa7\x01\n\x0c\x46\x65\x61tureGroup\x12\x08\n\x04\x46LOW\x10\x00\x12\x18\n\x14WEATHER_INTELLIGENCE\x10\x01\x12\x0f\n\x0bYARD_MAPPER\x10\x02\x12\x11\n\rMUNI_INSIGHTS\x10\x03\x12\x07\n\x03PRO\x10\x04\x12\n\n\x06GROWTH\x10\x05\x12\r\n\tYARD_CARE\x10\x06\x12\x0c\n\x08\x46IRMWARE\x10\x07\x12\x0c\n\x08SCHEDULE\x10\x08\x12\x0f\n\x0bINTEGRATION\x10\t\"\xdd\x04\n\x0b\x46\x65\x61tureName\x12\x1a\n\x16\x41\x43TUAL_USAGE_DETECTION\x10\x00\x12\x12\n\x0eLEAK_DETECTION\x10\x01\x12\x10\n\x0c\x41UTO_SHUTOFF\x10\x02\x12\x1d\n\x19WEATHER_INTELLIGENCE_PLUS\x10\x03\x12\x17\n\x13IDLE_FLOW_DETECTION\x10\x04\x12\x0c\n\x08YARD_MAP\x10\x05\x12\x0c\n\x08SEGMENTS\x10\x06\x12\x12\n\x0e\x43\x41LIBRATION_V2\x10\x07\x12\x0b\n\x07PRO_MAP\x10\x08\x12\x13\n\x0fYARDS_LIKE_MINE\x10\t\x12\x10\n\x0cYARD_CARE_UI\x10\n\x12\x1d\n\x19YARDCARE_DASHBOARD_WIDGET\x10\x0b\x12\x1c\n\x18YARDCARE_QUICK_RUN_ALERT\x10\x0c\x12\x0b\n\x07HOMEKIT\x10\r\x12\x08\n\x04LORA\x10\x0e\x12\x0b\n\x07PGG_LED\x10\x0f\x12\x17\n\x13\x46LEX_DAILY_SCHEDULE\x10\x10\x12\x19\n\x15\x46LEX_MONTHLY_SCHEDULE\x10\x11\x12\x12\n\x0e\x46IXED_SCHEDULE\x10\x12\x12\x18\n\x14WIRELESS_FLOW_SENSOR\x10\x13\x12\x16\n\x12GENERATION_HOMEKIT\x10\x14\x12\r\n\tTHRIVE_UI\x10\x15\x12\x1a\n\x16THRIVE_IN_APP_PURCHASE\x10\x16\x12\x0e\n\nWATER_PARK\x10\x17\x12\x17\n\x13\x41\x44\x41PTIVE_SCHEDULING\x10\x18\x12\x14\n\x10KUSTOMER_SUPPORT\x10\x19\x12\x17\n\x13\x41MPERAGE_MONITORING\x10\x1a\x12\x12\n\x0eWEATHER_ADJUST\x10\x1b\x42\x19\n\x15\x63om.rachio.api.deviceP\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
-_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, "feature_pb2", _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'feature_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-    _globals["DESCRIPTOR"]._loaded_options = None
-    _globals["DESCRIPTOR"]._serialized_options = b"\n\025com.rachio.api.deviceP\001"
-    _globals["_FEATURE"]._serialized_start = 83
-    _globals["_FEATURE"]._serialized_end = 1094
-    _globals["_FEATURE_FEATUREGROUP"]._serialized_start = 319
-    _globals["_FEATURE_FEATUREGROUP"]._serialized_end = 486
-    _globals["_FEATURE_FEATURENAME"]._serialized_start = 489
-    _globals["_FEATURE_FEATURENAME"]._serialized_end = 1094
+  _globals['DESCRIPTOR']._loaded_options = None
+  _globals['DESCRIPTOR']._serialized_options = b'\n\025com.rachio.api.deviceP\001'
+  _globals['_FEATURE']._serialized_start=83
+  _globals['_FEATURE']._serialized_end=1094
+  _globals['_FEATURE_FEATUREGROUP']._serialized_start=319
+  _globals['_FEATURE_FEATUREGROUP']._serialized_end=486
+  _globals['_FEATURE_FEATURENAME']._serialized_start=489
+  _globals['_FEATURE_FEATURENAME']._serialized_end=1094
 # @@protoc_insertion_point(module_scope)

@@ -17,12 +17,7 @@ class GetFlowProvisionResponse(_message.Message):
     __slots__ = ("provision",)
     PROVISION_FIELD_NUMBER: _ClassVar[int]
     provision: _flow_provision_model_pb2.FlowProvision
-    def __init__(
-        self,
-        provision: _Optional[
-            _Union[_flow_provision_model_pb2.FlowProvision, _Mapping]
-        ] = ...,
-    ) -> None: ...
+    def __init__(self, provision: _Optional[_Union[_flow_provision_model_pb2.FlowProvision, _Mapping]] = ...) -> None: ...
 
 class GetFlowProvisionBinaryRequest(_message.Message):
     __slots__ = ("serial_number",)
@@ -34,10 +29,7 @@ class GetFlowProvisionBinaryResponse(_message.Message):
     __slots__ = ("mfg_config_bytes",)
     MFG_CONFIG_BYTES_FIELD_NUMBER: _ClassVar[int]
     mfg_config_bytes: _wrappers_pb2.BytesValue
-    def __init__(
-        self,
-        mfg_config_bytes: _Optional[_Union[_wrappers_pb2.BytesValue, _Mapping]] = ...,
-    ) -> None: ...
+    def __init__(self, mfg_config_bytes: _Optional[_Union[_wrappers_pb2.BytesValue, _Mapping]] = ...) -> None: ...
 
 class AssignFlowProvisionRequest(_message.Message):
     __slots__ = ()
@@ -47,9 +39,4 @@ class AssignFlowProvisionResponse(_message.Message):
     __slots__ = ("provision",)
     PROVISION_FIELD_NUMBER: _ClassVar[int]
     provision: _flow_provision_model_pb2.FlowProvision
-    def __init__(
-        self,
-        provision: _Optional[
-            _Union[_flow_provision_model_pb2.FlowProvision, _Mapping]
-        ] = ...,
-    ) -> None: ...
+    def __init__(self, provision: _Optional[_Union[_flow_provision_model_pb2.FlowProvision, _Mapping]] = ...) -> None: ...

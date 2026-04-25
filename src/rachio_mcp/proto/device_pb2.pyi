@@ -26,7 +26,6 @@ class WiringPosition(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
     SLOT_ONE: _ClassVar[WiringPosition]
     SLOT_TWO: _ClassVar[WiringPosition]
-
 UNKNOWN: DeviceType
 CONTROLLER_GEN1: DeviceType
 CONTROLLER_GEN2: DeviceType
@@ -55,17 +54,4 @@ class Device(_message.Message):
     name: str
     geo_point: _core_pb2.GeoPoint
     location_id: str
-    def __init__(
-        self,
-        id: _Optional[str] = ...,
-        type: _Optional[_Union[DeviceType, str]] = ...,
-        created: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        updated: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        name: _Optional[str] = ...,
-        geo_point: _Optional[_Union[_core_pb2.GeoPoint, _Mapping]] = ...,
-        location_id: _Optional[str] = ...,
-    ) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., type: _Optional[_Union[DeviceType, str]] = ..., created: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., name: _Optional[str] = ..., geo_point: _Optional[_Union[_core_pb2.GeoPoint, _Mapping]] = ..., location_id: _Optional[str] = ...) -> None: ...

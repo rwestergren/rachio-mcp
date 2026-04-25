@@ -42,7 +42,6 @@ class PreferenceName(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     CLIMATE_MONITORING_TRIGGERED_PUSH: _ClassVar[PreferenceName]
     LIGHTING_CONTROLLER_OVER_TEMPERATURE_EMAIL: _ClassVar[PreferenceName]
     LIGHTING_CONTROLLER_OVER_WATTAGE_EMAIL: _ClassVar[PreferenceName]
-
 UNKNOWN_NAME: PreferenceName
 DEVICE_OFFLINE_EMAIL: PreferenceName
 DEVICE_OFFLINE_PUSH: PreferenceName
@@ -85,6 +84,4 @@ class UserPreference(_message.Message):
     VALUE_FIELD_NUMBER: _ClassVar[int]
     name: PreferenceName
     value: bool
-    def __init__(
-        self, name: _Optional[_Union[PreferenceName, str]] = ..., value: bool = ...
-    ) -> None: ...
+    def __init__(self, name: _Optional[_Union[PreferenceName, str]] = ..., value: bool = ...) -> None: ...

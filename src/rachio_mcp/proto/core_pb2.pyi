@@ -31,7 +31,6 @@ class OddDay(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     ODD_DAY_DISABLED: _ClassVar[OddDay]
     ODD: _ClassVar[OddDay]
     EVEN: _ClassVar[OddDay]
-
 METRIC: DisplayUnit
 IMPERIAL: DisplayUnit
 MONDAY: DayOfWeek
@@ -51,20 +50,10 @@ class GeoPoint(_message.Message):
     LONGITUDE_FIELD_NUMBER: _ClassVar[int]
     latitude: float
     longitude: float
-    def __init__(
-        self, latitude: _Optional[float] = ..., longitude: _Optional[float] = ...
-    ) -> None: ...
+    def __init__(self, latitude: _Optional[float] = ..., longitude: _Optional[float] = ...) -> None: ...
 
 class Address(_message.Message):
-    __slots__ = (
-        "address_line_1",
-        "address_line_2",
-        "city",
-        "county",
-        "region",
-        "postal_code",
-        "country",
-    )
+    __slots__ = ("address_line_1", "address_line_2", "city", "county", "region", "postal_code", "country")
     ADDRESS_LINE_1_FIELD_NUMBER: _ClassVar[int]
     ADDRESS_LINE_2_FIELD_NUMBER: _ClassVar[int]
     CITY_FIELD_NUMBER: _ClassVar[int]
@@ -79,16 +68,7 @@ class Address(_message.Message):
     region: Region
     postal_code: str
     country: Country
-    def __init__(
-        self,
-        address_line_1: _Optional[str] = ...,
-        address_line_2: _Optional[str] = ...,
-        city: _Optional[str] = ...,
-        county: _Optional[str] = ...,
-        region: _Optional[_Union[Region, _Mapping]] = ...,
-        postal_code: _Optional[str] = ...,
-        country: _Optional[_Union[Country, _Mapping]] = ...,
-    ) -> None: ...
+    def __init__(self, address_line_1: _Optional[str] = ..., address_line_2: _Optional[str] = ..., city: _Optional[str] = ..., county: _Optional[str] = ..., region: _Optional[_Union[Region, _Mapping]] = ..., postal_code: _Optional[str] = ..., country: _Optional[_Union[Country, _Mapping]] = ...) -> None: ...
 
 class Region(_message.Message):
     __slots__ = ("name", "code")
@@ -96,9 +76,7 @@ class Region(_message.Message):
     CODE_FIELD_NUMBER: _ClassVar[int]
     name: str
     code: str
-    def __init__(
-        self, name: _Optional[str] = ..., code: _Optional[str] = ...
-    ) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., code: _Optional[str] = ...) -> None: ...
 
 class Country(_message.Message):
     __slots__ = ("name", "code")
@@ -106,17 +84,13 @@ class Country(_message.Message):
     CODE_FIELD_NUMBER: _ClassVar[int]
     name: str
     code: str
-    def __init__(
-        self, name: _Optional[str] = ..., code: _Optional[str] = ...
-    ) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., code: _Optional[str] = ...) -> None: ...
 
 class TimeList(_message.Message):
     __slots__ = ("time",)
     TIME_FIELD_NUMBER: _ClassVar[int]
     time: _containers.RepeatedCompositeFieldContainer[Time]
-    def __init__(
-        self, time: _Optional[_Iterable[_Union[Time, _Mapping]]] = ...
-    ) -> None: ...
+    def __init__(self, time: _Optional[_Iterable[_Union[Time, _Mapping]]] = ...) -> None: ...
 
 class StringList(_message.Message):
     __slots__ = ("id",)
@@ -130,11 +104,7 @@ class TimeInterval(_message.Message):
     END_FIELD_NUMBER: _ClassVar[int]
     start: Time
     end: Time
-    def __init__(
-        self,
-        start: _Optional[_Union[Time, _Mapping]] = ...,
-        end: _Optional[_Union[Time, _Mapping]] = ...,
-    ) -> None: ...
+    def __init__(self, start: _Optional[_Union[Time, _Mapping]] = ..., end: _Optional[_Union[Time, _Mapping]] = ...) -> None: ...
 
 class DateInterval(_message.Message):
     __slots__ = ("start", "end")
@@ -142,11 +112,7 @@ class DateInterval(_message.Message):
     END_FIELD_NUMBER: _ClassVar[int]
     start: Date
     end: Date
-    def __init__(
-        self,
-        start: _Optional[_Union[Date, _Mapping]] = ...,
-        end: _Optional[_Union[Date, _Mapping]] = ...,
-    ) -> None: ...
+    def __init__(self, start: _Optional[_Union[Date, _Mapping]] = ..., end: _Optional[_Union[Date, _Mapping]] = ...) -> None: ...
 
 class TimestampInterval(_message.Message):
     __slots__ = ("start", "end")
@@ -154,15 +120,7 @@ class TimestampInterval(_message.Message):
     END_FIELD_NUMBER: _ClassVar[int]
     start: _timestamp_pb2.Timestamp
     end: _timestamp_pb2.Timestamp
-    def __init__(
-        self,
-        start: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        end: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-    ) -> None: ...
+    def __init__(self, start: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., end: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class Date(_message.Message):
     __slots__ = ("year", "month", "day")
@@ -172,12 +130,7 @@ class Date(_message.Message):
     year: int
     month: int
     day: int
-    def __init__(
-        self,
-        year: _Optional[int] = ...,
-        month: _Optional[int] = ...,
-        day: _Optional[int] = ...,
-    ) -> None: ...
+    def __init__(self, year: _Optional[int] = ..., month: _Optional[int] = ..., day: _Optional[int] = ...) -> None: ...
 
 class CalendarDate(_message.Message):
     __slots__ = ("month", "day")
@@ -185,9 +138,7 @@ class CalendarDate(_message.Message):
     DAY_FIELD_NUMBER: _ClassVar[int]
     month: int
     day: int
-    def __init__(
-        self, month: _Optional[int] = ..., day: _Optional[int] = ...
-    ) -> None: ...
+    def __init__(self, month: _Optional[int] = ..., day: _Optional[int] = ...) -> None: ...
 
 class Time(_message.Message):
     __slots__ = ("hour", "minute", "second", "millis")
@@ -199,13 +150,7 @@ class Time(_message.Message):
     minute: int
     second: int
     millis: int
-    def __init__(
-        self,
-        hour: _Optional[int] = ...,
-        minute: _Optional[int] = ...,
-        second: _Optional[int] = ...,
-        millis: _Optional[int] = ...,
-    ) -> None: ...
+    def __init__(self, hour: _Optional[int] = ..., minute: _Optional[int] = ..., second: _Optional[int] = ..., millis: _Optional[int] = ...) -> None: ...
 
 class NullableString(_message.Message):
     __slots__ = ("null", "data")
@@ -213,8 +158,4 @@ class NullableString(_message.Message):
     DATA_FIELD_NUMBER: _ClassVar[int]
     null: _struct_pb2.NullValue
     data: str
-    def __init__(
-        self,
-        null: _Optional[_Union[_struct_pb2.NullValue, str]] = ...,
-        data: _Optional[str] = ...,
-    ) -> None: ...
+    def __init__(self, null: _Optional[_Union[_struct_pb2.NullValue, str]] = ..., data: _Optional[str] = ...) -> None: ...

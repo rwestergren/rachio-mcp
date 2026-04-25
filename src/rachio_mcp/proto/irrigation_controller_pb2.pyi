@@ -4,6 +4,7 @@ from google.protobuf import timestamp_pb2 as _timestamp_pb2
 import core_pb2 as _core_pb2
 import alert_pb2 as _alert_pb2
 from google.protobuf import wrappers_pb2 as _wrappers_pb2
+import media_model_pb2 as _media_model_pb2
 import feature_pb2 as _feature_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -114,7 +115,6 @@ class IrrigationControllerModelType(int, metaclass=_enum_type_wrapper.EnumTypeWr
     GENERATION3_8ZONE_USI_PRO: _ClassVar[IrrigationControllerModelType]
     GENERATION3_16ZONE_USI_PRO: _ClassVar[IrrigationControllerModelType]
     UNASSIGNED_GEN3: _ClassVar[IrrigationControllerModelType]
-
 CALIBRATION_SUCCESS: FlowCalibrationResult
 CALIBRATION_COMMUNICATION_ERROR: FlowCalibrationResult
 CALIBRATION_ZERO_READING: FlowCalibrationResult
@@ -191,19 +191,7 @@ GENERATION3_16ZONE_USI_PRO: IrrigationControllerModelType
 UNASSIGNED_GEN3: IrrigationControllerModelType
 
 class NascentIrrigationController(_message.Message):
-    __slots__ = (
-        "serial_number",
-        "mac_address",
-        "model",
-        "firmware_version",
-        "homekit_pin",
-        "activated",
-        "default_firmware_version_url",
-        "default_firmware_version",
-        "activation_code_required",
-        "program_id",
-        "last_known_firmware_version",
-    )
+    __slots__ = ("serial_number", "mac_address", "model", "firmware_version", "homekit_pin", "activated", "default_firmware_version_url", "default_firmware_version", "activation_code_required", "program_id", "last_known_firmware_version")
     SERIAL_NUMBER_FIELD_NUMBER: _ClassVar[int]
     MAC_ADDRESS_FIELD_NUMBER: _ClassVar[int]
     MODEL_FIELD_NUMBER: _ClassVar[int]
@@ -226,52 +214,10 @@ class NascentIrrigationController(_message.Message):
     activation_code_required: bool
     program_id: str
     last_known_firmware_version: _wrappers_pb2.StringValue
-    def __init__(
-        self,
-        serial_number: _Optional[str] = ...,
-        mac_address: _Optional[str] = ...,
-        model: _Optional[_Union[IrrigationControllerModelType, str]] = ...,
-        firmware_version: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...,
-        homekit_pin: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...,
-        activated: bool = ...,
-        default_firmware_version_url: _Optional[
-            _Union[_wrappers_pb2.StringValue, _Mapping]
-        ] = ...,
-        default_firmware_version: _Optional[
-            _Union[_wrappers_pb2.StringValue, _Mapping]
-        ] = ...,
-        activation_code_required: bool = ...,
-        program_id: _Optional[str] = ...,
-        last_known_firmware_version: _Optional[
-            _Union[_wrappers_pb2.StringValue, _Mapping]
-        ] = ...,
-    ) -> None: ...
+    def __init__(self, serial_number: _Optional[str] = ..., mac_address: _Optional[str] = ..., model: _Optional[_Union[IrrigationControllerModelType, str]] = ..., firmware_version: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., homekit_pin: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., activated: bool = ..., default_firmware_version_url: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., default_firmware_version: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., activation_code_required: bool = ..., program_id: _Optional[str] = ..., last_known_firmware_version: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...) -> None: ...
 
 class Gen1IrrigationController(_message.Message):
-    __slots__ = (
-        "id",
-        "name",
-        "geo_point",
-        "location_id",
-        "created",
-        "updated",
-        "zone_id",
-        "mac_address",
-        "model",
-        "serial_number",
-        "master_valve",
-        "linked_sensor_wiring_position_one_id",
-        "standby",
-        "water_hammer",
-        "agent_id",
-        "external_plan_id",
-        "pin",
-        "weather_intelligence_plus",
-        "wellpump_delay_active",
-        "usda_hardiness_zone",
-        "climate_region",
-        "koppen",
-    )
+    __slots__ = ("id", "name", "geo_point", "location_id", "created", "updated", "zone_id", "mac_address", "model", "serial_number", "master_valve", "linked_sensor_wiring_position_one_id", "standby", "water_hammer", "agent_id", "external_plan_id", "pin", "weather_intelligence_plus", "wellpump_delay_active", "usda_hardiness_zone", "climate_region", "koppen")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     GEO_POINT_FIELD_NUMBER: _ClassVar[int]
@@ -316,63 +262,10 @@ class Gen1IrrigationController(_message.Message):
     usda_hardiness_zone: _wrappers_pb2.StringValue
     climate_region: _wrappers_pb2.Int32Value
     koppen: _wrappers_pb2.StringValue
-    def __init__(
-        self,
-        id: _Optional[str] = ...,
-        name: _Optional[str] = ...,
-        geo_point: _Optional[_Union[_core_pb2.GeoPoint, _Mapping]] = ...,
-        location_id: _Optional[str] = ...,
-        created: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        updated: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        zone_id: _Optional[_Iterable[str]] = ...,
-        mac_address: _Optional[str] = ...,
-        model: _Optional[_Union[IrrigationControllerModelType, str]] = ...,
-        serial_number: _Optional[str] = ...,
-        master_valve: bool = ...,
-        linked_sensor_wiring_position_one_id: _Optional[str] = ...,
-        standby: bool = ...,
-        water_hammer: bool = ...,
-        agent_id: _Optional[str] = ...,
-        external_plan_id: _Optional[str] = ...,
-        pin: _Optional[str] = ...,
-        weather_intelligence_plus: bool = ...,
-        wellpump_delay_active: bool = ...,
-        usda_hardiness_zone: _Optional[
-            _Union[_wrappers_pb2.StringValue, _Mapping]
-        ] = ...,
-        climate_region: _Optional[_Union[_wrappers_pb2.Int32Value, _Mapping]] = ...,
-        koppen: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...,
-    ) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., geo_point: _Optional[_Union[_core_pb2.GeoPoint, _Mapping]] = ..., location_id: _Optional[str] = ..., created: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., zone_id: _Optional[_Iterable[str]] = ..., mac_address: _Optional[str] = ..., model: _Optional[_Union[IrrigationControllerModelType, str]] = ..., serial_number: _Optional[str] = ..., master_valve: bool = ..., linked_sensor_wiring_position_one_id: _Optional[str] = ..., standby: bool = ..., water_hammer: bool = ..., agent_id: _Optional[str] = ..., external_plan_id: _Optional[str] = ..., pin: _Optional[str] = ..., weather_intelligence_plus: bool = ..., wellpump_delay_active: bool = ..., usda_hardiness_zone: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., climate_region: _Optional[_Union[_wrappers_pb2.Int32Value, _Mapping]] = ..., koppen: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...) -> None: ...
 
 class Gen2IrrigationController(_message.Message):
-    __slots__ = (
-        "id",
-        "name",
-        "geo_point",
-        "location_id",
-        "created",
-        "updated",
-        "zone_id",
-        "mac_address",
-        "model",
-        "serial_number",
-        "master_valve",
-        "linked_sensor_wiring_position_one_id",
-        "linked_sensor_wiring_position_two_id",
-        "standby",
-        "water_hammer",
-        "pin",
-        "homekit_pin",
-        "weather_intelligence_plus",
-        "wellpump_delay_active",
-        "usda_hardiness_zone",
-        "climate_region",
-        "koppen",
-    )
+    __slots__ = ("id", "name", "geo_point", "location_id", "created", "updated", "zone_id", "mac_address", "model", "serial_number", "master_valve", "linked_sensor_wiring_position_one_id", "linked_sensor_wiring_position_two_id", "standby", "water_hammer", "pin", "homekit_pin", "weather_intelligence_plus", "wellpump_delay_active", "usda_hardiness_zone", "climate_region", "koppen")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     GEO_POINT_FIELD_NUMBER: _ClassVar[int]
@@ -417,64 +310,10 @@ class Gen2IrrigationController(_message.Message):
     usda_hardiness_zone: _wrappers_pb2.StringValue
     climate_region: _wrappers_pb2.Int32Value
     koppen: _wrappers_pb2.StringValue
-    def __init__(
-        self,
-        id: _Optional[str] = ...,
-        name: _Optional[str] = ...,
-        geo_point: _Optional[_Union[_core_pb2.GeoPoint, _Mapping]] = ...,
-        location_id: _Optional[str] = ...,
-        created: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        updated: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        zone_id: _Optional[_Iterable[str]] = ...,
-        mac_address: _Optional[str] = ...,
-        model: _Optional[_Union[IrrigationControllerModelType, str]] = ...,
-        serial_number: _Optional[str] = ...,
-        master_valve: bool = ...,
-        linked_sensor_wiring_position_one_id: _Optional[str] = ...,
-        linked_sensor_wiring_position_two_id: _Optional[str] = ...,
-        standby: bool = ...,
-        water_hammer: bool = ...,
-        pin: _Optional[str] = ...,
-        homekit_pin: _Optional[str] = ...,
-        weather_intelligence_plus: bool = ...,
-        wellpump_delay_active: bool = ...,
-        usda_hardiness_zone: _Optional[
-            _Union[_wrappers_pb2.StringValue, _Mapping]
-        ] = ...,
-        climate_region: _Optional[_Union[_wrappers_pb2.Int32Value, _Mapping]] = ...,
-        koppen: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...,
-    ) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., geo_point: _Optional[_Union[_core_pb2.GeoPoint, _Mapping]] = ..., location_id: _Optional[str] = ..., created: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., zone_id: _Optional[_Iterable[str]] = ..., mac_address: _Optional[str] = ..., model: _Optional[_Union[IrrigationControllerModelType, str]] = ..., serial_number: _Optional[str] = ..., master_valve: bool = ..., linked_sensor_wiring_position_one_id: _Optional[str] = ..., linked_sensor_wiring_position_two_id: _Optional[str] = ..., standby: bool = ..., water_hammer: bool = ..., pin: _Optional[str] = ..., homekit_pin: _Optional[str] = ..., weather_intelligence_plus: bool = ..., wellpump_delay_active: bool = ..., usda_hardiness_zone: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., climate_region: _Optional[_Union[_wrappers_pb2.Int32Value, _Mapping]] = ..., koppen: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...) -> None: ...
 
 class Gen3IrrigationController(_message.Message):
-    __slots__ = (
-        "id",
-        "name",
-        "geo_point",
-        "location_id",
-        "created",
-        "updated",
-        "zone_id",
-        "mac_address",
-        "model",
-        "serial_number",
-        "master_valve",
-        "linked_sensor_wiring_position_one_id",
-        "linked_sensor_wiring_position_two_id",
-        "standby",
-        "water_hammer",
-        "pin",
-        "homekit_pin",
-        "weather_intelligence_plus",
-        "wellpump_delay_active",
-        "wireless_flow_sensor_id",
-        "usda_hardiness_zone",
-        "climate_region",
-        "koppen",
-    )
+    __slots__ = ("id", "name", "geo_point", "location_id", "created", "updated", "zone_id", "mac_address", "model", "serial_number", "master_valve", "linked_sensor_wiring_position_one_id", "linked_sensor_wiring_position_two_id", "standby", "water_hammer", "pin", "homekit_pin", "weather_intelligence_plus", "wellpump_delay_active", "wireless_flow_sensor_id", "usda_hardiness_zone", "climate_region", "koppen")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     GEO_POINT_FIELD_NUMBER: _ClassVar[int]
@@ -521,54 +360,10 @@ class Gen3IrrigationController(_message.Message):
     usda_hardiness_zone: _wrappers_pb2.StringValue
     climate_region: _wrappers_pb2.Int32Value
     koppen: _wrappers_pb2.StringValue
-    def __init__(
-        self,
-        id: _Optional[str] = ...,
-        name: _Optional[str] = ...,
-        geo_point: _Optional[_Union[_core_pb2.GeoPoint, _Mapping]] = ...,
-        location_id: _Optional[str] = ...,
-        created: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        updated: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        zone_id: _Optional[_Iterable[str]] = ...,
-        mac_address: _Optional[str] = ...,
-        model: _Optional[_Union[IrrigationControllerModelType, str]] = ...,
-        serial_number: _Optional[str] = ...,
-        master_valve: bool = ...,
-        linked_sensor_wiring_position_one_id: _Optional[str] = ...,
-        linked_sensor_wiring_position_two_id: _Optional[str] = ...,
-        standby: bool = ...,
-        water_hammer: bool = ...,
-        pin: _Optional[str] = ...,
-        homekit_pin: _Optional[str] = ...,
-        weather_intelligence_plus: bool = ...,
-        wellpump_delay_active: bool = ...,
-        wireless_flow_sensor_id: _Optional[_Iterable[str]] = ...,
-        usda_hardiness_zone: _Optional[
-            _Union[_wrappers_pb2.StringValue, _Mapping]
-        ] = ...,
-        climate_region: _Optional[_Union[_wrappers_pb2.Int32Value, _Mapping]] = ...,
-        koppen: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...,
-    ) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., geo_point: _Optional[_Union[_core_pb2.GeoPoint, _Mapping]] = ..., location_id: _Optional[str] = ..., created: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., zone_id: _Optional[_Iterable[str]] = ..., mac_address: _Optional[str] = ..., model: _Optional[_Union[IrrigationControllerModelType, str]] = ..., serial_number: _Optional[str] = ..., master_valve: bool = ..., linked_sensor_wiring_position_one_id: _Optional[str] = ..., linked_sensor_wiring_position_two_id: _Optional[str] = ..., standby: bool = ..., water_hammer: bool = ..., pin: _Optional[str] = ..., homekit_pin: _Optional[str] = ..., weather_intelligence_plus: bool = ..., wellpump_delay_active: bool = ..., wireless_flow_sensor_id: _Optional[_Iterable[str]] = ..., usda_hardiness_zone: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., climate_region: _Optional[_Union[_wrappers_pb2.Int32Value, _Mapping]] = ..., koppen: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...) -> None: ...
 
 class VirtualIrrigationController(_message.Message):
-    __slots__ = (
-        "id",
-        "name",
-        "geo_point",
-        "location_id",
-        "created",
-        "updated",
-        "zone_id",
-        "model",
-        "serial_number",
-        "usda_hardiness_zone",
-        "climate_region",
-        "koppen",
-    )
+    __slots__ = ("id", "name", "geo_point", "location_id", "created", "updated", "zone_id", "model", "serial_number", "usda_hardiness_zone", "climate_region", "koppen")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     GEO_POINT_FIELD_NUMBER: _ClassVar[int]
@@ -593,27 +388,7 @@ class VirtualIrrigationController(_message.Message):
     usda_hardiness_zone: _wrappers_pb2.StringValue
     climate_region: _wrappers_pb2.Int32Value
     koppen: _wrappers_pb2.StringValue
-    def __init__(
-        self,
-        id: _Optional[str] = ...,
-        name: _Optional[str] = ...,
-        geo_point: _Optional[_Union[_core_pb2.GeoPoint, _Mapping]] = ...,
-        location_id: _Optional[str] = ...,
-        created: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        updated: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        zone_id: _Optional[_Iterable[str]] = ...,
-        model: _Optional[_Union[IrrigationControllerModelType, str]] = ...,
-        serial_number: _Optional[str] = ...,
-        usda_hardiness_zone: _Optional[
-            _Union[_wrappers_pb2.StringValue, _Mapping]
-        ] = ...,
-        climate_region: _Optional[_Union[_wrappers_pb2.Int32Value, _Mapping]] = ...,
-        koppen: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...,
-    ) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., geo_point: _Optional[_Union[_core_pb2.GeoPoint, _Mapping]] = ..., location_id: _Optional[str] = ..., created: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., zone_id: _Optional[_Iterable[str]] = ..., model: _Optional[_Union[IrrigationControllerModelType, str]] = ..., serial_number: _Optional[str] = ..., usda_hardiness_zone: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., climate_region: _Optional[_Union[_wrappers_pb2.Int32Value, _Mapping]] = ..., koppen: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...) -> None: ...
 
 class AppMessageBanner(_message.Message):
     __slots__ = ("id", "entity_id", "type", "title", "archived", "created", "updated")
@@ -631,28 +406,13 @@ class AppMessageBanner(_message.Message):
     archived: bool
     created: _timestamp_pb2.Timestamp
     updated: _timestamp_pb2.Timestamp
-    def __init__(
-        self,
-        id: _Optional[str] = ...,
-        entity_id: _Optional[str] = ...,
-        type: _Optional[_Union[_alert_pb2.AlertType, str]] = ...,
-        title: _Optional[str] = ...,
-        archived: bool = ...,
-        created: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        updated: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-    ) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., entity_id: _Optional[str] = ..., type: _Optional[_Union[_alert_pb2.AlertType, str]] = ..., title: _Optional[str] = ..., archived: bool = ..., created: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class FlowCalibrationResultWrapper(_message.Message):
     __slots__ = ("value",)
     VALUE_FIELD_NUMBER: _ClassVar[int]
     value: FlowCalibrationResult
-    def __init__(
-        self, value: _Optional[_Union[FlowCalibrationResult, str]] = ...
-    ) -> None: ...
+    def __init__(self, value: _Optional[_Union[FlowCalibrationResult, str]] = ...) -> None: ...
 
 class ActivityLevelWrapper(_message.Message):
     __slots__ = ("value",)
@@ -706,10 +466,4 @@ class IrrigationControllerProperties(_message.Message):
     model: IrrigationControllerModelType
     name: str
     features: _containers.RepeatedCompositeFieldContainer[_feature_pb2.Feature]
-    def __init__(
-        self,
-        device_id: _Optional[str] = ...,
-        model: _Optional[_Union[IrrigationControllerModelType, str]] = ...,
-        name: _Optional[str] = ...,
-        features: _Optional[_Iterable[_Union[_feature_pb2.Feature, _Mapping]]] = ...,
-    ) -> None: ...
+    def __init__(self, device_id: _Optional[str] = ..., model: _Optional[_Union[IrrigationControllerModelType, str]] = ..., name: _Optional[str] = ..., features: _Optional[_Iterable[_Union[_feature_pb2.Feature, _Mapping]]] = ...) -> None: ...

@@ -17,7 +17,6 @@ class WeatherType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     WIND: _ClassVar[WeatherType]
     FOG: _ClassVar[WeatherType]
     THUNDER_STORM: _ClassVar[WeatherType]
-
 CLEAR: WeatherType
 MOSTLY_SUNNY: WeatherType
 PARTLY_CLOUDY: WeatherType

@@ -4,39 +4,41 @@
 # source: feature_get.proto
 # Protobuf Python Version: 6.31.1
 """Generated protocol buffer code."""
-
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import runtime_version as _runtime_version
 from google.protobuf import symbol_database as _symbol_database
 from google.protobuf.internal import builder as _builder
-
 _runtime_version.ValidateProtobufRuntimeVersion(
-    _runtime_version.Domain.PUBLIC, 6, 31, 1, "", "feature_get.proto"
+    _runtime_version.Domain.PUBLIC,
+    6,
+    31,
+    1,
+    '',
+    'feature_get.proto'
 )
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
 
 
+import feature_pb2 as feature__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
-    b'\n\x11\x66\x65\x61ture_get.proto\x1a\rfeature.proto" \n\x12GetFeaturesRequest\x12\n\n\x02id\x18\x01 \x01(\t"1\n\x13GetFeaturesResponse\x12\x1a\n\x08\x66\x65\x61tures\x18\x01 \x03(\x0b\x32\x08.Feature"\x17\n\x15GetAllFeaturesRequest"3\n\x16GetAllFeaturesResponse\x12\x19\n\x07\x66\x65\x61ture\x18\x01 \x03(\x0b\x32\x08.FeatureB\x19\n\x15\x63om.rachio.api.deviceP\x01\x62\x06proto3'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11\x66\x65\x61ture_get.proto\x1a\rfeature.proto\" \n\x12GetFeaturesRequest\x12\n\n\x02id\x18\x01 \x01(\t\"1\n\x13GetFeaturesResponse\x12\x1a\n\x08\x66\x65\x61tures\x18\x01 \x03(\x0b\x32\x08.Feature\"\x17\n\x15GetAllFeaturesRequest\"3\n\x16GetAllFeaturesResponse\x12\x19\n\x07\x66\x65\x61ture\x18\x01 \x03(\x0b\x32\x08.FeatureB\x19\n\x15\x63om.rachio.api.deviceP\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
-_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, "feature_get_pb2", _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'feature_get_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-    _globals["DESCRIPTOR"]._loaded_options = None
-    _globals["DESCRIPTOR"]._serialized_options = b"\n\025com.rachio.api.deviceP\001"
-    _globals["_GETFEATURESREQUEST"]._serialized_start = 36
-    _globals["_GETFEATURESREQUEST"]._serialized_end = 68
-    _globals["_GETFEATURESRESPONSE"]._serialized_start = 70
-    _globals["_GETFEATURESRESPONSE"]._serialized_end = 119
-    _globals["_GETALLFEATURESREQUEST"]._serialized_start = 121
-    _globals["_GETALLFEATURESREQUEST"]._serialized_end = 144
-    _globals["_GETALLFEATURESRESPONSE"]._serialized_start = 146
-    _globals["_GETALLFEATURESRESPONSE"]._serialized_end = 197
+  _globals['DESCRIPTOR']._loaded_options = None
+  _globals['DESCRIPTOR']._serialized_options = b'\n\025com.rachio.api.deviceP\001'
+  _globals['_GETFEATURESREQUEST']._serialized_start=36
+  _globals['_GETFEATURESREQUEST']._serialized_end=68
+  _globals['_GETFEATURESRESPONSE']._serialized_start=70
+  _globals['_GETFEATURESRESPONSE']._serialized_end=119
+  _globals['_GETALLFEATURESREQUEST']._serialized_start=121
+  _globals['_GETALLFEATURESREQUEST']._serialized_end=144
+  _globals['_GETALLFEATURESRESPONSE']._serialized_start=146
+  _globals['_GETALLFEATURESRESPONSE']._serialized_end=197
 # @@protoc_insertion_point(module_scope)

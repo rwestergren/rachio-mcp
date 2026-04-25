@@ -4,37 +4,39 @@
 # source: media_model.proto
 # Protobuf Python Version: 6.31.1
 """Generated protocol buffer code."""
-
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import runtime_version as _runtime_version
 from google.protobuf import symbol_database as _symbol_database
 from google.protobuf.internal import builder as _builder
-
 _runtime_version.ValidateProtobufRuntimeVersion(
-    _runtime_version.Domain.PUBLIC, 6, 31, 1, "", "media_model.proto"
+    _runtime_version.Domain.PUBLIC,
+    6,
+    31,
+    1,
+    '',
+    'media_model.proto'
 )
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
-    b'\n\x11media_model.proto\x1a\x1fgoogle/protobuf/timestamp.proto"\x86\x03\n\x05Photo\x12\n\n\x02id\x18\x01 \x01(\t\x12$\n\nphoto_type\x18\x02 \x01(\x0e\x32\x10.Photo.PhotoType\x12\x11\n\tparent_id\x18\x03 \x01(\t\x12+\n\x07\x63reated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12 \n\x18share_permission_granted\x18\x06 \x01(\x08\x12\x16\n\x0eshared_primary\x18\x07 \x01(\x08\x12\r\n\x05stock\x18\x08 \x01(\x08"\x94\x01\n\tPhotoType\x12\n\n\x06\x44\x45VICE\x10\x00\x12\x08\n\x04ZONE\x10\x01\x12\x0c\n\x08LOCATION\x10\x02\x12\x08\n\x04USER\x10\x03\x12\x10\n\x0cYARD_JOURNAL\x10\x04\x12\t\n\x05VALVE\x10\x05\x12\x11\n\rLIGHTING_ZONE\x10\x06\x12\x17\n\x13LIGHTING_ZONE_GROUP\x10\x07\x12\x10\n\x0cORGANIZATION\x10\x08"+\n\x0cPhotoSummary\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x64\x65\x66\x61ult\x18\x02 \x01(\x08\x42\x18\n\x14\x63om.rachio.api.mediaP\x01\x62\x06proto3'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11media_model.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x86\x03\n\x05Photo\x12\n\n\x02id\x18\x01 \x01(\t\x12$\n\nphoto_type\x18\x02 \x01(\x0e\x32\x10.Photo.PhotoType\x12\x11\n\tparent_id\x18\x03 \x01(\t\x12+\n\x07\x63reated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12 \n\x18share_permission_granted\x18\x06 \x01(\x08\x12\x16\n\x0eshared_primary\x18\x07 \x01(\x08\x12\r\n\x05stock\x18\x08 \x01(\x08\"\x94\x01\n\tPhotoType\x12\n\n\x06\x44\x45VICE\x10\x00\x12\x08\n\x04ZONE\x10\x01\x12\x0c\n\x08LOCATION\x10\x02\x12\x08\n\x04USER\x10\x03\x12\x10\n\x0cYARD_JOURNAL\x10\x04\x12\t\n\x05VALVE\x10\x05\x12\x11\n\rLIGHTING_ZONE\x10\x06\x12\x17\n\x13LIGHTING_ZONE_GROUP\x10\x07\x12\x10\n\x0cORGANIZATION\x10\x08\"+\n\x0cPhotoSummary\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x64\x65\x66\x61ult\x18\x02 \x01(\x08\x42\x18\n\x14\x63om.rachio.api.mediaP\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
-_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, "media_model_pb2", _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'media_model_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-    _globals["DESCRIPTOR"]._loaded_options = None
-    _globals["DESCRIPTOR"]._serialized_options = b"\n\024com.rachio.api.mediaP\001"
-    _globals["_PHOTO"]._serialized_start = 55
-    _globals["_PHOTO"]._serialized_end = 445
-    _globals["_PHOTO_PHOTOTYPE"]._serialized_start = 297
-    _globals["_PHOTO_PHOTOTYPE"]._serialized_end = 445
-    _globals["_PHOTOSUMMARY"]._serialized_start = 447
-    _globals["_PHOTOSUMMARY"]._serialized_end = 490
+  _globals['DESCRIPTOR']._loaded_options = None
+  _globals['DESCRIPTOR']._serialized_options = b'\n\024com.rachio.api.mediaP\001'
+  _globals['_PHOTO']._serialized_start=55
+  _globals['_PHOTO']._serialized_end=445
+  _globals['_PHOTO_PHOTOTYPE']._serialized_start=297
+  _globals['_PHOTO_PHOTOTYPE']._serialized_end=445
+  _globals['_PHOTOSUMMARY']._serialized_start=447
+  _globals['_PHOTOSUMMARY']._serialized_end=490
 # @@protoc_insertion_point(module_scope)

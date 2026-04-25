@@ -15,23 +15,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Schedule(_message.Message):
-    __slots__ = (
-        "id",
-        "name",
-        "schedule_criteria",
-        "schedule_restriction_criteria",
-        "zone_info",
-        "enabled",
-        "created",
-        "updated",
-        "summary",
-        "color",
-        "koppen_reduction_factor",
-        "annual_start_on_notifications_enabled",
-        "annual_end_on_notifications_enabled",
-        "use_forecast_weather_for_precip_skip",
-        "schedule_adjustments",
-    )
+    __slots__ = ("id", "name", "schedule_criteria", "schedule_restriction_criteria", "zone_info", "enabled", "created", "updated", "summary", "color", "koppen_reduction_factor", "annual_start_on_notifications_enabled", "annual_end_on_notifications_enabled", "use_forecast_weather_for_precip_skip", "schedule_adjustments")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     SCHEDULE_CRITERIA_FIELD_NUMBER: _ClassVar[int]
@@ -50,12 +34,8 @@ class Schedule(_message.Message):
     id: str
     name: str
     schedule_criteria: _schedule_criteria_pb2.ScheduleCriteria
-    schedule_restriction_criteria: (
-        _schedule_restriction_criteria_pb2.ScheduleRestrictionCriteria
-    )
-    zone_info: _containers.RepeatedCompositeFieldContainer[
-        _schedule_zone_info_pb2.ScheduleZoneInfo
-    ]
+    schedule_restriction_criteria: _schedule_restriction_criteria_pb2.ScheduleRestrictionCriteria
+    zone_info: _containers.RepeatedCompositeFieldContainer[_schedule_zone_info_pb2.ScheduleZoneInfo]
     enabled: bool
     created: _timestamp_pb2.Timestamp
     updated: _timestamp_pb2.Timestamp
@@ -65,40 +45,5 @@ class Schedule(_message.Message):
     annual_start_on_notifications_enabled: bool
     annual_end_on_notifications_enabled: bool
     use_forecast_weather_for_precip_skip: bool
-    schedule_adjustments: _containers.RepeatedCompositeFieldContainer[
-        _schedule_adjustment_pb2.ScheduleAdjustment
-    ]
-    def __init__(
-        self,
-        id: _Optional[str] = ...,
-        name: _Optional[str] = ...,
-        schedule_criteria: _Optional[
-            _Union[_schedule_criteria_pb2.ScheduleCriteria, _Mapping]
-        ] = ...,
-        schedule_restriction_criteria: _Optional[
-            _Union[
-                _schedule_restriction_criteria_pb2.ScheduleRestrictionCriteria, _Mapping
-            ]
-        ] = ...,
-        zone_info: _Optional[
-            _Iterable[_Union[_schedule_zone_info_pb2.ScheduleZoneInfo, _Mapping]]
-        ] = ...,
-        enabled: bool = ...,
-        created: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        updated: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        summary: _Optional[str] = ...,
-        color: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ...,
-        koppen_reduction_factor: _Optional[
-            _Union[_wrappers_pb2.DoubleValue, _Mapping]
-        ] = ...,
-        annual_start_on_notifications_enabled: bool = ...,
-        annual_end_on_notifications_enabled: bool = ...,
-        use_forecast_weather_for_precip_skip: bool = ...,
-        schedule_adjustments: _Optional[
-            _Iterable[_Union[_schedule_adjustment_pb2.ScheduleAdjustment, _Mapping]]
-        ] = ...,
-    ) -> None: ...
+    schedule_adjustments: _containers.RepeatedCompositeFieldContainer[_schedule_adjustment_pb2.ScheduleAdjustment]
+    def __init__(self, id: _Optional[str] = ..., name: _Optional[str] = ..., schedule_criteria: _Optional[_Union[_schedule_criteria_pb2.ScheduleCriteria, _Mapping]] = ..., schedule_restriction_criteria: _Optional[_Union[_schedule_restriction_criteria_pb2.ScheduleRestrictionCriteria, _Mapping]] = ..., zone_info: _Optional[_Iterable[_Union[_schedule_zone_info_pb2.ScheduleZoneInfo, _Mapping]]] = ..., enabled: bool = ..., created: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., summary: _Optional[str] = ..., color: _Optional[_Union[_wrappers_pb2.StringValue, _Mapping]] = ..., koppen_reduction_factor: _Optional[_Union[_wrappers_pb2.DoubleValue, _Mapping]] = ..., annual_start_on_notifications_enabled: bool = ..., annual_end_on_notifications_enabled: bool = ..., use_forecast_weather_for_precip_skip: bool = ..., schedule_adjustments: _Optional[_Iterable[_Union[_schedule_adjustment_pb2.ScheduleAdjustment, _Mapping]]] = ...) -> None: ...

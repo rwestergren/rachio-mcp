@@ -1,6 +1,7 @@
 import datetime
 
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
+from google.protobuf import wrappers_pb2 as _wrappers_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -17,7 +18,6 @@ class AlertType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     ZONE_HIGH_FLOW_SHUTOFF: _ClassVar[AlertType]
     ZONE_LOW_AMPERAGE: _ClassVar[AlertType]
     ZONE_HIGH_AMPERAGE: _ClassVar[AlertType]
-
 ZONE_HIGH_FLOW: AlertType
 ZONE_LOW_FLOW: AlertType
 ZONE_HIGH_FLOW_NO_SHUTOFF: AlertType
@@ -26,18 +26,7 @@ ZONE_LOW_AMPERAGE: AlertType
 ZONE_HIGH_AMPERAGE: AlertType
 
 class Alert(_message.Message):
-    __slots__ = (
-        "id",
-        "entity_id",
-        "type",
-        "title",
-        "subtitle",
-        "summary",
-        "dismissed",
-        "dismissed_timestamp",
-        "created",
-        "updated",
-    )
+    __slots__ = ("id", "entity_id", "type", "title", "subtitle", "summary", "dismissed", "dismissed_timestamp", "created", "updated")
     ID_FIELD_NUMBER: _ClassVar[int]
     ENTITY_ID_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -58,22 +47,4 @@ class Alert(_message.Message):
     dismissed_timestamp: _timestamp_pb2.Timestamp
     created: _timestamp_pb2.Timestamp
     updated: _timestamp_pb2.Timestamp
-    def __init__(
-        self,
-        id: _Optional[str] = ...,
-        entity_id: _Optional[str] = ...,
-        type: _Optional[_Union[AlertType, str]] = ...,
-        title: _Optional[str] = ...,
-        subtitle: _Optional[str] = ...,
-        summary: _Optional[str] = ...,
-        dismissed: bool = ...,
-        dismissed_timestamp: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        created: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        updated: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-    ) -> None: ...
+    def __init__(self, id: _Optional[str] = ..., entity_id: _Optional[str] = ..., type: _Optional[_Union[AlertType, str]] = ..., title: _Optional[str] = ..., subtitle: _Optional[str] = ..., summary: _Optional[str] = ..., dismissed: bool = ..., dismissed_timestamp: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., created: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...

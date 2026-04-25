@@ -17,38 +17,11 @@ class FinalAssembly(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
 class FlowModel(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
     FLOW_V1: _ClassVar[FlowModel]
-
 FLOW_PRO: FinalAssembly
 FLOW_V1: FlowModel
 
 class FlowProvision(_message.Message):
-    __slots__ = (
-        "serial_number",
-        "pin",
-        "mac_address",
-        "key",
-        "firmware_version",
-        "model",
-        "status",
-        "pcb_manufacturer",
-        "final_assembly",
-        "type",
-        "profile",
-        "preamble_len",
-        "interval",
-        "resp_interval_num_wake",
-        "use_ch_num",
-        "ecpt_cnt_max",
-        "crc_cnt_max",
-        "wake_cnt_max",
-        "hb_interval",
-        "hb_timeout",
-        "status_interval",
-        "pcb_manufacturing_time",
-        "assembly_time",
-        "created",
-        "updated",
-    )
+    __slots__ = ("serial_number", "pin", "mac_address", "key", "firmware_version", "model", "status", "pcb_manufacturer", "final_assembly", "type", "profile", "preamble_len", "interval", "resp_interval_num_wake", "use_ch_num", "ecpt_cnt_max", "crc_cnt_max", "wake_cnt_max", "hb_interval", "hb_timeout", "status_interval", "pcb_manufacturing_time", "assembly_time", "created", "updated")
     SERIAL_NUMBER_FIELD_NUMBER: _ClassVar[int]
     PIN_FIELD_NUMBER: _ClassVar[int]
     MAC_ADDRESS_FIELD_NUMBER: _ClassVar[int]
@@ -99,39 +72,4 @@ class FlowProvision(_message.Message):
     assembly_time: _timestamp_pb2.Timestamp
     created: _timestamp_pb2.Timestamp
     updated: _timestamp_pb2.Timestamp
-    def __init__(
-        self,
-        serial_number: _Optional[str] = ...,
-        pin: _Optional[str] = ...,
-        mac_address: _Optional[str] = ...,
-        key: _Optional[str] = ...,
-        firmware_version: _Optional[str] = ...,
-        model: _Optional[_Union[FlowModel, str]] = ...,
-        status: _Optional[_Union[_provision_pb2.ProvisionStatus, str]] = ...,
-        pcb_manufacturer: _Optional[_Union[_provision_pb2.Manufacturer, str]] = ...,
-        final_assembly: _Optional[_Union[FinalAssembly, str]] = ...,
-        type: _Optional[int] = ...,
-        profile: _Optional[int] = ...,
-        preamble_len: _Optional[int] = ...,
-        interval: _Optional[int] = ...,
-        resp_interval_num_wake: _Optional[int] = ...,
-        use_ch_num: bool = ...,
-        ecpt_cnt_max: _Optional[int] = ...,
-        crc_cnt_max: _Optional[int] = ...,
-        wake_cnt_max: _Optional[int] = ...,
-        hb_interval: _Optional[int] = ...,
-        hb_timeout: _Optional[int] = ...,
-        status_interval: _Optional[int] = ...,
-        pcb_manufacturing_time: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        assembly_time: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        created: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        updated: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-    ) -> None: ...
+    def __init__(self, serial_number: _Optional[str] = ..., pin: _Optional[str] = ..., mac_address: _Optional[str] = ..., key: _Optional[str] = ..., firmware_version: _Optional[str] = ..., model: _Optional[_Union[FlowModel, str]] = ..., status: _Optional[_Union[_provision_pb2.ProvisionStatus, str]] = ..., pcb_manufacturer: _Optional[_Union[_provision_pb2.Manufacturer, str]] = ..., final_assembly: _Optional[_Union[FinalAssembly, str]] = ..., type: _Optional[int] = ..., profile: _Optional[int] = ..., preamble_len: _Optional[int] = ..., interval: _Optional[int] = ..., resp_interval_num_wake: _Optional[int] = ..., use_ch_num: bool = ..., ecpt_cnt_max: _Optional[int] = ..., crc_cnt_max: _Optional[int] = ..., wake_cnt_max: _Optional[int] = ..., hb_interval: _Optional[int] = ..., hb_timeout: _Optional[int] = ..., status_interval: _Optional[int] = ..., pcb_manufacturing_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., assembly_time: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., created: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., updated: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...

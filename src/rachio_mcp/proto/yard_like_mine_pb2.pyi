@@ -1,5 +1,6 @@
 import datetime
 
+import schedule_criteria_pb2 as _schedule_criteria_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
@@ -10,18 +11,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class YardLikeMine(_message.Message):
-    __slots__ = (
-        "device_id",
-        "primary_photo_id",
-        "distance_from_my_yard",
-        "green_score",
-        "water_usage",
-        "city",
-        "state",
-        "zone_photo_id",
-        "updated",
-        "is_updated",
-    )
+    __slots__ = ("device_id", "primary_photo_id", "distance_from_my_yard", "green_score", "water_usage", "city", "state", "zone_photo_id", "updated", "is_updated")
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     PRIMARY_PHOTO_ID_FIELD_NUMBER: _ClassVar[int]
     DISTANCE_FROM_MY_YARD_FIELD_NUMBER: _ClassVar[int]
@@ -42,18 +32,4 @@ class YardLikeMine(_message.Message):
     zone_photo_id: _containers.RepeatedScalarFieldContainer[str]
     updated: _timestamp_pb2.Timestamp
     is_updated: bool
-    def __init__(
-        self,
-        device_id: _Optional[str] = ...,
-        primary_photo_id: _Optional[str] = ...,
-        distance_from_my_yard: _Optional[int] = ...,
-        green_score: _Optional[float] = ...,
-        water_usage: _Optional[float] = ...,
-        city: _Optional[str] = ...,
-        state: _Optional[str] = ...,
-        zone_photo_id: _Optional[_Iterable[str]] = ...,
-        updated: _Optional[
-            _Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]
-        ] = ...,
-        is_updated: bool = ...,
-    ) -> None: ...
+    def __init__(self, device_id: _Optional[str] = ..., primary_photo_id: _Optional[str] = ..., distance_from_my_yard: _Optional[int] = ..., green_score: _Optional[float] = ..., water_usage: _Optional[float] = ..., city: _Optional[str] = ..., state: _Optional[str] = ..., zone_photo_id: _Optional[_Iterable[str]] = ..., updated: _Optional[_Union[datetime.datetime, _timestamp_pb2.Timestamp, _Mapping]] = ..., is_updated: bool = ...) -> None: ...

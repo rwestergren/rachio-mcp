@@ -4,35 +4,38 @@
 # source: schedule_criteria.proto
 # Protobuf Python Version: 6.31.1
 """Generated protocol buffer code."""
-
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import runtime_version as _runtime_version
 from google.protobuf import symbol_database as _symbol_database
 from google.protobuf.internal import builder as _builder
-
 _runtime_version.ValidateProtobufRuntimeVersion(
-    _runtime_version.Domain.PUBLIC, 6, 31, 1, "", "schedule_criteria.proto"
+    _runtime_version.Domain.PUBLIC,
+    6,
+    31,
+    1,
+    '',
+    'schedule_criteria.proto'
 )
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+import core_pb2 as core__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
-    b'\n\x17schedule_criteria.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\ncore.proto"\xf9\x04\n\x10ScheduleCriteria\x12$\n\rschedule_type\x18\x01 \x01(\x0e\x32\r.ScheduleType\x12\x19\n\nstart_date\x18\x02 \x01(\x0b\x32\x05.Date\x12\x17\n\x08\x65nd_date\x18\x03 \x01(\x0b\x32\x05.Date\x12(\n\x11\x61nnual_start_date\x18\x13 \x01(\x0b\x32\r.CalendarDate\x12&\n\x0f\x61nnual_end_date\x18\x14 \x01(\x0b\x32\r.CalendarDate\x12\x1a\n\x12rain_delay_enabled\x18\x08 \x01(\x08\x12\x1c\n\x14\x66reeze_delay_enabled\x18\t \x01(\x08\x12\x1a\n\x12wind_delay_enabled\x18\n \x01(\x08\x12\x14\n\x0c\x63limate_skip\x18\x0b \x01(\x08\x12\x16\n\x0eseasonal_shift\x18\x0c \x01(\x08\x12\x13\n\x0bsmart_cycle\x18\r \x01(\x08\x12\x12\n\ncycle_soak\x18\x0e \x01(\x08\x12\x11\n\tsoak_time\x18\x0f \x01(\x05\x12\x12\n\ncycle_time\x18\x10 \x01(\x05\x12\x17\n\x0fzone_delay_time\x18\x11 \x01(\x05\x12#\n\x0estart_time_set\x18\x04 \x01(\x0b\x32\t.TimeListH\x00\x12\x18\n\x0estart_sun_time\x18\x05 \x01(\tH\x00\x12!\n\x0c\x65nd_time_set\x18\x06 \x01(\x0b\x32\t.TimeListH\x00\x12\x16\n\x0c\x65nd_sun_time\x18\x07 \x01(\tH\x00\x12:\n!start_time_with_end_time_boundary\x18\x15 \x01(\x0b\x32\r.TimeIntervalH\x00\x42\x10\n\x0estart_end_timeJ\x04\x08\x12\x10\x13*;\n\x0cScheduleType\x12\t\n\x05\x46IXED\x10\x00\x12\x10\n\x0c\x46LEX_MONTHLY\x10\x01\x12\x0e\n\nFLEX_DAILY\x10\x02\x42\x1b\n\x17\x63om.rachio.api.scheduleP\x01\x62\x06proto3'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17schedule_criteria.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\ncore.proto\"\xf9\x04\n\x10ScheduleCriteria\x12$\n\rschedule_type\x18\x01 \x01(\x0e\x32\r.ScheduleType\x12\x19\n\nstart_date\x18\x02 \x01(\x0b\x32\x05.Date\x12\x17\n\x08\x65nd_date\x18\x03 \x01(\x0b\x32\x05.Date\x12(\n\x11\x61nnual_start_date\x18\x13 \x01(\x0b\x32\r.CalendarDate\x12&\n\x0f\x61nnual_end_date\x18\x14 \x01(\x0b\x32\r.CalendarDate\x12\x1a\n\x12rain_delay_enabled\x18\x08 \x01(\x08\x12\x1c\n\x14\x66reeze_delay_enabled\x18\t \x01(\x08\x12\x1a\n\x12wind_delay_enabled\x18\n \x01(\x08\x12\x14\n\x0c\x63limate_skip\x18\x0b \x01(\x08\x12\x16\n\x0eseasonal_shift\x18\x0c \x01(\x08\x12\x13\n\x0bsmart_cycle\x18\r \x01(\x08\x12\x12\n\ncycle_soak\x18\x0e \x01(\x08\x12\x11\n\tsoak_time\x18\x0f \x01(\x05\x12\x12\n\ncycle_time\x18\x10 \x01(\x05\x12\x17\n\x0fzone_delay_time\x18\x11 \x01(\x05\x12#\n\x0estart_time_set\x18\x04 \x01(\x0b\x32\t.TimeListH\x00\x12\x18\n\x0estart_sun_time\x18\x05 \x01(\tH\x00\x12!\n\x0c\x65nd_time_set\x18\x06 \x01(\x0b\x32\t.TimeListH\x00\x12\x16\n\x0c\x65nd_sun_time\x18\x07 \x01(\tH\x00\x12:\n!start_time_with_end_time_boundary\x18\x15 \x01(\x0b\x32\r.TimeIntervalH\x00\x42\x10\n\x0estart_end_timeJ\x04\x08\x12\x10\x13*;\n\x0cScheduleType\x12\t\n\x05\x46IXED\x10\x00\x12\x10\n\x0c\x46LEX_MONTHLY\x10\x01\x12\x0e\n\nFLEX_DAILY\x10\x02\x42\x1b\n\x17\x63om.rachio.api.scheduleP\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
-_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, "schedule_criteria_pb2", _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'schedule_criteria_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-    _globals["DESCRIPTOR"]._loaded_options = None
-    _globals["DESCRIPTOR"]._serialized_options = b"\n\027com.rachio.api.scheduleP\001"
-    _globals["_SCHEDULETYPE"]._serialized_start = 708
-    _globals["_SCHEDULETYPE"]._serialized_end = 767
-    _globals["_SCHEDULECRITERIA"]._serialized_start = 73
-    _globals["_SCHEDULECRITERIA"]._serialized_end = 706
+  _globals['DESCRIPTOR']._loaded_options = None
+  _globals['DESCRIPTOR']._serialized_options = b'\n\027com.rachio.api.scheduleP\001'
+  _globals['_SCHEDULETYPE']._serialized_start=708
+  _globals['_SCHEDULETYPE']._serialized_end=767
+  _globals['_SCHEDULECRITERIA']._serialized_start=73
+  _globals['_SCHEDULECRITERIA']._serialized_end=706
 # @@protoc_insertion_point(module_scope)
