@@ -33,6 +33,14 @@ uvx --from rachio-mcp rachio-mcp-token
 
 It will prompt for your Rachio email and password, then print a `RACHIO_ACCESS_TOKEN` value to paste into your MCP client config. The token remains valid until you change your password or explicitly log out from another device.
 
+Or, if you'd rather have the commands on your PATH permanently, install once:
+
+```bash
+uv tool install rachio-mcp
+```
+
+Then `rachio-mcp-token` (and `rachio-mcp` itself) are available as regular commands.
+
 For scripting (e.g. pipe into a password manager):
 
 ```bash
@@ -207,32 +215,6 @@ Neither `RACHIO_EMAIL` nor `RACHIO_PASSWORD` is ever read by the MCP server itse
 ## Transport
 
 stdio only. Remote HTTP with OAuth 2.1 is not supported in v0.1.
-
-## Releasing
-
-Publishing is fully automated via GitHub Actions: tagging a release on GitHub builds the wheel, uploads it to PyPI (via trusted publishing, no API tokens stored), and pushes `server.json` to the [MCP Registry](https://registry.modelcontextprotocol.io/).
-
-### Cut a release
-
-1. Locally, before pushing: `uv run ruff check` and `uv run ruff format --check`. CI will reject PRs that don't pass.
-2. Push the release commit to `main`.
-3. On GitHub, **Releases → Draft a new release**. Tag: `vX.Y.Z` (e.g. `v0.1.0`). The leading `v` is required; the workflow strips it.
-4. **Publish release**. `.github/workflows/publish.yml` runs automatically:
-   - Rewrites `pyproject.toml` and `server.json` to `X.Y.Z`
-   - `uv build` → `dist/*.whl` + `dist/*.tar.gz`
-   - Uploads to PyPI via OIDC trusted publishing
-   - Uploads `server.json` to the MCP Registry via GitHub OIDC
-
-### One-time setup (before the first release)
-
-1. **Create a PyPI pending publisher.** Go to [pypi.org/manage/account/publishing/](https://pypi.org/manage/account/publishing/) and add a new pending publisher:
-   - PyPI Project Name: `rachio-mcp`
-   - Owner: `rwestergren`
-   - Repository: `rachio-mcp`
-   - Workflow: `publish.yml`
-   - Environment: `release`
-2. **Create a GitHub Environment.** In the repo's **Settings → Environments**, add an environment named `release`. Optional: require a reviewer before a release can publish.
-3. **MCP Registry namespace** (`io.github.rwestergren/rachio-mcp`) is auto-claimed by the first successful `mcp-publisher login github-oidc` from this repo. No manual registration needed.
 
 ## License
 
