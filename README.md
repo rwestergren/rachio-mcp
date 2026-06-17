@@ -112,7 +112,7 @@ If a tool call later returns a "token rejected" error, rerun `rachio-mcp-token` 
 | `get_schedule` | Single schedule + its locations/devices |
 | `preview_schedule` | **Dry-run** — returns the Schedule that `create_schedule` would produce, including the server-generated human-readable summary. Never persists |
 | `create_schedule` | Create a new schedule |
-| `update_schedule` | Rename or toggle enabled/disabled |
+| `update_schedule` | Partial-merge edit: name, enabled, timing/criteria, day restrictions, and per-zone add/update/remove |
 | `delete_schedule` | Permanent, destructive |
 | `copy_schedule` | Duplicate an existing schedule |
 | `run_schedule` | Trigger an immediate run |
@@ -143,6 +143,8 @@ All `device_id`, `zone_id`, `schedule_id`, and `location_id` parameters are UUID
 7. `delete_schedule(schedule_id=<new>)` → rollback if needed
 
 `preview_schedule` is safe to call repeatedly — it never writes anything.
+
+To edit an existing schedule instead of recreating it, use `update_schedule`. It performs a partial merge: read the schedule with `get_schedule`, then pass only the fields you want to change (name, enabled, timing/criteria, `days`, or `zones`/`zone_ids_to_remove`). Omitted fields are left untouched.
 
 ## How It Works
 
