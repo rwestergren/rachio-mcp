@@ -633,23 +633,95 @@ def update_schedule(
     schedule_id: str,
     name: str | None = None,
     enabled: bool | None = None,
+    schedule_type: str | None = None,
+    start_time: str | None = None,
+    start_sun: str | None = None,
+    days: list[str] | None = None,
+    annual_start: str | None = None,
+    annual_end: str | None = None,
+    smart_cycle: bool | None = None,
+    cycle_soak: bool | None = None,
+    cycle_time_seconds: int | None = None,
+    soak_time_seconds: int | None = None,
+    zone_delay_time_seconds: int | None = None,
+    rain_delay_enabled: bool | None = None,
+    freeze_delay_enabled: bool | None = None,
+    wind_delay_enabled: bool | None = None,
+    climate_skip: bool | None = None,
+    seasonal_shift: bool | None = None,
+    zones: list[dict] | None = None,
+    zone_ids_to_remove: list[str] | None = None,
 ) -> str:
-    """Partial update of an existing schedule.
+    """Partial-merge update of an existing schedule.
 
-    Currently supports renaming and toggling enabled/disabled. To change
-    criteria, days, or zones, delete + recreate the schedule.
+    Only the fields you pass are changed. The current schedule is read
+    first and your changes are overlaid onto its existing timing,
+    restrictions, and zones, then sent as a single update — so omitting
+    an argument leaves that aspect untouched. Field meanings match
+    create_schedule / preview_schedule.
+
+    Recommended: call get_schedule first to review current values.
 
     Args:
         schedule_id: Schedule UUID to update.
-        name: New display name (optional).
-        enabled: New enabled state (optional).
+        name: New display name.
+        enabled: New enabled state.
+        schedule_type: FIXED, FLEX_MONTHLY, or FLEX_DAILY.
+        start_time: Daily start time HH:MM (mutually exclusive with
+            start_sun; supplying one replaces the other).
+        start_sun: "SUNRISE" or "SUNSET".
+        days: Days of week, e.g. ["MON", "WED", "FRI"]. Replaces the
+            existing day restriction. Pass [] to clear it.
+        annual_start: Annual window start MM-DD. Pass "" to clear.
+        annual_end: Annual window end MM-DD. Pass "" to clear.
+        smart_cycle: Let Rachio auto-calculate cycle/soak.
+        cycle_soak: Enable manual cycle+soak.
+        cycle_time_seconds: Cycle length in seconds.
+        soak_time_seconds: Soak duration in seconds.
+        zone_delay_time_seconds: Delay between zones.
+        rain_delay_enabled: Enable rain-delay skipping.
+        freeze_delay_enabled: Enable freeze-delay skipping.
+        wind_delay_enabled: Enable wind-delay skipping.
+        climate_skip: Enable climate/ET skipping.
+        seasonal_shift: Enable seasonal runtime adjustment.
+        zones: Zone entries to add or update, matched on
+            device_id + zone_id. Each dict needs device_id and zone_id;
+            watering_time (seconds) is required for new zones and
+            optional when updating an existing one. Optional order_id,
+            flex_aggression_coefficient, flex_runtime_coefficient.
+        zone_ids_to_remove: Zone UUIDs to drop from the schedule.
     """
+    # MCP omits unset optional args, so ``None`` reliably means "not
+    # provided". Forward only supplied args; this preserves the client's
+    # leave-unchanged sentinels for the clearable timing fields. Empty
+    # string / list are passed through and act as explicit clears.
+    kwargs: dict = {}
+    for key, value in (
+        ("name", name),
+        ("enabled", enabled),
+        ("schedule_type", schedule_type),
+        ("start_time", start_time),
+        ("start_sun", start_sun),
+        ("days", days),
+        ("annual_start", annual_start),
+        ("annual_end", annual_end),
+        ("smart_cycle", smart_cycle),
+        ("cycle_soak", cycle_soak),
+        ("cycle_time_seconds", cycle_time_seconds),
+        ("soak_time_seconds", soak_time_seconds),
+        ("zone_delay_time_seconds", zone_delay_time_seconds),
+        ("rain_delay_enabled", rain_delay_enabled),
+        ("freeze_delay_enabled", freeze_delay_enabled),
+        ("wind_delay_enabled", wind_delay_enabled),
+        ("climate_skip", climate_skip),
+        ("seasonal_shift", seasonal_shift),
+        ("zones", zones),
+        ("zone_ids_to_remove", zone_ids_to_remove),
+    ):
+        if value is not None:
+            kwargs[key] = value
     try:
-        return _ok(
-            schedule=_get_client().update_schedule(
-                schedule_id, name=name, enabled=enabled
-            )
-        )
+        return _ok(schedule=_get_client().update_schedule(schedule_id, **kwargs))
     except Exception as e:
         return _err(e)
 

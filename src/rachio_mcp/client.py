@@ -676,21 +676,211 @@ class RachioClient:
         resp = self._call(self._schedule_stub().CreateSchedule, req)
         return self._pb2dict(resp.schedule)
 
+    # Sentinel distinguishing "argument not supplied" (leave unchanged)
+    # from an explicit value, including ``None`` where that is meaningful.
+    _UNSET: Any = object()
+
+    def _get_schedule_proto(self, schedule_id: str):
+        """Fetch the raw ``Schedule`` protobuf message (not a dict).
+
+        Used by ``update_schedule`` so it can merge changes onto the
+        schedule's existing ``schedule_criteria`` / restriction / zone
+        state, since the gRPC ``UpdateScheduleRequest`` carries those as
+        whole (non-nullable) sub-messages rather than per-field patches.
+        """
+        req = svc.GetSchedulesRequest()
+        req.schedule_id.CopyFrom(core_pb2.StringList(id=[schedule_id]))
+        resp = self._call(self._schedule_stub().GetSchedules, req)
+        if not resp.schedule:
+            raise RachioError(f"schedule {schedule_id} not found")
+        return resp.schedule[0]
+
     def update_schedule(
         self,
         schedule_id: str,
         *,
         name: str | None = None,
         enabled: bool | None = None,
+        # --- criteria (timing / behaviour) ---
+        schedule_type: str | None = None,
+        start_time: str | None = _UNSET,
+        start_sun: str | None = _UNSET,
+        days: list[str] | None = _UNSET,
+        annual_start: str | None = _UNSET,
+        annual_end: str | None = _UNSET,
+        smart_cycle: bool | None = None,
+        cycle_soak: bool | None = None,
+        cycle_time_seconds: int | None = None,
+        soak_time_seconds: int | None = None,
+        zone_delay_time_seconds: int | None = None,
+        rain_delay_enabled: bool | None = None,
+        freeze_delay_enabled: bool | None = None,
+        wind_delay_enabled: bool | None = None,
+        climate_skip: bool | None = None,
+        seasonal_shift: bool | None = None,
+        # --- zones ---
+        zones: list[dict] | None = None,
+        zone_ids_to_remove: list[str] | None = None,
     ) -> dict:
-        """Partially update an existing schedule. Currently supports
-        name and enabled/disabled state; more fields can be added as
-        needed."""
+        """Partial-merge update of an existing schedule.
+
+        Only the arguments you pass are changed; everything else is
+        preserved by reading the current schedule first and overlaying
+        your changes onto its existing criteria, restriction criteria,
+        and zone list before sending a single ``UpdateSchedule`` RPC.
+
+        Notes:
+          * ``schedule_type``, the delay/skip booleans, smart-cycle,
+            cycle-soak and the *_seconds timers map onto
+            ``schedule_criteria``.
+          * ``start_time`` and ``start_sun`` are mutually exclusive (a
+            proto ``oneof``); passing one clears the other. Passing
+            ``None`` explicitly leaves the existing start setting alone.
+          * ``days`` replaces the day-of-week restriction wholesale.
+          * ``zones`` upserts zone entries (matched on
+            ``device_id`` + ``zone_id``); ``zone_ids_to_remove`` deletes
+            zones by id. Both are optional and additive to the existing
+            zone set.
+        """
+        current = self._get_schedule_proto(schedule_id)
         req = svc.UpdateScheduleRequest(schedule_id=schedule_id)
+
         if name is not None:
             req.name.CopyFrom(StringValue(value=name))
         if enabled is not None:
             req.enabled.CopyFrom(BoolValue(value=enabled))
+
+        criteria_touched = any(
+            v is not None
+            for v in (
+                schedule_type,
+                smart_cycle,
+                cycle_soak,
+                cycle_time_seconds,
+                soak_time_seconds,
+                zone_delay_time_seconds,
+                rain_delay_enabled,
+                freeze_delay_enabled,
+                wind_delay_enabled,
+                climate_skip,
+                seasonal_shift,
+            )
+        ) or any(
+            v is not self._UNSET
+            for v in (start_time, start_sun, days, annual_start, annual_end)
+        )
+
+        if criteria_touched:
+            criteria = sc_pb.ScheduleCriteria()
+            criteria.CopyFrom(current.schedule_criteria)
+
+            if schedule_type is not None:
+                st_key = schedule_type.upper()
+                if st_key not in SCHEDULE_TYPE_NAMES:
+                    raise RachioError(
+                        f"schedule_type must be one of {list(SCHEDULE_TYPE_NAMES)}, "
+                        f"got {schedule_type!r}"
+                    )
+                criteria.schedule_type = SCHEDULE_TYPE_NAMES[st_key]
+            if smart_cycle is not None:
+                criteria.smart_cycle = smart_cycle
+            if cycle_soak is not None:
+                criteria.cycle_soak = cycle_soak
+            if cycle_time_seconds is not None:
+                criteria.cycle_time = cycle_time_seconds
+            if soak_time_seconds is not None:
+                criteria.soak_time = soak_time_seconds
+            if zone_delay_time_seconds is not None:
+                criteria.zone_delay_time = zone_delay_time_seconds
+            if rain_delay_enabled is not None:
+                criteria.rain_delay_enabled = rain_delay_enabled
+            if freeze_delay_enabled is not None:
+                criteria.freeze_delay_enabled = freeze_delay_enabled
+            if wind_delay_enabled is not None:
+                criteria.wind_delay_enabled = wind_delay_enabled
+            if climate_skip is not None:
+                criteria.climate_skip = climate_skip
+            if seasonal_shift is not None:
+                criteria.seasonal_shift = seasonal_shift
+
+            if annual_start is not self._UNSET:
+                criteria.ClearField("annual_start_date")
+                if annual_start:
+                    m, d = _parse_mmdd(annual_start)
+                    criteria.annual_start_date.month = m
+                    criteria.annual_start_date.day = d
+            if annual_end is not self._UNSET:
+                criteria.ClearField("annual_end_date")
+                if annual_end:
+                    m, d = _parse_mmdd(annual_end)
+                    criteria.annual_end_date.month = m
+                    criteria.annual_end_date.day = d
+
+            # start_end_time oneof: a supplied start_time/start_sun
+            # replaces whatever was there.
+            st_supplied = start_time is not self._UNSET and start_time is not None
+            ss_supplied = start_sun is not self._UNSET and start_sun is not None
+            if st_supplied and ss_supplied:
+                raise RachioError("provide at most one of start_time or start_sun")
+            if st_supplied:
+                criteria.ClearField("start_end_time")
+                h, m = _parse_hhmm(start_time)
+                tl = core_pb2.TimeList()
+                t = tl.time.add()
+                t.hour = h
+                t.minute = m
+                criteria.start_time_set.CopyFrom(tl)
+            elif ss_supplied:
+                criteria.ClearField("start_end_time")
+                criteria.start_sun_time = start_sun.upper()
+
+            req.schedule_criteria.CopyFrom(criteria)
+
+        if days is not self._UNSET:
+            restriction = src_pb.ScheduleRestrictionCriteria()
+            restriction.CopyFrom(current.schedule_restriction_criteria)
+            restriction.ClearField("day_of_week_constraint")
+            if days:
+                restriction.day_of_week_constraint.extend(
+                    [_parse_day(name) for name in days]
+                )
+            req.schedule_restriction_criteria.CopyFrom(restriction)
+
+        if zones:
+            existing_by_key = {(z.device_id, z.zone_id): z for z in current.zone_info}
+            for idx, z in enumerate(zones, start=1):
+                try:
+                    device_id = z["device_id"]
+                    zone_id = z["zone_id"]
+                except KeyError as e:
+                    raise RachioError(
+                        f"zone entry missing key {e}; required: device_id, zone_id"
+                    ) from e
+                base = existing_by_key.get((device_id, zone_id))
+                zi = szi_pb.ScheduleZoneInfo()
+                if base is not None:
+                    zi.CopyFrom(base)
+                else:
+                    zi.device_id = device_id
+                    zi.zone_id = zone_id
+                    zi.order_id = idx
+                if "watering_time" in z:
+                    zi.watering_time = int(z["watering_time"])
+                elif base is None:
+                    raise RachioError(f"new zone {zone_id} requires watering_time")
+                if "order_id" in z:
+                    zi.order_id = int(z["order_id"])
+                if "flex_aggression_coefficient" in z:
+                    zi.flex_aggression_coefficient = float(
+                        z["flex_aggression_coefficient"]
+                    )
+                if "flex_runtime_coefficient" in z:
+                    zi.flex_runtime_coefficient = float(z["flex_runtime_coefficient"])
+                req.zone_info_to_add_or_update.append(zi)
+
+        if zone_ids_to_remove:
+            req.zone_ids_to_remove.extend(zone_ids_to_remove)
+
         resp = self._call(self._schedule_stub().UpdateSchedule, req)
         return self._pb2dict(resp.schedule)
 
