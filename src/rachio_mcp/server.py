@@ -1,10 +1,10 @@
 """MCP server for Rachio sprinkler controllers via the reverse-engineered
 Android gRPC API.
 
-23 tools over stdio transport:
+24 tools over stdio transport:
 
-- Discovery (7): list_devices, get_device, list_zones, get_zone,
-  get_calendar, get_active_alerts, get_weather
+- Discovery (8): list_devices, get_device, list_zones, get_zone,
+  get_calendar, get_run_history, get_active_alerts, get_weather
 - Schedule CRUD (10): list_schedules, get_schedule, preview_schedule,
   create_schedule, update_schedule, delete_schedule, copy_schedule,
   run_schedule, skip_schedule, get_schedule_runs
@@ -49,6 +49,7 @@ mcp = FastMCP(
         "Rachio sprinkler-controller MCP using the reverse-engineered Android "
         "mobile gRPC API. Use list_devices and list_zones to discover hardware. "
         "Use list_schedules + get_schedule to inspect watering programs. Use "
+        "get_run_history to inspect recent/past watering that actually ran. Use "
         "preview_schedule to server-dry-run a proposed schedule — it returns "
         "the same Schedule proto that create_schedule would produce, including "
         "a human-readable summary — then call create_schedule to commit it. "
@@ -300,6 +301,48 @@ def get_calendar(
     try:
         return _ok(
             _get_client().get_calendar(
+                device_id,
+                start=_parse_date(start),
+                end=_parse_date(end),
+            )
+        )
+    except Exception as e:
+        return _err(e)
+
+
+@mcp.tool(
+    annotations={
+        "readOnlyHint": True,
+        "destructiveHint": False,
+        "idempotentHint": True,
+        "openWorldHint": True,
+    }
+)
+def get_run_history(
+    device_id: str,
+    start: str | None = None,
+    end: str | None = None,
+) -> str:
+    """Return recent/past watering history for a controller.
+
+    This is the best first tool for questions like "what ran today?",
+    "when did this controller water recently?", or "did anything skip?".
+    The response includes controller-observed ``actual_zone_runs`` plus
+    Rachio ``calendar_runs``/``skips`` for calendar context. Calendar events
+    may not include every completed scheduled run; observed telemetry is the
+    source of truth for what actually watered and is limited to the latest run
+    per zone. For schedule-specific audit trails, use ``get_schedule_runs``
+    after discovering a schedule id.
+
+    Args:
+        device_id: Controller UUID.
+        start: Start date, ISO YYYY-MM-DD (default: today - 7 days).
+        end: End date, ISO YYYY-MM-DD (default: tomorrow, so all of today
+            is included).
+    """
+    try:
+        return _ok(
+            _get_client().get_run_history(
                 device_id,
                 start=_parse_date(start),
                 end=_parse_date(end),
