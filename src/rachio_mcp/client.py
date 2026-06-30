@@ -218,10 +218,7 @@ class RachioClient:
                 "RACHIO_ACCESS_TOKEN in your MCP client's env block."
             )
         self._token = token
-        logger.info(
-            "Rachio access token loaded from RACHIO_ACCESS_TOKEN (token=%s...)",
-            token[:8],
-        )
+        logger.info("Rachio access token loaded from RACHIO_ACCESS_TOKEN")
 
     def _ensure_auth(self) -> None:
         if self._token is None:
@@ -469,6 +466,64 @@ class RachioClient:
         _set_ts(req.end_time, end_dt)
         resp = self._call(self._device_stub().GetCalendar, req)
         return self._pb2dict(resp)
+
+    def get_run_history(
+        self,
+        device_id: str,
+        start: datetime | date | None = None,
+        end: datetime | date | None = None,
+    ) -> dict:
+        """Return recent completed/started runs and skips for a controller.
+
+        Defaults to the last 7 days through tomorrow, so today's completed
+        watering is included without the caller having to specify dates.
+        """
+        from datetime import timedelta
+
+        start = start or date.today() - timedelta(days=7)
+        end = end or date.today() + timedelta(days=1)
+        start_dt = _to_utc(start)
+        end_dt = _to_utc(end)
+        if end_dt <= start_dt:
+            raise RachioError("end must be after start")
+
+        req = dev_svc.GetCalendarRequest(device_id=device_id)
+        _set_ts(req.start_time, start_dt)
+        _set_ts(req.end_time, end_dt)
+        resp = self._call(self._device_stub().GetCalendar, req)
+        out = self._pb2dict(resp)
+        out["calendar_runs"] = out.pop("runs", [])
+        last_zone_runs = self.get_last_zone_runs(device_id)
+        actual_zone_runs = []
+        for zone_run in last_zone_runs:
+            run_start = _parse_utc_timestamp(zone_run.get("last_run_start_time"))
+            if run_start is None:
+                continue
+            run_end = (
+                _parse_utc_timestamp(zone_run.get("last_run_end_time")) or run_start
+            )
+            if start_dt <= run_end and run_start < end_dt:
+                actual_zone_runs.append(zone_run)
+        actual_zone_runs.sort(key=lambda z: z.get("last_run_start_time", ""))
+
+        out["range"] = {
+            "start": start_dt.isoformat(),
+            "end": end_dt.isoformat(),
+        }
+        out["actual_zone_runs"] = actual_zone_runs
+        out["history_note"] = (
+            "actual_zone_runs is controller-observed watering telemetry. "
+            "calendar_runs and skips are Rachio calendar events and may not "
+            "include every completed scheduled run. Observed telemetry is "
+            "limited to the latest run per zone."
+        )
+        return out
+
+    def get_last_zone_runs(self, device_id: str) -> list[dict]:
+        """Return the last observed run state for each zone on a controller."""
+        req = dev_svc.GetLastZoneRunStateRequest(device_id=device_id)
+        resp = self._call(self._device_stub().GetLastZoneRunState, req)
+        return [self._pb2dict(z) for z in resp.last_zone_run_states]
 
     def get_active_alerts(
         self,
@@ -1166,3 +1221,10 @@ def _to_utc(d: datetime | date) -> datetime:
 def _set_ts(pb_ts: Timestamp, dt: datetime) -> None:
     """Populate a google.protobuf.Timestamp from an aware datetime."""
     pb_ts.FromDatetime(dt.astimezone(timezone.utc))
+
+
+def _parse_utc_timestamp(value: str | None) -> datetime | None:
+    """Parse a protobuf JSON timestamp into an aware UTC datetime."""
+    if not value:
+        return None
+    return datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(timezone.utc)

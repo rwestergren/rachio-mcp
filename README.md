@@ -13,7 +13,7 @@ The [public Rachio API](https://rachio.readme.io/) exposes only read-only access
 - **Devices and zones** — list controllers, sensors, and weather stations; inspect zone soil/nozzle/plant configuration and live state
 - **Schedules** — list, read, preview (dry-run), create, update, delete, copy, run, and skip schedules
 - **Live control** — stop watering, run specific zones manually, set rain delays, skip/pause/resume the currently-running zone
-- **Context** — calendar of upcoming and past runs, active alerts, observed/forecast weather readings
+- **Context** — calendar of upcoming runs, recent/past run history, active alerts, observed/forecast weather readings
 
 ## Quick Start
 
@@ -90,7 +90,7 @@ If a tool call later returns a "token rejected" error, rerun `rachio-mcp-token` 
 
 ## Available Tools
 
-23 tools over stdio transport.
+24 tools over stdio transport.
 
 ### Discovery
 
@@ -101,6 +101,7 @@ If a tool call later returns a "token rejected" error, rerun `rachio-mcp-token` 
 | `list_zones` | Zones configured on a controller, with agronomic metadata |
 | `get_zone` | Full detail for a single zone |
 | `get_calendar` | Scheduled runs + skip events for a date range |
+| `get_run_history` | Observed recent/past zone-run telemetry plus calendar context |
 | `get_active_alerts` | Unresolved alerts on a device or zone |
 | `get_weather` | Observed + forecast weather readings for a location |
 
